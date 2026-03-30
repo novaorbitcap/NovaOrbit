@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Pulse — 28-29 March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a1a;--paper:#faf8f4;--accent:#c0392b;--accent2:#2c3e50;--rule:#d4c5a9;--muted:#7a7062;--tag-bg:#f0ece4;--card-bg:#fff;--shadow:0 2px 12px rgba(0,0,0,.06)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.masthead{text-align:center;padding:32px 20px 0;border-bottom:4px double var(--ink)}.masthead-date{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.masthead h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,64px);letter-spacing:-1px;line-height:1.05;margin-bottom:4px}.masthead-sub{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:14px}
+.edition-bar{background:var(--ink);color:var(--paper);font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}.stat-pill{background:rgba(255,255,255,.12);padding:3px 10px;border-radius:3px;font-size:11px}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.filter-bar{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;margin-bottom:24px}.filter-bar .container{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;padding:6px 14px;border:1.5px solid var(--rule);border-radius:20px;background:0 0;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}.filter-btn:hover{border-color:var(--ink);color:var(--ink)}.filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.search-box{font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 14px;border:1.5px solid var(--rule);border-radius:20px;background:var(--card-bg);color:var(--ink);width:200px;outline:0;margin-left:auto}.search-box:focus{border-color:var(--accent)}
+.section-header{display:flex;align-items:center;gap:12px;margin:36px 0 18px;padding-bottom:8px;border-bottom:2px solid var(--ink)}.section-icon{font-size:22px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);border-radius:6px;flex-shrink:0}.section-header h2{font-family:'Playfair Display',serif;font-weight:800;font-size:22px}.section-count{font-family:'DM Sans',sans-serif;font-size:11px;background:var(--tag-bg);padding:2px 8px;border-radius:10px;color:var(--muted);font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-bottom:12px}
+.card{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;padding:20px;transition:all .25s;cursor:default;position:relative;overflow:hidden}.card:hover{box-shadow:var(--shadow);border-color:#bbb;transform:translateY(-2px)}
+.card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:6px;flex-wrap:wrap}.card-ticker{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;background:var(--accent2);color:#fff;padding:2px 8px;border-radius:4px;letter-spacing:.5px}.card-date{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted)}
+.card-tag{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:3px;background:var(--tag-bg);color:var(--muted)}.card-tag.acq{background:#e8f5e9;color:#2e7d32}.card-tag.order{background:#e3f2fd;color:#1565c0}.card-tag.div{background:#fff3e0;color:#e65100}.card-tag.expand{background:#f3e5f5;color:#7b1fa2}.card-tag.fund{background:#fce4ec;color:#c62828}.card-tag.jv{background:#e0f2f1;color:#00695c}.card-tag.legal{background:#fff8e1;color:#f57f17}.card-tag.tech{background:#ede7f6;color:#4527a0}.card-tag.divest{background:#efebe9;color:#4e342e}.card-tag.restructure{background:#fafafa;color:#424242}.card-tag.mgmt{background:#e8eaf6;color:#283593}.card-tag.psu{background:#e3f2fd;color:#0d47a1}.card-tag.alert{background:#ffebee;color:#c62828}
+.card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;line-height:1.3;margin-bottom:8px}.card p{font-size:14px;color:#444;line-height:1.6}.card .source{font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted);margin-top:10px}.card .source a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}.card .source a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.connector{background:linear-gradient(135deg,#2c3e50,#34495e);color:#fff;border-radius:8px;padding:20px 24px;margin:20px 0 28px;position:relative;overflow:hidden}.connector::before{content:'🔗';position:absolute;right:16px;top:14px;font-size:20px;opacity:.4}.connector h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;color:#f1c40f}.connector p{font-size:14px;line-height:1.65;opacity:.92}
+.cont-badge{display:inline-flex;align-items:center;gap:4px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:3px;background:#1a5276;color:#fff;margin-bottom:8px}.cont-badge::before{content:'↩';font-size:12px}
+.headline-card{grid-column:1/-1;border-left:4px solid var(--accent)}.headline-card h3{font-size:20px}
+.report-footer{text-align:center;padding:32px 20px;margin-top:40px;border-top:2px solid var(--ink);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted)}
+.hidden{display:none!important}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}.search-box{width:100%;margin-left:0;margin-top:8px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.card,.connector{animation:fadeUp .4s ease both}
+</style>
+</head>
+<body>
+<header class="masthead">
+<div class="masthead-date">Saturday & Sunday (Weekend Edition)</div>
+<h1>Market Pulse</h1>
+<div class="masthead-sub">NSE Corporate Announcements Intelligence Report &bull; 28–29 March 2026 &bull; Edition #3</div>
+</header>
+<div class="edition-bar">
+<span>Daily Equity Research Digest — Weekend Edition</span>
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
+<span class="stat-pill">293 Total Filings</span>
+<span class="stat-pill">Lighter Volume (Weekend + Holiday)</span>
+<span class="stat-pill">FY26 Year-End: 2 Days Left</span>
+</div>
+</div>
+<div class="filter-bar"><div class="container">
+<button class="filter-btn active" onclick="filterCards('all')">All</button>
+<button class="filter-btn" onclick="filterCards('order')">Orders</button>
+<button class="filter-btn" onclick="filterCards('psu')">PSU Reshuffle</button>
+<button class="filter-btn" onclick="filterCards('expand')">Expansion</button>
+<button class="filter-btn" onclick="filterCards('legal')">Legal / Tax</button>
+<button class="filter-btn" onclick="filterCards('restructure')">Restructuring</button>
+<button class="filter-btn" onclick="filterCards('cont')">Continuing</button>
+<input class="search-box" type="text" placeholder="Search ticker or keyword…" oninput="searchCards(this.value)">
+</div></div>
+
+<main class="container">
+
+<!-- ══════ TOP STORY: PSU BOARD RESHUFFLE ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🏛️</div>
+<h2>Government & PSU Board Reshuffle</h2>
+<span class="section-count">Top Story</span>
+</div>
+<div class="card-grid">
+<div class="card headline-card" data-tags="psu mgmt" data-ticker="PSU-BATCH">
+<div class="card-meta">
+<span class="card-ticker">10+ PSUs</span>
+<span class="card-tag psu">Board Reshuffle</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Massive Government-Coordinated PSU Board Reshuffle — 10+ Companies File Director Changes on Same Day</h3>
+<p>In a clear FY-end government action, at least <strong>10 major PSUs</strong> filed director cessation/change notices within hours of each other on 28 Mar morning:</p>
+<p><strong>IOC</strong> (3 Independent Directors ceased) · <strong>BPCL</strong> · <strong>HPCL</strong> · <strong>GAIL</strong> · <strong>Coal India</strong> · <strong>BHEL</strong> (IDs ceased) · <strong>Engineers India</strong> · <strong>Oil India</strong> · <strong>IREDA</strong> (ID ceased) · <strong>ONGC</strong> (3 cessations) · <strong>Chennai Petro</strong> · <strong>Balm Lawrie</strong> (2 cessations)</p>
+<p>This is a coordinated year-end rotation of government-nominated and independent directors across India's energy, power, and industrial PSU complex. New appointments will follow in April. While routine, it signals the government's governance refresh cycle and investors should watch for any strategic directional shifts with new board compositions.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/IOC_28032026092748_Reg_30_Cessation_of_3_Independent_Directors_28032026_S.pdf" target="_blank">IOC</a> · <a href="https://nsearchives.nseindia.com/corporate/BPCL22_28032026105117_stexintimationchangeindirs28326s.pdf" target="_blank">BPCL</a> · <a href="https://nsearchives.nseindia.com/corporate/HINDPETRO1_28032026083417_Change_in_Directorate.pdf" target="_blank">HPCL</a> · <a href="https://nsearchives.nseindia.com/corporate/DEVIKA_28032026100349_Change_in_Directorship_S.pdf" target="_blank">GAIL</a> · <a href="https://nsearchives.nseindia.com/corporate/COALINDIA_28032026074935_signedcessation.pdf" target="_blank">CIL</a> · <a href="https://nsearchives.nseindia.com/corporate/BHEL_28032026105428_SE_intimation_for_Cessation_of_IDs.pdf" target="_blank">BHEL</a> · <a href="https://nsearchives.nseindia.com/corporate/IREDAEQ_28032026101613_SignedIntimationSEcessationofID28032026.pdf" target="_blank">IREDA</a> · <a href="https://nsearchives.nseindia.com/corporate/ONGC_28032026133634_DisclosureunderRegulation30SD.pdf" target="_blank">ONGC</a></div>
+</div>
+</div>
+</div>
+
+<!-- ══════ INFRA & ORDERS ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🏗️</div>
+<h2>Infrastructure & Order Wins</h2>
+<span class="section-count">6 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="order cont" data-ticker="TITAGARH">
+<div class="cont-badge">Continuing from 27 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">TITAGARH</span>
+<span class="card-tag order">LOI Received</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Titagarh Rail: Letter of Intent Received — Details Filed</h3>
+<p>Following the late-night board meeting outcome on 27 Mar (Edition #2), Titagarh has now filed an <strong>LOI disclosure</strong>. The rolling stock maker (Vande Bharat, metro coaches) continues its strong order pipeline.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/TWL_28032026153222_DisclosuretoSELOI28032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="KNRCON">
+<div class="card-meta">
+<span class="card-ticker">KNRCON</span>
+<span class="card-tag order">LOA Received</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>KNR Constructions Receives Letter of Acceptance</h3>
+<p>Highway infra player KNR Constructions filed an LOA for a new project. KNR has been consistently winning road EPC and HAM projects across southern and central India.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/KNRCON_28032026121009_LOAIntimation.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order cont" data-ticker="GRINFRA">
+<div class="cont-badge">Continuing from 27 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">GRINFRA</span>
+<span class="card-tag order">2nd LOA in 2 Days</span>
+<span class="card-date">29 Mar 2026</span>
+</div>
+<h3>G R Infra Receives Another LOA — 2nd in 2 Days</h3>
+<p>Following the L1 status and LOA on 27 Mar, G R Infraprojects filed <strong>another LOA on 29 Mar</strong>. The company is on an order-winning streak, building strong FY27 revenue visibility. Also filed a SAST (Reg 29) disclosure — worth watching for promoter stake changes.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/GRINFRA_29032026162247_LOA_Intimation_SE.pdf" target="_blank">LOA Filing</a> · <a href="https://nsearchives.nseindia.com/corporate/GRINFRA_29032026161651_Intimation_29_2__Signed_SE.pdf" target="_blank">SAST</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="COALINDIA">
+<div class="card-meta">
+<span class="card-ticker">COALINDIA</span>
+<span class="card-tag order">LOA</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Coal India Receives Letter of Acceptance</h3>
+<p>CIL disclosed an LOA, adding to its new subsidiary incorporation announced on 27 Mar. India's largest coal miner continues to diversify while maintaining core coal production targets.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/COALINDIA_28032026210731_signedloa.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="DBL">
+<div class="card-meta">
+<span class="card-ticker">DBL</span>
+<span class="card-tag order">LOA</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Dilip Buildcon Receives LOA for NWR Project</h3>
+<p>Road EPC major Dilip Buildcon filed an LOA intimation for a North Western Railway project — adding to its order book that spans highways, railways, and mining.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/DBL_28032026135001_LOAIntimationNWRWS.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="AVANTEL">
+<div class="card-meta">
+<span class="card-ticker">AVANTEL</span>
+<span class="card-tag order">IMD Order</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Avantel Bags Order from India Meteorological Department</h3>
+<p>Defence electronics player Avantel disclosed an <strong>order from IMD</strong>. The company specializes in SATCOM, radar, and electronic warfare systems.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/AVANTEL_28032026130404_IMDIntimation28032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+<div class="connector">
+<h4>Week-in-Review — Order Win Tally (25-29 March)</h4>
+<p>The infra order pipeline over 5 days has been exceptionally strong: <strong>L&T</strong> (2 "Significant" orders), <strong>G R Infra</strong> (L1 + 2 LOAs), <strong>Titagarh</strong> (LOI), <strong>KNR</strong> (LOA), <strong>Dilip Buildcon</strong> (LOA), <strong>Ceigall</strong> (PPA + LOA), <strong>Thermax</strong> (order), <strong>RailTel</strong> (3 days of orders), <strong>Seamec</strong> (ONGC), <strong>Ceinsys</strong> (ISRO), <strong>Avantel</strong> (IMD), plus <strong>Saatvik Green</strong> (4+ solar orders). This points to a <strong>strong Q4 order inflow season</strong> — watch for blockbuster order book numbers when companies report FY26 results.</p>
+</div>
+</div>
+
+<!-- ══════ ENERGY & POWER ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">⚡</div>
+<h2>Energy & Power</h2>
+<span class="section-count">3 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="expand" data-ticker="NTPC">
+<div class="card-meta">
+<span class="card-ticker">NTPC / NTPCGREEN</span>
+<span class="card-tag expand">Khavda COD + Investment</span>
+<span class="card-date">28-29 Mar 2026</span>
+</div>
+<h3>NTPC Green: 105 MW Khavda-II Solar Achieves COD — Group Capacity Nears 10 GW</h3>
+<p>NTPC Green Energy declared commercial operation of a <strong>105 MW segment of the 1,200 MW Khavda-II Solar PV Project</strong> in Gujarat (29 Mar). Group commercial capacity rises to <strong>9,907 MW</strong> — the 10 GW milestone is now imminent. NTPC parent separately filed <strong>2 investment proposal disclosures</strong> on 28 Mar.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NTPC_28032026221934_20260328_STEX_KHAVDA.pdf" target="_blank">Khavda</a> · <a href="https://nsearchives.nseindia.com/corporate/NTPC_28032026130351_20260328_STEX_INVESTMENTPROPOSAL.pdf" target="_blank">Investment 1</a> · <a href="https://nsearchives.nseindia.com/corporate/gauravrai02_28032026164750_Disclosure_-_Reg_30.pdf" target="_blank">NTPC Green</a></div>
+</div>
+
+<div class="card" data-tags="expand cont" data-ticker="NHPC">
+<div class="cont-badge">Continuing from 27 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">NHPC</span>
+<span class="card-tag expand">Project Update</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>NHPC Files Update on NHDC & RHPCL Hydro Projects</h3>
+<p>Following the Uri-Dulhasti implementation agreement on 27 Mar, NHPC now filed updates on its <strong>NHDC and RHPCL</strong> subsidiaries. India's largest hydropower company is in execution mode across multiple mega projects.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NHPC_28032026214515_STX_Intimation_NHDC_RHPCL_Update_reg.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="ACMESOLAR">
+<div class="card-meta">
+<span class="card-ticker">ACMESOLAR</span>
+<span class="card-tag expand">COD + Legal</span>
+<span class="card-date">29 Mar 2026</span>
+</div>
+<h3>ACME Solar: Surya Power Project COD Achieved; Separately Receives Show Cause Notice</h3>
+<p>ACME Solar declared commercial operation of a Surya Power project and separately disclosed a <strong>show cause notice</strong> — dual filings showing both growth execution and regulatory headwinds for the renewable energy developer.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/ACME122002_29032026211603_Surya_Power29032026.pdf" target="_blank">COD</a> · <a href="https://nsearchives.nseindia.com/corporate/ACME122002_29032026124412_Intimation29032026SCN.pdf" target="_blank">SCN</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ CORPORATE RESTRUCTURING ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🔄</div>
+<h2>Corporate Restructuring & M&A</h2>
+<span class="section-count">4 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="restructure" data-ticker="EPL">
+<div class="card-meta">
+<span class="card-ticker">EPL</span>
+<span class="card-tag restructure">Merger + Concall</span>
+<span class="card-date">29 Mar 2026</span>
+</div>
+<h3>EPL Limited: Major Board Outcome — Merger Scheme + Agreements + Investor Presentation</h3>
+<p>Packaging major EPL (formerly Essel Propack) filed <strong>6 disclosures</strong> on 29 Mar: board meeting outcome, merger/amalgamation scheme, agreements, press release, investor presentation, and concall schedule. This signals a significant corporate restructuring — likely related to a subsidiary merger or operational consolidation. Investor concall announced for scheme details.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026175230_Reg30OutcomeSd.pdf" target="_blank">Board Outcome</a> · <a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026180111_Reg30OutcomeSd.pdf" target="_blank">Merger</a> · <a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026181211_IntimationOfPressReleaseSd.pdf" target="_blank">Press Release</a> · <a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026184309_IntimationOfInvestorPPTSd.pdf" target="_blank">Investor PPT</a></div>
+</div>
+
+<div class="card" data-tags="restructure cont" data-ticker="PIRAMALFIN">
+<div class="cont-badge">Continuing from 27 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">PIRAMALFIN</span>
+<span class="card-tag mgmt">Key Resignation</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Piramal Finance: Gautam Doshi Resigns + Independent Director Exits</h3>
+<p>Following 5 disclosures on 27 Mar (merger scheme + fund raise), Piramal Finance now filed the resignation of <strong>Gautam Doshi</strong> (a prominent group executive) and separately an <strong>independent director resignation</strong>. The NBFC's restructuring continues at pace — 7+ filings in 2 days.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/Piramalcapital_28032026140752_PFL_Resignation_of_Gautam_Doshi_sd.pdf" target="_blank">Doshi Resignation</a></div>
+</div>
+
+<div class="card" data-tags="restructure" data-ticker="INDIACEM">
+<div class="card-meta">
+<span class="card-ticker">INDIACEM</span>
+<span class="card-tag restructure">Scheme Update</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>India Cements: Scheme of Arrangement Update Filed</h3>
+<p>India Cements disclosed an update on its ongoing scheme — likely related to the UltraTech Cement acquisition. This is a key special situation to track for merger arbitrage and timeline visibility.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/INDIACEM_28032026183718_SEsltrdt28032026ICLSchemeUpdate.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="restructure cont" data-ticker="MOSCHIP">
+<div class="cont-badge">Continuing from 26 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">MOSCHIP</span>
+<span class="card-tag restructure">NCLT Order</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>MosChip: Certified True Copy of NCLT Merger Order Filed</h3>
+<p>Following the initial NCLT order disclosure on 26 Mar (Edition #1), MosChip now filed the certified true copy — formally completing the merger approval process for the semiconductor design company.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/MOSCHIP_28032026111155_NCLT_order_intimation_to_Stock_Exchange_-_Certified_True_Copy.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ TAX & LEGAL ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">⚖️</div>
+<h2>Tax Orders & Legal</h2>
+<span class="section-count">5 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card headline-card" data-tags="legal" data-ticker="RRKABEL">
+<div class="card-meta">
+<span class="card-ticker">RRKABEL</span>
+<span class="card-tag alert">IT Search Order</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>RR Kabel Discloses Income Tax "Search Order" — Escalation from Prior Reassessments</h3>
+<p>RR Kabel filed an intimation regarding an <strong>Income Tax Search Order dated 27 Mar 2026</strong>. This is a significant escalation from the ongoing series of reassessment orders (₹67 Cr demand for AY 2018-22 filed on 25 Mar, ₹12.68 Cr for AY 2017-25 filed on 18 Mar, and ₹5.44 Cr for AY 2015-17 filed on 28 Mar). A "search order" typically follows an investigation — more severe than routine assessments. The company had faced IT raids across 40+ locations in November 2023. Cumulative tax demands now exceed <strong>₹85 Cr</strong>. Company says no material impact and plans to appeal all orders.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/RRKL1995_28032026205723_Intimation_Reg_30_IT_Search_Order_27_03_2026.pdf" target="_blank">NSE Filing</a> · <a href="https://www.whalesbook.com/news/English/industrial-goodsservices/RR-Kabel-Faces-indian-rupee67-Cr-Tax-Demand-Company-Plans-Appeal/69c2e11349d6b264f25957fc" target="_blank">Whalesbook</a></div>
+</div>
+
+<div class="card" data-tags="legal cont" data-ticker="TATASTEEL">
+<div class="cont-badge">Continuing from 25 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">TATASTEEL</span>
+<span class="card-tag legal">Litigation</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Tata Steel: Second Litigation Filing in 4 Days</h3>
+<p>Tata Steel filed another pendency/litigation outcome — the second in 4 days (first on 25 Mar). Multiple concurrent legal proceedings suggest active dispute resolution as the steel major navigates its European restructuring.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NIDHIFADNAVIS_28032026122053_BSENSE.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="SYNGENE">
+<div class="card-meta">
+<span class="card-ticker">SYNGENE</span>
+<span class="card-tag legal">Litigation</span>
+<span class="card-date">29 Mar 2026</span>
+</div>
+<h3>Syngene International: Litigation/Dispute Outcome Disclosed</h3>
+<p>Biocon subsidiary Syngene (CDMO/CRO services) filed a litigation outcome. Coming within 2 days of Biocon's major leadership overhaul (Edition #2), the Biocon group is going through a transformative period.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/SYNGENE2_29032026135051_SEIntimationMarch292026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="JUBLFOOD">
+<div class="card-meta">
+<span class="card-ticker">JUBLFOOD</span>
+<span class="card-tag legal">LPG Situation</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Jubilant FoodWorks Discloses "LPG Situation" — Operational Alert</h3>
+<p>Domino's operator Jubilant FoodWorks filed a disclosure on an <strong>"LPG situation"</strong> affecting operations. This follows the IDT case classification issue filed on 27 Mar. Two operational/regulatory filings in 2 days for the QSR major — watch for any store-level impact.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/JUBLFOOD_28032026164343_SEDisclosureonLPGsituation.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="SAMMAANCAP">
+<div class="card-meta">
+<span class="card-ticker">SAMMAANCAP</span>
+<span class="card-tag legal">Rating Change</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Sammaan Capital (ex-IHFL): Moody's Outlook Change</h3>
+<p>Sammaan Capital (formerly Indiabulls Housing Finance) disclosed a <strong>Moody's outlook change</strong>. Any directional shift in Moody's view — upgrade or downgrade — is significant for the NBFC's borrowing costs and market perception.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/IHFL_28032026212717_SCL_Moody_Outlook_Change_Exchange_Intimation_28Mar2026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+<div class="connector">
+<h4>Week-in-Review — Tax/Legal Tally (25-29 March)</h4>
+<p>The FY-end tax order barrage has been relentless across the full week. <strong>RR Kabel stands out</strong> with a search order escalation on top of ₹85 Cr+ cumulative demands — this is no longer routine. Across 5 days, we've tracked 30+ companies receiving tax/penalty orders. <strong>Key names:</strong> UltraTech (GST×2), Vi (GST), RR Kabel (IT search), Bharti Airtel, Torrent Power (GST), ixigo (IT+GST), IOB (IT×2), Devyani (IT), Go Digit (IT), Federal Bank (IT), Fortis (IT on WOS), Crompton, NIIT MindTree, Cummins (CGST), Heidelberg (GST), and more. Q4 provisioning will tell the real story.</p>
+</div>
+</div>
+
+<!-- ══════ CONSUMER & RETAIL ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🛒</div>
+<h2>Consumer & Retail</h2>
+<span class="section-count">3 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="expand cont" data-ticker="DMART">
+<div class="cont-badge">Continuing from 25 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">DMART</span>
+<span class="card-tag expand">Store Sprint</span>
+<span class="card-date">28-29 Mar 2026</span>
+</div>
+<h3>DMart Opens 2 More Stores — Total: 6 New Stores in 5 Days</h3>
+<p>Avenue Supermarts filed store openings on <strong>both 28 Mar and 29 Mar</strong>. That brings the week's tally to an unprecedented <strong>6 new stores in 5 days</strong> (25 Mar: 3, 27 Mar: 1, 28 Mar: 1, 29 Mar: 1). This FY-end sprint is remarkable for a company known for measured expansion — likely hitting a batch of stores ready simultaneously before FY26 close.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/DMART_28032026210126_ASLInitmationStoreOpening28032026.pdf" target="_blank">28 Mar</a> · <a href="https://nsearchives.nseindia.com/corporate/DMART_29032026184729_ASLInitmationStoreOpening29032026.pdf" target="_blank">29 Mar</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="ADFFOODS">
+<div class="card-meta">
+<span class="card-ticker">ADFFOODS</span>
+<span class="card-tag expand">Commercial Production</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>ADF Foods Commences Commercial Production at Surat Facility</h3>
+<p>Ready-to-eat food exporter ADF Foods started commercial production at its <strong>Surat plant</strong>. The company serves international markets with Indian ethnic foods — new capacity should drive export volume growth.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/ADFFOODS1_28032026163107_Reg30commercialproductionsurat.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand cont" data-ticker="PNGJL">
+<div class="cont-badge">Continuing from 27 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">PNGJL</span>
+<span class="card-tag expand">Store Opening</span>
+<span class="card-date">29 Mar 2026</span>
+</div>
+<h3>PNG Jewellers Opens Another Store — 2nd This Week</h3>
+<p>After the Varanasi store on 27 Mar, PNG filed another store opening on 29 Mar. The jewelry retailer is accelerating its expansion beyond its Maharashtra stronghold.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/PNGJEWELLERS_29032026205006_IntimationOfStoreOpening.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ OTHER NOTABLE ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">📌</div>
+<h2>Other Notable Updates</h2>
+<span class="section-count">4 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="expand" data-ticker="OBEROIRLTY">
+<div class="card-meta">
+<span class="card-ticker">OBEROIRLTY</span>
+<span class="card-tag expand">Peddar Road</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Oberoi Realty: Peddar Road Capacity Addition — Premium Mumbai Project</h3>
+<p>Oberoi Realty filed a definitive agreement for a <strong>Peddar Road development</strong> — one of Mumbai's most premium micro-markets. Land acquisition in this area is rare and signals a marquee ultra-luxury project.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/OBEROIRLTY_28032026173435_DA_PeddarRoad_28032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="BANSALWIRE">
+<div class="card-meta">
+<span class="card-ticker">BANSALWIRE</span>
+<span class="card-tag alert">Disruption</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>Bansal Wire: Disruption of Operations Disclosed</h3>
+<p>Recently listed Bansal Wire Industries filed a <strong>disruption of operations</strong> intimation. For a single-product wire manufacturer, any production disruption can have direct revenue impact. Watch for follow-up details on cause and duration.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/BANSALWIRE_28032026162725_BWIL-Exchange_Intimation-Disruption_of_Operation.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="CMSINFO">
+<div class="card-meta">
+<span class="card-ticker">CMSINFO</span>
+<span class="card-tag jv">Agreement</span>
+<span class="card-date">28-29 Mar 2026</span>
+</div>
+<h3>CMS Info Systems Signs Asset Transfer Agreement with FSS</h3>
+<p>Cash management and ATM services provider CMS Info filed an ATA with FSS (Financial Software and Systems). Press release followed on 29 Mar. This could expand CMS's technology stack in the payments infrastructure space.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/CMSINFO_28032026213512_ATAwithFSSsd.pdf" target="_blank">Agreement</a> · <a href="https://nsearchives.nseindia.com/corporate/CMSINFO_29032026140849_SEpressreleaseATAwithFSS.pdf" target="_blank">Press Release</a></div>
+</div>
+
+<div class="card" data-tags="expand cont" data-ticker="HFCL">
+<div class="cont-badge">Continuing from 25 Mar</div>
+<div class="card-meta">
+<span class="card-ticker">HFCL</span>
+<span class="card-tag jv">Corporate Guarantee</span>
+<span class="card-date">28 Mar 2026</span>
+</div>
+<h3>HFCL Provides Corporate Guarantee for Subsidiary HTL</h3>
+<p>Following the ₹555 Cr warrant issue approval (25 Mar) and defence business disclosure, HFCL now filed a <strong>corporate guarantee for subsidiary HTL</strong>. The company is deploying capital rapidly as it scales telecom and defence operations.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/AHMED_28032026193415_STX_HTL_Guarantee_28032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+</main>
+
+<footer class="report-footer">
+<p><strong>Market Pulse — Edition #3 (Weekend)</strong> — Compiled from 293 NSE corporate filings on 28–29 March 2026</p>
+<p style="margin-top:6px;">Market closed 28 Mar (Saturday). 29 Mar filings are pre-market for Monday 31 Mar — the last trading day of FY26.</p>
+<p style="margin-top:8px;font-size:11px;line-height:1.5;">
+<strong>Active Threads Carried Forward (Full Week 25-29 Mar):</strong><br>
+INFY $560M deal (CCI pending) · HFCL EGM 24 Apr (₹555 Cr warrants) + HTL guarantee · CHENNPETRO/IREDA div record 2 Apr · MEDANTA Varanasi ₹550Cr project · LTTS SWC sale by Sep '26 · SULA Chandon deal by Q1 FY27 · RELAXO restructuring · COCHINSHIP-HBL JV pending · NETWORK18 merger · BIOCON new leadership effective 1 Apr · AEGIS VOPAK SPA executed · PIRAMAL FINANCE merger + fund raise + Doshi exit · EPL merger scheme + concall · India Cements scheme update · RR Kabel IT search orders (₹85Cr+) · DMART 6 stores in 5 days · GR INFRA 2 LOAs in 2 days
+</p>
+<p style="margin-top:6px;">All information sourced from NSE filings and cited news sources. This is an informational digest, not investment advice.</p>
+</footer>
+
+<script>
+function filterCards(tag){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.card').forEach(card=>{if(tag==='all'||card.dataset.tags.includes(tag))card.classList.remove('hidden');else card.classList.add('hidden')});document.querySelectorAll('.section-wrapper').forEach(s=>{const v=s.querySelectorAll('.card:not(.hidden)');const h=s.querySelector('.section-header');const c=s.querySelector('.connector');if(!v.length){h&&h.classList.add('hidden');c&&c.classList.add('hidden')}else{h&&h.classList.remove('hidden');c&&c.classList.remove('hidden')}})}
+function searchCards(q){q=q.toLowerCase().trim();document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.querySelector('.filter-btn').classList.add('active');document.querySelectorAll('.card').forEach(card=>{const t=card.textContent.toLowerCase();const tk=(card.dataset.ticker||'').toLowerCase();if(!q||t.includes(q)||tk.includes(q))card.classList.remove('hidden');else card.classList.add('hidden')});document.querySelectorAll('.section-wrapper').forEach(s=>{const v=s.querySelectorAll('.card:not(.hidden)');const h=s.querySelector('.section-header');const c=s.querySelector('.connector');if(!v.length){h&&h.classList.add('hidden');c&&c.classList.add('hidden')}else{h&&h.classList.remove('hidden');c&&c.classList.remove('hidden')}})}
+</script>
+</body>
+</html>
