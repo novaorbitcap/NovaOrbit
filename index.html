@@ -1,463 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Market Pulse — 28-29 March 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#1a1a1a;--paper:#faf8f4;--accent:#c0392b;--accent2:#2c3e50;--rule:#d4c5a9;--muted:#7a7062;--tag-bg:#f0ece4;--card-bg:#fff;--shadow:0 2px 12px rgba(0,0,0,.06)}
-*{margin:0;padding:0;box-sizing:border-box}body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;-webkit-font-smoothing:antialiased}
-.masthead{text-align:center;padding:32px 20px 0;border-bottom:4px double var(--ink)}.masthead-date{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.masthead h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,64px);letter-spacing:-1px;line-height:1.05;margin-bottom:4px}.masthead-sub{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:14px}
-.edition-bar{background:var(--ink);color:var(--paper);font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}.stat-pill{background:rgba(255,255,255,.12);padding:3px 10px;border-radius:3px;font-size:11px}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
-.filter-bar{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;margin-bottom:24px}.filter-bar .container{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.filter-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;padding:6px 14px;border:1.5px solid var(--rule);border-radius:20px;background:0 0;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}.filter-btn:hover{border-color:var(--ink);color:var(--ink)}.filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.search-box{font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 14px;border:1.5px solid var(--rule);border-radius:20px;background:var(--card-bg);color:var(--ink);width:200px;outline:0;margin-left:auto}.search-box:focus{border-color:var(--accent)}
-.section-header{display:flex;align-items:center;gap:12px;margin:36px 0 18px;padding-bottom:8px;border-bottom:2px solid var(--ink)}.section-icon{font-size:22px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);border-radius:6px;flex-shrink:0}.section-header h2{font-family:'Playfair Display',serif;font-weight:800;font-size:22px}.section-count{font-family:'DM Sans',sans-serif;font-size:11px;background:var(--tag-bg);padding:2px 8px;border-radius:10px;color:var(--muted);font-weight:600}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-bottom:12px}
-.card{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;padding:20px;transition:all .25s;cursor:default;position:relative;overflow:hidden}.card:hover{box-shadow:var(--shadow);border-color:#bbb;transform:translateY(-2px)}
-.card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:6px;flex-wrap:wrap}.card-ticker{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;background:var(--accent2);color:#fff;padding:2px 8px;border-radius:4px;letter-spacing:.5px}.card-date{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted)}
-.card-tag{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:3px;background:var(--tag-bg);color:var(--muted)}.card-tag.acq{background:#e8f5e9;color:#2e7d32}.card-tag.order{background:#e3f2fd;color:#1565c0}.card-tag.div{background:#fff3e0;color:#e65100}.card-tag.expand{background:#f3e5f5;color:#7b1fa2}.card-tag.fund{background:#fce4ec;color:#c62828}.card-tag.jv{background:#e0f2f1;color:#00695c}.card-tag.legal{background:#fff8e1;color:#f57f17}.card-tag.tech{background:#ede7f6;color:#4527a0}.card-tag.divest{background:#efebe9;color:#4e342e}.card-tag.restructure{background:#fafafa;color:#424242}.card-tag.mgmt{background:#e8eaf6;color:#283593}.card-tag.psu{background:#e3f2fd;color:#0d47a1}.card-tag.alert{background:#ffebee;color:#c62828}
-.card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;line-height:1.3;margin-bottom:8px}.card p{font-size:14px;color:#444;line-height:1.6}.card .source{font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted);margin-top:10px}.card .source a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}.card .source a:hover{color:var(--ink);border-bottom-color:var(--ink)}
-.connector{background:linear-gradient(135deg,#2c3e50,#34495e);color:#fff;border-radius:8px;padding:20px 24px;margin:20px 0 28px;position:relative;overflow:hidden}.connector::before{content:'🔗';position:absolute;right:16px;top:14px;font-size:20px;opacity:.4}.connector h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;color:#f1c40f}.connector p{font-size:14px;line-height:1.65;opacity:.92}
-.cont-badge{display:inline-flex;align-items:center;gap:4px;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 10px;border-radius:3px;background:#1a5276;color:#fff;margin-bottom:8px}.cont-badge::before{content:'↩';font-size:12px}
-.headline-card{grid-column:1/-1;border-left:4px solid var(--accent)}.headline-card h3{font-size:20px}
-.report-footer{text-align:center;padding:32px 20px;margin-top:40px;border-top:2px solid var(--ink);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted)}
-.hidden{display:none!important}
-@media(max-width:600px){.card-grid{grid-template-columns:1fr}.search-box{width:100%;margin-left:0;margin-top:8px}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.card,.connector{animation:fadeUp .4s ease both}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Orbit — Market Pulse Reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-900: #1a3a1a;
+      --green-800: #1e4d2b;
+      --green-700: #276534;
+      --green-600: #2d7a3a;
+      --green-500: #3a9448;
+      --green-400: #5ab868;
+      --green-100: #e8f5e9;
+      --green-50: #f1f8f2;
+      --cream: #fafdf7;
+      --text-primary: #1a2e1a;
+      --text-secondary: #4a6a4a;
+      --text-muted: #7a9a7a;
+      --border: #d0e4d0;
+      --card-shadow: 0 1px 3px rgba(26,58,26,0.06), 0 4px 12px rgba(26,58,26,0.04);
+      --card-hover: 0 2px 8px rgba(26,58,26,0.1), 0 8px 24px rgba(26,58,26,0.08);
+    }
+ 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+    body {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-primary);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+ 
+    /* ── Top accent bar ── */
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-800), var(--green-500), var(--green-800));
+    }
+ 
+    /* ── Header ── */
+    header {
+      background: var(--green-900);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 600px 300px at 20% 50%, rgba(58,148,72,0.12), transparent),
+        radial-gradient(ellipse 500px 250px at 80% 50%, rgba(45,122,58,0.1), transparent);
+      pointer-events: none;
+    }
+ 
+    .header-content {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+ 
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .logo-wrap img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.95);
+      padding: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+ 
+    .brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: #fff;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
+    }
+    .brand-tagline {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+ 
+    /* ── Main container ── */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+ 
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--green-800);
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      color: var(--green-900);
+    }
+    .report-count {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: var(--green-100);
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+    }
+ 
+    /* ── Config banner ── */
+    .config-banner {
+      background: #fffbeb;
+      border: 1px solid #f0d060;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: #6b5900;
+    }
+    .config-banner code {
+      background: rgba(0,0,0,0.06);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+    .config-banner.hidden { display: none; }
+ 
+    /* ── States ── */
+    .state-message {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+    .state-message .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .state-message p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+ 
+    .spinner {
+      width: 32px; height: 32px;
+      border: 3px solid var(--border);
+      border-top-color: var(--green-600);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+ 
+    /* ── Report list ── */
+    .report-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+ 
+    .report-item {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: fadeUp 0.35s ease forwards;
+    }
+ 
+    .report-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+      box-shadow: var(--card-shadow);
+    }
+    .report-link:hover {
+      border-color: var(--green-500);
+      box-shadow: var(--card-hover);
+      transform: translateY(-1px);
+    }
+ 
+    .report-icon {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .report-icon svg {
+      width: 20px; height: 20px;
+      color: var(--green-700);
+    }
+ 
+    .report-info { flex: 1; min-width: 0; }
+    .report-name {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .report-meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+ 
+    .report-arrow {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .report-link:hover .report-arrow {
+      color: var(--green-600);
+      transform: translateX(3px);
+    }
+ 
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+ 
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header { padding: 2rem 1.25rem; }
+      .brand-name { font-size: 1.6rem; }
+      main { padding: 2rem 1rem 3rem; }
+      .report-link { padding: 0.85rem 1rem; gap: 0.75rem; }
+    }
+  </style>
 </head>
 <body>
-<header class="masthead">
-<div class="masthead-date">Saturday & Sunday (Weekend Edition)</div>
-<h1>Market Pulse</h1>
-<div class="masthead-sub">NSE Corporate Announcements Intelligence Report &bull; 28–29 March 2026 &bull; Edition #3</div>
-</header>
-<div class="edition-bar">
-<span>Daily Equity Research Digest — Weekend Edition</span>
-<div style="display:flex;gap:12px;flex-wrap:wrap;">
-<span class="stat-pill">293 Total Filings</span>
-<span class="stat-pill">Lighter Volume (Weekend + Holiday)</span>
-<span class="stat-pill">FY26 Year-End: 2 Days Left</span>
-</div>
-</div>
-<div class="filter-bar"><div class="container">
-<button class="filter-btn active" onclick="filterCards('all')">All</button>
-<button class="filter-btn" onclick="filterCards('order')">Orders</button>
-<button class="filter-btn" onclick="filterCards('psu')">PSU Reshuffle</button>
-<button class="filter-btn" onclick="filterCards('expand')">Expansion</button>
-<button class="filter-btn" onclick="filterCards('legal')">Legal / Tax</button>
-<button class="filter-btn" onclick="filterCards('restructure')">Restructuring</button>
-<button class="filter-btn" onclick="filterCards('cont')">Continuing</button>
-<input class="search-box" type="text" placeholder="Search ticker or keyword…" oninput="searchCards(this.value)">
-</div></div>
-
-<main class="container">
-
-<!-- ══════ TOP STORY: PSU BOARD RESHUFFLE ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">🏛️</div>
-<h2>Government & PSU Board Reshuffle</h2>
-<span class="section-count">Top Story</span>
-</div>
-<div class="card-grid">
-<div class="card headline-card" data-tags="psu mgmt" data-ticker="PSU-BATCH">
-<div class="card-meta">
-<span class="card-ticker">10+ PSUs</span>
-<span class="card-tag psu">Board Reshuffle</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Massive Government-Coordinated PSU Board Reshuffle — 10+ Companies File Director Changes on Same Day</h3>
-<p>In a clear FY-end government action, at least <strong>10 major PSUs</strong> filed director cessation/change notices within hours of each other on 28 Mar morning:</p>
-<p><strong>IOC</strong> (3 Independent Directors ceased) · <strong>BPCL</strong> · <strong>HPCL</strong> · <strong>GAIL</strong> · <strong>Coal India</strong> · <strong>BHEL</strong> (IDs ceased) · <strong>Engineers India</strong> · <strong>Oil India</strong> · <strong>IREDA</strong> (ID ceased) · <strong>ONGC</strong> (3 cessations) · <strong>Chennai Petro</strong> · <strong>Balm Lawrie</strong> (2 cessations)</p>
-<p>This is a coordinated year-end rotation of government-nominated and independent directors across India's energy, power, and industrial PSU complex. New appointments will follow in April. While routine, it signals the government's governance refresh cycle and investors should watch for any strategic directional shifts with new board compositions.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/IOC_28032026092748_Reg_30_Cessation_of_3_Independent_Directors_28032026_S.pdf" target="_blank">IOC</a> · <a href="https://nsearchives.nseindia.com/corporate/BPCL22_28032026105117_stexintimationchangeindirs28326s.pdf" target="_blank">BPCL</a> · <a href="https://nsearchives.nseindia.com/corporate/HINDPETRO1_28032026083417_Change_in_Directorate.pdf" target="_blank">HPCL</a> · <a href="https://nsearchives.nseindia.com/corporate/DEVIKA_28032026100349_Change_in_Directorship_S.pdf" target="_blank">GAIL</a> · <a href="https://nsearchives.nseindia.com/corporate/COALINDIA_28032026074935_signedcessation.pdf" target="_blank">CIL</a> · <a href="https://nsearchives.nseindia.com/corporate/BHEL_28032026105428_SE_intimation_for_Cessation_of_IDs.pdf" target="_blank">BHEL</a> · <a href="https://nsearchives.nseindia.com/corporate/IREDAEQ_28032026101613_SignedIntimationSEcessationofID28032026.pdf" target="_blank">IREDA</a> · <a href="https://nsearchives.nseindia.com/corporate/ONGC_28032026133634_DisclosureunderRegulation30SD.pdf" target="_blank">ONGC</a></div>
-</div>
-</div>
-</div>
-
-<!-- ══════ INFRA & ORDERS ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">🏗️</div>
-<h2>Infrastructure & Order Wins</h2>
-<span class="section-count">6 updates</span>
-</div>
-<div class="card-grid">
-
-<div class="card" data-tags="order cont" data-ticker="TITAGARH">
-<div class="cont-badge">Continuing from 27 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">TITAGARH</span>
-<span class="card-tag order">LOI Received</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Titagarh Rail: Letter of Intent Received — Details Filed</h3>
-<p>Following the late-night board meeting outcome on 27 Mar (Edition #2), Titagarh has now filed an <strong>LOI disclosure</strong>. The rolling stock maker (Vande Bharat, metro coaches) continues its strong order pipeline.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/TWL_28032026153222_DisclosuretoSELOI28032026.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="order" data-ticker="KNRCON">
-<div class="card-meta">
-<span class="card-ticker">KNRCON</span>
-<span class="card-tag order">LOA Received</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>KNR Constructions Receives Letter of Acceptance</h3>
-<p>Highway infra player KNR Constructions filed an LOA for a new project. KNR has been consistently winning road EPC and HAM projects across southern and central India.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/KNRCON_28032026121009_LOAIntimation.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="order cont" data-ticker="GRINFRA">
-<div class="cont-badge">Continuing from 27 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">GRINFRA</span>
-<span class="card-tag order">2nd LOA in 2 Days</span>
-<span class="card-date">29 Mar 2026</span>
-</div>
-<h3>G R Infra Receives Another LOA — 2nd in 2 Days</h3>
-<p>Following the L1 status and LOA on 27 Mar, G R Infraprojects filed <strong>another LOA on 29 Mar</strong>. The company is on an order-winning streak, building strong FY27 revenue visibility. Also filed a SAST (Reg 29) disclosure — worth watching for promoter stake changes.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/GRINFRA_29032026162247_LOA_Intimation_SE.pdf" target="_blank">LOA Filing</a> · <a href="https://nsearchives.nseindia.com/corporate/GRINFRA_29032026161651_Intimation_29_2__Signed_SE.pdf" target="_blank">SAST</a></div>
-</div>
-
-<div class="card" data-tags="order" data-ticker="COALINDIA">
-<div class="card-meta">
-<span class="card-ticker">COALINDIA</span>
-<span class="card-tag order">LOA</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Coal India Receives Letter of Acceptance</h3>
-<p>CIL disclosed an LOA, adding to its new subsidiary incorporation announced on 27 Mar. India's largest coal miner continues to diversify while maintaining core coal production targets.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/COALINDIA_28032026210731_signedloa.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="order" data-ticker="DBL">
-<div class="card-meta">
-<span class="card-ticker">DBL</span>
-<span class="card-tag order">LOA</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Dilip Buildcon Receives LOA for NWR Project</h3>
-<p>Road EPC major Dilip Buildcon filed an LOA intimation for a North Western Railway project — adding to its order book that spans highways, railways, and mining.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/DBL_28032026135001_LOAIntimationNWRWS.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="order" data-ticker="AVANTEL">
-<div class="card-meta">
-<span class="card-ticker">AVANTEL</span>
-<span class="card-tag order">IMD Order</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Avantel Bags Order from India Meteorological Department</h3>
-<p>Defence electronics player Avantel disclosed an <strong>order from IMD</strong>. The company specializes in SATCOM, radar, and electronic warfare systems.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/AVANTEL_28032026130404_IMDIntimation28032026.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-</div>
-<div class="connector">
-<h4>Week-in-Review — Order Win Tally (25-29 March)</h4>
-<p>The infra order pipeline over 5 days has been exceptionally strong: <strong>L&T</strong> (2 "Significant" orders), <strong>G R Infra</strong> (L1 + 2 LOAs), <strong>Titagarh</strong> (LOI), <strong>KNR</strong> (LOA), <strong>Dilip Buildcon</strong> (LOA), <strong>Ceigall</strong> (PPA + LOA), <strong>Thermax</strong> (order), <strong>RailTel</strong> (3 days of orders), <strong>Seamec</strong> (ONGC), <strong>Ceinsys</strong> (ISRO), <strong>Avantel</strong> (IMD), plus <strong>Saatvik Green</strong> (4+ solar orders). This points to a <strong>strong Q4 order inflow season</strong> — watch for blockbuster order book numbers when companies report FY26 results.</p>
-</div>
-</div>
-
-<!-- ══════ ENERGY & POWER ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">⚡</div>
-<h2>Energy & Power</h2>
-<span class="section-count">3 updates</span>
-</div>
-<div class="card-grid">
-
-<div class="card" data-tags="expand" data-ticker="NTPC">
-<div class="card-meta">
-<span class="card-ticker">NTPC / NTPCGREEN</span>
-<span class="card-tag expand">Khavda COD + Investment</span>
-<span class="card-date">28-29 Mar 2026</span>
-</div>
-<h3>NTPC Green: 105 MW Khavda-II Solar Achieves COD — Group Capacity Nears 10 GW</h3>
-<p>NTPC Green Energy declared commercial operation of a <strong>105 MW segment of the 1,200 MW Khavda-II Solar PV Project</strong> in Gujarat (29 Mar). Group commercial capacity rises to <strong>9,907 MW</strong> — the 10 GW milestone is now imminent. NTPC parent separately filed <strong>2 investment proposal disclosures</strong> on 28 Mar.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NTPC_28032026221934_20260328_STEX_KHAVDA.pdf" target="_blank">Khavda</a> · <a href="https://nsearchives.nseindia.com/corporate/NTPC_28032026130351_20260328_STEX_INVESTMENTPROPOSAL.pdf" target="_blank">Investment 1</a> · <a href="https://nsearchives.nseindia.com/corporate/gauravrai02_28032026164750_Disclosure_-_Reg_30.pdf" target="_blank">NTPC Green</a></div>
-</div>
-
-<div class="card" data-tags="expand cont" data-ticker="NHPC">
-<div class="cont-badge">Continuing from 27 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">NHPC</span>
-<span class="card-tag expand">Project Update</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>NHPC Files Update on NHDC & RHPCL Hydro Projects</h3>
-<p>Following the Uri-Dulhasti implementation agreement on 27 Mar, NHPC now filed updates on its <strong>NHDC and RHPCL</strong> subsidiaries. India's largest hydropower company is in execution mode across multiple mega projects.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NHPC_28032026214515_STX_Intimation_NHDC_RHPCL_Update_reg.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="expand" data-ticker="ACMESOLAR">
-<div class="card-meta">
-<span class="card-ticker">ACMESOLAR</span>
-<span class="card-tag expand">COD + Legal</span>
-<span class="card-date">29 Mar 2026</span>
-</div>
-<h3>ACME Solar: Surya Power Project COD Achieved; Separately Receives Show Cause Notice</h3>
-<p>ACME Solar declared commercial operation of a Surya Power project and separately disclosed a <strong>show cause notice</strong> — dual filings showing both growth execution and regulatory headwinds for the renewable energy developer.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/ACME122002_29032026211603_Surya_Power29032026.pdf" target="_blank">COD</a> · <a href="https://nsearchives.nseindia.com/corporate/ACME122002_29032026124412_Intimation29032026SCN.pdf" target="_blank">SCN</a></div>
-</div>
-
-</div>
-</div>
-
-<!-- ══════ CORPORATE RESTRUCTURING ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">🔄</div>
-<h2>Corporate Restructuring & M&A</h2>
-<span class="section-count">4 updates</span>
-</div>
-<div class="card-grid">
-
-<div class="card" data-tags="restructure" data-ticker="EPL">
-<div class="card-meta">
-<span class="card-ticker">EPL</span>
-<span class="card-tag restructure">Merger + Concall</span>
-<span class="card-date">29 Mar 2026</span>
-</div>
-<h3>EPL Limited: Major Board Outcome — Merger Scheme + Agreements + Investor Presentation</h3>
-<p>Packaging major EPL (formerly Essel Propack) filed <strong>6 disclosures</strong> on 29 Mar: board meeting outcome, merger/amalgamation scheme, agreements, press release, investor presentation, and concall schedule. This signals a significant corporate restructuring — likely related to a subsidiary merger or operational consolidation. Investor concall announced for scheme details.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026175230_Reg30OutcomeSd.pdf" target="_blank">Board Outcome</a> · <a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026180111_Reg30OutcomeSd.pdf" target="_blank">Merger</a> · <a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026181211_IntimationOfPressReleaseSd.pdf" target="_blank">Press Release</a> · <a href="https://nsearchives.nseindia.com/corporate/Sonia_Gupte_29032026184309_IntimationOfInvestorPPTSd.pdf" target="_blank">Investor PPT</a></div>
-</div>
-
-<div class="card" data-tags="restructure cont" data-ticker="PIRAMALFIN">
-<div class="cont-badge">Continuing from 27 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">PIRAMALFIN</span>
-<span class="card-tag mgmt">Key Resignation</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Piramal Finance: Gautam Doshi Resigns + Independent Director Exits</h3>
-<p>Following 5 disclosures on 27 Mar (merger scheme + fund raise), Piramal Finance now filed the resignation of <strong>Gautam Doshi</strong> (a prominent group executive) and separately an <strong>independent director resignation</strong>. The NBFC's restructuring continues at pace — 7+ filings in 2 days.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/Piramalcapital_28032026140752_PFL_Resignation_of_Gautam_Doshi_sd.pdf" target="_blank">Doshi Resignation</a></div>
-</div>
-
-<div class="card" data-tags="restructure" data-ticker="INDIACEM">
-<div class="card-meta">
-<span class="card-ticker">INDIACEM</span>
-<span class="card-tag restructure">Scheme Update</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>India Cements: Scheme of Arrangement Update Filed</h3>
-<p>India Cements disclosed an update on its ongoing scheme — likely related to the UltraTech Cement acquisition. This is a key special situation to track for merger arbitrage and timeline visibility.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/INDIACEM_28032026183718_SEsltrdt28032026ICLSchemeUpdate.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="restructure cont" data-ticker="MOSCHIP">
-<div class="cont-badge">Continuing from 26 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">MOSCHIP</span>
-<span class="card-tag restructure">NCLT Order</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>MosChip: Certified True Copy of NCLT Merger Order Filed</h3>
-<p>Following the initial NCLT order disclosure on 26 Mar (Edition #1), MosChip now filed the certified true copy — formally completing the merger approval process for the semiconductor design company.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/MOSCHIP_28032026111155_NCLT_order_intimation_to_Stock_Exchange_-_Certified_True_Copy.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-</div>
-</div>
-
-<!-- ══════ TAX & LEGAL ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">⚖️</div>
-<h2>Tax Orders & Legal</h2>
-<span class="section-count">5 updates</span>
-</div>
-<div class="card-grid">
-
-<div class="card headline-card" data-tags="legal" data-ticker="RRKABEL">
-<div class="card-meta">
-<span class="card-ticker">RRKABEL</span>
-<span class="card-tag alert">IT Search Order</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>RR Kabel Discloses Income Tax "Search Order" — Escalation from Prior Reassessments</h3>
-<p>RR Kabel filed an intimation regarding an <strong>Income Tax Search Order dated 27 Mar 2026</strong>. This is a significant escalation from the ongoing series of reassessment orders (₹67 Cr demand for AY 2018-22 filed on 25 Mar, ₹12.68 Cr for AY 2017-25 filed on 18 Mar, and ₹5.44 Cr for AY 2015-17 filed on 28 Mar). A "search order" typically follows an investigation — more severe than routine assessments. The company had faced IT raids across 40+ locations in November 2023. Cumulative tax demands now exceed <strong>₹85 Cr</strong>. Company says no material impact and plans to appeal all orders.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/RRKL1995_28032026205723_Intimation_Reg_30_IT_Search_Order_27_03_2026.pdf" target="_blank">NSE Filing</a> · <a href="https://www.whalesbook.com/news/English/industrial-goodsservices/RR-Kabel-Faces-indian-rupee67-Cr-Tax-Demand-Company-Plans-Appeal/69c2e11349d6b264f25957fc" target="_blank">Whalesbook</a></div>
-</div>
-
-<div class="card" data-tags="legal cont" data-ticker="TATASTEEL">
-<div class="cont-badge">Continuing from 25 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">TATASTEEL</span>
-<span class="card-tag legal">Litigation</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Tata Steel: Second Litigation Filing in 4 Days</h3>
-<p>Tata Steel filed another pendency/litigation outcome — the second in 4 days (first on 25 Mar). Multiple concurrent legal proceedings suggest active dispute resolution as the steel major navigates its European restructuring.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NIDHIFADNAVIS_28032026122053_BSENSE.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="legal" data-ticker="SYNGENE">
-<div class="card-meta">
-<span class="card-ticker">SYNGENE</span>
-<span class="card-tag legal">Litigation</span>
-<span class="card-date">29 Mar 2026</span>
-</div>
-<h3>Syngene International: Litigation/Dispute Outcome Disclosed</h3>
-<p>Biocon subsidiary Syngene (CDMO/CRO services) filed a litigation outcome. Coming within 2 days of Biocon's major leadership overhaul (Edition #2), the Biocon group is going through a transformative period.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/SYNGENE2_29032026135051_SEIntimationMarch292026.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="legal" data-ticker="JUBLFOOD">
-<div class="card-meta">
-<span class="card-ticker">JUBLFOOD</span>
-<span class="card-tag legal">LPG Situation</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Jubilant FoodWorks Discloses "LPG Situation" — Operational Alert</h3>
-<p>Domino's operator Jubilant FoodWorks filed a disclosure on an <strong>"LPG situation"</strong> affecting operations. This follows the IDT case classification issue filed on 27 Mar. Two operational/regulatory filings in 2 days for the QSR major — watch for any store-level impact.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/JUBLFOOD_28032026164343_SEDisclosureonLPGsituation.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="legal" data-ticker="SAMMAANCAP">
-<div class="card-meta">
-<span class="card-ticker">SAMMAANCAP</span>
-<span class="card-tag legal">Rating Change</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Sammaan Capital (ex-IHFL): Moody's Outlook Change</h3>
-<p>Sammaan Capital (formerly Indiabulls Housing Finance) disclosed a <strong>Moody's outlook change</strong>. Any directional shift in Moody's view — upgrade or downgrade — is significant for the NBFC's borrowing costs and market perception.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/IHFL_28032026212717_SCL_Moody_Outlook_Change_Exchange_Intimation_28Mar2026.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-</div>
-<div class="connector">
-<h4>Week-in-Review — Tax/Legal Tally (25-29 March)</h4>
-<p>The FY-end tax order barrage has been relentless across the full week. <strong>RR Kabel stands out</strong> with a search order escalation on top of ₹85 Cr+ cumulative demands — this is no longer routine. Across 5 days, we've tracked 30+ companies receiving tax/penalty orders. <strong>Key names:</strong> UltraTech (GST×2), Vi (GST), RR Kabel (IT search), Bharti Airtel, Torrent Power (GST), ixigo (IT+GST), IOB (IT×2), Devyani (IT), Go Digit (IT), Federal Bank (IT), Fortis (IT on WOS), Crompton, NIIT MindTree, Cummins (CGST), Heidelberg (GST), and more. Q4 provisioning will tell the real story.</p>
-</div>
-</div>
-
-<!-- ══════ CONSUMER & RETAIL ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">🛒</div>
-<h2>Consumer & Retail</h2>
-<span class="section-count">3 updates</span>
-</div>
-<div class="card-grid">
-
-<div class="card" data-tags="expand cont" data-ticker="DMART">
-<div class="cont-badge">Continuing from 25 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">DMART</span>
-<span class="card-tag expand">Store Sprint</span>
-<span class="card-date">28-29 Mar 2026</span>
-</div>
-<h3>DMart Opens 2 More Stores — Total: 6 New Stores in 5 Days</h3>
-<p>Avenue Supermarts filed store openings on <strong>both 28 Mar and 29 Mar</strong>. That brings the week's tally to an unprecedented <strong>6 new stores in 5 days</strong> (25 Mar: 3, 27 Mar: 1, 28 Mar: 1, 29 Mar: 1). This FY-end sprint is remarkable for a company known for measured expansion — likely hitting a batch of stores ready simultaneously before FY26 close.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/DMART_28032026210126_ASLInitmationStoreOpening28032026.pdf" target="_blank">28 Mar</a> · <a href="https://nsearchives.nseindia.com/corporate/DMART_29032026184729_ASLInitmationStoreOpening29032026.pdf" target="_blank">29 Mar</a></div>
-</div>
-
-<div class="card" data-tags="expand" data-ticker="ADFFOODS">
-<div class="card-meta">
-<span class="card-ticker">ADFFOODS</span>
-<span class="card-tag expand">Commercial Production</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>ADF Foods Commences Commercial Production at Surat Facility</h3>
-<p>Ready-to-eat food exporter ADF Foods started commercial production at its <strong>Surat plant</strong>. The company serves international markets with Indian ethnic foods — new capacity should drive export volume growth.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/ADFFOODS1_28032026163107_Reg30commercialproductionsurat.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="expand cont" data-ticker="PNGJL">
-<div class="cont-badge">Continuing from 27 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">PNGJL</span>
-<span class="card-tag expand">Store Opening</span>
-<span class="card-date">29 Mar 2026</span>
-</div>
-<h3>PNG Jewellers Opens Another Store — 2nd This Week</h3>
-<p>After the Varanasi store on 27 Mar, PNG filed another store opening on 29 Mar. The jewelry retailer is accelerating its expansion beyond its Maharashtra stronghold.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/PNGJEWELLERS_29032026205006_IntimationOfStoreOpening.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-</div>
-</div>
-
-<!-- ══════ OTHER NOTABLE ══════ -->
-<div class="section-wrapper">
-<div class="section-header">
-<div class="section-icon">📌</div>
-<h2>Other Notable Updates</h2>
-<span class="section-count">4 updates</span>
-</div>
-<div class="card-grid">
-
-<div class="card" data-tags="expand" data-ticker="OBEROIRLTY">
-<div class="card-meta">
-<span class="card-ticker">OBEROIRLTY</span>
-<span class="card-tag expand">Peddar Road</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Oberoi Realty: Peddar Road Capacity Addition — Premium Mumbai Project</h3>
-<p>Oberoi Realty filed a definitive agreement for a <strong>Peddar Road development</strong> — one of Mumbai's most premium micro-markets. Land acquisition in this area is rare and signals a marquee ultra-luxury project.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/OBEROIRLTY_28032026173435_DA_PeddarRoad_28032026.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="expand" data-ticker="BANSALWIRE">
-<div class="card-meta">
-<span class="card-ticker">BANSALWIRE</span>
-<span class="card-tag alert">Disruption</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>Bansal Wire: Disruption of Operations Disclosed</h3>
-<p>Recently listed Bansal Wire Industries filed a <strong>disruption of operations</strong> intimation. For a single-product wire manufacturer, any production disruption can have direct revenue impact. Watch for follow-up details on cause and duration.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/BANSALWIRE_28032026162725_BWIL-Exchange_Intimation-Disruption_of_Operation.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-<div class="card" data-tags="expand" data-ticker="CMSINFO">
-<div class="card-meta">
-<span class="card-ticker">CMSINFO</span>
-<span class="card-tag jv">Agreement</span>
-<span class="card-date">28-29 Mar 2026</span>
-</div>
-<h3>CMS Info Systems Signs Asset Transfer Agreement with FSS</h3>
-<p>Cash management and ATM services provider CMS Info filed an ATA with FSS (Financial Software and Systems). Press release followed on 29 Mar. This could expand CMS's technology stack in the payments infrastructure space.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/CMSINFO_28032026213512_ATAwithFSSsd.pdf" target="_blank">Agreement</a> · <a href="https://nsearchives.nseindia.com/corporate/CMSINFO_29032026140849_SEpressreleaseATAwithFSS.pdf" target="_blank">Press Release</a></div>
-</div>
-
-<div class="card" data-tags="expand cont" data-ticker="HFCL">
-<div class="cont-badge">Continuing from 25 Mar</div>
-<div class="card-meta">
-<span class="card-ticker">HFCL</span>
-<span class="card-tag jv">Corporate Guarantee</span>
-<span class="card-date">28 Mar 2026</span>
-</div>
-<h3>HFCL Provides Corporate Guarantee for Subsidiary HTL</h3>
-<p>Following the ₹555 Cr warrant issue approval (25 Mar) and defence business disclosure, HFCL now filed a <strong>corporate guarantee for subsidiary HTL</strong>. The company is deploying capital rapidly as it scales telecom and defence operations.</p>
-<div class="source"><a href="https://nsearchives.nseindia.com/corporate/AHMED_28032026193415_STX_HTL_Guarantee_28032026.pdf" target="_blank">NSE Filing</a></div>
-</div>
-
-</div>
-</div>
-
-</main>
-
-<footer class="report-footer">
-<p><strong>Market Pulse — Edition #3 (Weekend)</strong> — Compiled from 293 NSE corporate filings on 28–29 March 2026</p>
-<p style="margin-top:6px;">Market closed 28 Mar (Saturday). 29 Mar filings are pre-market for Monday 31 Mar — the last trading day of FY26.</p>
-<p style="margin-top:8px;font-size:11px;line-height:1.5;">
-<strong>Active Threads Carried Forward (Full Week 25-29 Mar):</strong><br>
-INFY $560M deal (CCI pending) · HFCL EGM 24 Apr (₹555 Cr warrants) + HTL guarantee · CHENNPETRO/IREDA div record 2 Apr · MEDANTA Varanasi ₹550Cr project · LTTS SWC sale by Sep '26 · SULA Chandon deal by Q1 FY27 · RELAXO restructuring · COCHINSHIP-HBL JV pending · NETWORK18 merger · BIOCON new leadership effective 1 Apr · AEGIS VOPAK SPA executed · PIRAMAL FINANCE merger + fund raise + Doshi exit · EPL merger scheme + concall · India Cements scheme update · RR Kabel IT search orders (₹85Cr+) · DMART 6 stores in 5 days · GR INFRA 2 LOAs in 2 days
-</p>
-<p style="margin-top:6px;">All information sourced from NSE filings and cited news sources. This is an informational digest, not investment advice.</p>
-</footer>
-
-<script>
-function filterCards(tag){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.card').forEach(card=>{if(tag==='all'||card.dataset.tags.includes(tag))card.classList.remove('hidden');else card.classList.add('hidden')});document.querySelectorAll('.section-wrapper').forEach(s=>{const v=s.querySelectorAll('.card:not(.hidden)');const h=s.querySelector('.section-header');const c=s.querySelector('.connector');if(!v.length){h&&h.classList.add('hidden');c&&c.classList.add('hidden')}else{h&&h.classList.remove('hidden');c&&c.classList.remove('hidden')}})}
-function searchCards(q){q=q.toLowerCase().trim();document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.querySelector('.filter-btn').classList.add('active');document.querySelectorAll('.card').forEach(card=>{const t=card.textContent.toLowerCase();const tk=(card.dataset.ticker||'').toLowerCase();if(!q||t.includes(q)||tk.includes(q))card.classList.remove('hidden');else card.classList.add('hidden')});document.querySelectorAll('.section-wrapper').forEach(s=>{const v=s.querySelectorAll('.card:not(.hidden)');const h=s.querySelector('.section-header');const c=s.querySelector('.connector');if(!v.length){h&&h.classList.add('hidden');c&&c.classList.add('hidden')}else{h&&h.classList.remove('hidden');c&&c.classList.remove('hidden')}})}
-</script>
+ 
+  <div class="accent-bar"></div>
+ 
+  <header>
+    <div class="header-content">
+      <div class="logo-wrap">
+        <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAH0AfQDASIAAhEBAxEB/8QAHQABAAICAwEBAAAAAAAAAAAAAAcIBgkBBAUCA//EAFkQAAEDAwIEAgQHCQoKCAcAAAABAgMEBREGBwgSITFBURMiYXEUMjd1gZGhCRUYI0JSVbGzFjM0OENicpS00xckJVN0goSSssEnY5Wio8Pw8TZWZpPC0dL/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAgMEBQEG/8QALREBAAICAQMEAQMDBQEAAAAAAAECAxEEEiExBRMyQVEicaEUYZEjQoGx0fD/2gAMAwEAAhEDEQA/ALlgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADHdxdSy6Q0tPqFLXLcqeke11VFC9GyMiVcOe1F6OVMouFVOmVymD9tEassmsrDFebDVpPTv9V7FwkkL07se38l360wqZRUUxDiX1FT2HaW6Qvw6e6N+AQMz3V/xl+hqOX34IU4N7nVQbiV1rbJL8Eqre+SSNF9XnY5nK5U8FRHOTPt+rNfkdGaMf5ZL8jozxj/K2wANLWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGKbo67tGgNNvu1yd6WZ68lLSNciPqH9OieSJnKr4J9CL5a0VjcvLWisbnwyK6XChtVBLX3Osgo6SFMyTTyIxjU7dVXoQtrjiR0xaZJ6XTlvqL5URrytlV3oKdV8VRyorlRP6PXwXHUrluBrvUuuLk6svle90fNmKkjcrYIfJGt8+vdevmpjByc3qM71jcfP6nO9Y0wXniL3ErYlZRPtdsX8+Cl53J1/6xXJ9h51u373SpZvST6ghrm/5ueggRP+4xq/aRgDJPJyz36pYp5Wbe+qWXbnbhX3cG4UlZe0p4/gkPoooaZHNjRVdlXYVy+svRPoRPAx6zXa52erSrtNwqqCoxj0tPKsbseWUwdIFU5LWnqme6q2S1rdUz3S/t5v8Aax0/UQU17qPv9bUenpEqP4Qxi9+WTuq91TmzntlEwpbHS+o7NqW1QXKzXCnq4ZWNdiORHOYqoi8rkRfVcmeqL1Q13n3SzTUtQlRSTSwTImEkicrXY96dTZg596dr94bOP6hfH2t3hsjBQK3bi69t9SyppNYXpsjOyPq3yMX2Kx6q1U96F4tBXOtvWibJd7jB6CsrKGGaePlxh7mIq4TwTJ0uPya5t6jw6vG5dc+4iNae2ADS1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6l5uVBZ7VU3S51UdLR00ayTTSLhGNT/128SiW7Wua7X2rqi71CyxUjfUoqVz1c2CLw6ZxzOwiuVO/bwQlPiy3H++Nf8AuFs87vgtI9HXKRj+ksqfFi6eDF6r1+Nj80r8cjncjqn26uJ6hyeu3t1ntH/YAcKcxzBFOQcZA5AOMgcgGRbd6Pu2udTwWK0Nw96c887ky2niRURXu6plEymEz16J7pUpN51Hl7Ss3nprG5epshpubU+5VnokoFrKOKobPWo6PnjbCxcu589MLjl6+Kp3L3sa1jGsY1GtamEREwiIY1t1oew6FsTLZZaZEcuFqKl6Zlnf5uXy8k7J4GTHf4vH9mmvuX0fE4/sU1PmQAGlqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+ZpY4YXzTSMjjY1XPe9cNaid1VV7IB5k+orNT6mp9Nz10cV1qYFqIKdyKiyMRVRVavZVTC9M5PVKe7i67i1ZxBWS42JyyUlvraWkpZGqv47EuXPTH5LuZUTzRPbguEU4s0ZJtr6lRhzxlm0R9SAAuXgAAAAAAAAB+NbVU1FSy1dZURU9PE1XySyvRrGNRMqqqvREA/YiDiE3bp9GW2Sx2OdkuoqhmMt6pRsXPru6Kiu8m/SvTGcP3f4h2MSazaBVkjlTlkur25RvfPomr38MPXp5IvcrZVVE9VUy1NVNJNPM9ZJJHu5nPcvVVVfFV8zncnmxWOmnlzOXz4rE1x+fy+ZXySyPkke573qrnucuVcq9VVT5AOO4gADwADjAHIMv2e0jNrXX1us7YWyUzX+nrFeq8qQMVOfOFRevRqf0jGLlHUw3GqirIfQVUcz2zRcvLyPRyo5uE6Jhc9Cz25ivUlOO0U6nXLhcJmkmWPbtL5U0qR3C8vWb0jvjfB06Rp7EXq728yZ7IU9w5yo1jVc5eyJ4r4GxLSNAtq0raLY5vKtJRQwKnlyMRuPsN3p1Im02/Do+mY4m83/EPUAB2HbAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcOVGtVzlRERMqq+BUfiD3artYXeTSOmHypZo5vQvdAqufcZM4TGO8eeiInxui9eiFkN3a59t2u1NWRuVsjLXOjHJ3a5zFa1frVCsXCHbaO4bsOlqoo3uobdLUwI5M8r0fGxFTw6JI76zFyr2m1cVZ1tg5l7WtXDWddTOuH7Y6sttypdV6yhSGeBUkorersuY7orZJFRe6eDPBe/YsYAacWKuKvTVqw4a4a9NQAFi0B1rncKC10b6y5VtPR0zEy6WeRGNT6VIa1hxI6PtkTm6eo6u/T5wnRaaLvj4zmq76mqhC+WmON2nSvJlpjjdp0m4FV6vig1E9yLS6ZtUCY6tllkl+1OX9R51x4ltczxclJbrHRuz8dIJHr9Svx+szzzsP5/hmn1DB+f4W5OhfL3aLHRvrLxc6Sgp2JlX1EqMT7e/ZSk1y3m3OuDZGVGraljH/AJNPDFDy+xFY1HfapgtVPPVVMlTVTy1E8ruaSWV6ue9f5yr1Uov6lT/bCi/qlI+MLWa64k9NW5iQ6Topb3O7vNKjoIGJ9Kc7l9mET2leNebgar1vUI/UF0fLCx6ujpYk5II8+TE74Toiqqr36mLAw5eXky9p7Q52bmZcva06j8AAMrMAAAAAAAAuXwy7fN0ho9LvXxMW8XdjZXrj1oYVRFZH7/FcY6qifkodPc/h/surL5Ne7Vc32WrqFV9Qz0HpYpHquVfjmRWqvjhcL7CCto94dR6EmiopJH3OxIuHUMrk/FIq5zE7qrV7+r8X2J3Lg6K1XY9Y2OO72GtbU07+j29nxO8Wvb3av/umU6ncwWw58fRrx9O/x7YM+OKa8fSJNvOHO2af1HSXm9X112WjkSaGCOm9CxZGrlrnes5VRF646dUT2os7AGvHjrjjVY0148VMUapGgAE1gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADydZ2dNQaRu9jVzWrX0UtO1zuzXPYqIv0KqL9BSjQl+vG0u5rpq6hVJ6N7qOvp1TKvi5k5uVVx+ajmr2XCeCl7TDNy9tNLa+pkS80r4q2NqNhrqdUZPGiKq8uVRUc3qvRUVOq4wvUzcjBOTVqzqYZeTx5yatSdWh+mjdy9FaromVFsvtIyRVw6mqZGxTtX2sVcr70yntMtY9j2I9j2uYqZRyLlFKs6o4Yr/FVOXTt9t1bSOXPJWo6GRnsy1rkd7/AFfceezh23HYxI2XO0sYiY5W1ciN93xCEZs0drU/wrjPnjtbH/iVn7xqrTNmje+66gtdEjEXKTVTGr08ERVyq+xCIda8SmmqGF8OlbfU3ipR2ElnasECJ4r19dfdyp7yPouHO926jq7tqrUdotVspInT1ElMj53q1qKrlVFaxO3tXK+BCUiMR7kjcrmIq8rlbhVTzwZ8/LzUj46Z+TzM9I+Ot/5e/rnWeo9aXP4dqC4SVKtc50MOcRQI78mNvZOyJ5rhMqpj4By7Wted2cm1rWndgAEUQAAAcKcgAAABxg5AAAAcIZdt5t3qnXNYkNkt7kpkyklbMisp41TwV2Oq+xEVfZ3Ul/cnbLTG2Oy1xnkiZd75XywU7ayojT8U9Vy70Sd2JytevdVXx6dE0U417Vm89oj7aMfFves3ntEfauZmuymqLrpbcW0zW2d7YqyqipauFOrZ43uRuFT2Zyi+fvVFwnsShwzaQfqjculqZedtDZ8Vs7mtyivRU9GzOMJlevtRq+8848WnJEV8o8eLTlrFPO11wAfRvqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOolxpXXJbdE9ZahjeaVGJlIkx05l8M+Cd/o6mCX7WNXqXUs+iNDVDVqIE/yvdmpzRUMa8zVYxU6LPlOiL0TC57LjNdO2WgsNsbQW+NyMzzySPdzSTPX40j3L1c9e6qvcjFtz2Qi3VPZFXF/eay2bXwUVFIsf3zuDKeoVO/oUY+RUT3uYxPcqoU/LVcaSr+42yNz0Wvcv/cUqqcX1CZnLr8OH6laZza/AADCwAB27JQSXS8Udtia5z6mZsScvgjlwq+5Eyv0HtY3OiI6p06gP2r54auuqKqnh9BDNK+SOL/NtVVVrfoTCH4nskuPEeJyceJEcgHCqjc8yontVT0cg7Vstlyusno7Vbqyvk/MpYHSr9TEUzLTGz+4d+uEdLFpyroGP+PU17FgijTzXKcy+5EVfYTrivadVhZTFe86rG2G2i23C8XKG22qimrayd3LFBCzmc9cZXt7l69iy+13DjRUfo7jrqdldOjkey3071SFvTtI/or1yvZMJ0/KRSQ9mtrLPt5bOZvJXXqdqJU1zmdcfmMz8Vn2r3XwRMO4pty63TFFTaY09WrTXStZ6WpnidiSnhzhvKqdnOVFTPgiL55Tp4+NTBT3MveXUxcTHx6e5l7zCbLdRUduooqG30sFJSwt5YoYY0YxieSInRCr/ABj6sjr79btJ0VU2SK3tWorGMXtO5MMavtRmV/1yNKDdjcmhjdHT6zunI9MKkytm6L5LIjlT3oph9VUT1dTLVVU0k88rlfJLI7mc9yrlVVfFSvkc2uTH01jyq5PPrkx9FI8vzRFc5Gta5yqqIiImVXPZELycP+i00Vt3SU08bm3GuxV1qPTCse5ExH/qphPfnzKzcNekotWbm0vwtHuorWz4dMiNyjnNcno2Kvhl3XHijVQu2WenYtROSf8Ahb6bh7Tkn9oAAdN1gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACFN+9x66K50+2+i5UfqG6PbTzzMVFSmbImOXKdWvwqOVceq3r7s43m1vDoLQ1VeOVJK2Rfg9DEv5czkXCr/NaiK5fY3HdUIh4R9NTXa6Xfce8TS1NW+d9PA6RvxpHYdLLnHf1kb0/np7s2XJM2jFXzPn9mXNkmbxir5nz/aEz7V6LodCaQprLS4kqF/G1tRlVWedUTmd1648ETwREMqANERERqGmtYrGoQNxpIiaGsjsZX758vu/FPX/kVSLE8Z2p4p7hadIwJzOpmrW1LsphHOy1jffhHKvschXY4XOmJzTp8/6hMTnnQADGxOMmbaahfpjSFVq6d7oLjXsfQ2Njm550cisqJ/NEaxysav57vHGBpDSdFHZm6x1m+Sl06iqlNBG5G1F0kTP4qFPBqKnV69ET7PF1pqWv1VenXGsZDTxNY2KlpKdOWCmiaiI2NjfyURPLuvXxL619uOqfP1/6vrX269VvP1/68Q48TkkzYvamv3Cufwyr9JSaeppESoqE+NM5MZij9uF6uxhPeQx47ZLRWsd1ePHbJaK1jcywjS+m79qi4fe/T9qqbjUIiK5sTejEVcZc7KI1M+KqhPWh+GWVypUazvfo2q1FSltq+si+TpHtx7FRG+5SwWltO2XTFoitVit8FFSxNRuI29X48XO7ud7Vyp6p2MPBx0727y7eH07HSN37ywHTuze21kjxDpejrJMIjpa9FqXL7cPyjV/oohkkGktK07uaDTNmiXzZQxp+pp7QNkUrXxDbXHWviHxBDDTxJFBFHFG3ojWNRqJ9CH2ASTcOcjWq5eyJlTX3uRqObVuubtqCZrW/Cp19E1E7Rt9WNF9vKifTk2CPaj2q1yZRUwpgVk2a20tNS6op9K0k8jnKv+OOfUtTPk2RVRPqMvKwWzREROmTl8e2eIrE6Uet9HV3GsbRW+lqKypeuGw08ayPVfY1vVfoJE0jsZuJf5kSS0JZ6dE6z3JyxfUxEV6r9CfQXQt9ttltajKCgo6Nq9EbBC2NPd0RDtlFPTqR8p2z09MpHynbB9m9urft1pt1BBMtXX1LkkrKpWonO/GOVvijE64RVXuq+JnABvrWKxqHRpSKRFa+AAEkgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8vV11ZY9LXW8yKiNoqOWf6WtVUT60EzomdKkcUurJNS7mSWilYrqWyotJEiO/fJlwsjseHXDP9Xv1wWo2xsTtM7fWOySNY2elo42z8qYRZVTMi/wC8rijugGVF13K09HPI+omq7zTeme/Cq7mmar3L5qqcyr9JsFMHDn3LXyT9ubwZ9y98s/YRZvru5QaConWygRtVqGoiVYYvyadFRcSP6YXqnRvdceCdSUyinEFIyXerVL45fSNSrY3Oc4VsMaKn0Kip9Bby81sWPdfK/m57Yce6+WGXSuq7ncqm5V876iqqZHSzSvXKve7uv/t2OuCZ9lNjbhq+OG+ajdPbLI7Doo0bierTzTPxGdvW658PBTi48V8ttV7y4OLFfNbVe6KNPWS7agukVsslvqK+slzyxQsyuE7qq9kT2r07diVq/by07WafpNSa+gZebtVP5aGyRPVsLXp1V0sifGRPVy1Ewqrj1k6panSembFpW1Ntmn7bBQUzVyrWIqucvirnLlXL7VVSMOLXSlVfdARXmha6SayyOmlja1VV8LkRHqmPzcNd7kU6P9FGKk282h0/6CMOObebR/hVbVmpLxqi7OuV5q1nlVqMjY1vJHExMYYxqdGtRETp9K5U8gHt6E0zX6w1XQactvK2ereqK96+rGxE5nPX3NRVx4rhDl6te2vuXKiLZLa8zLJ9j9tK3cPUWJUfBZKNzVrqlE79U/FN6/Gcmev5PdeuEW7NmtlBZrVTWu2UzKWjpY0ihiZ2a1Oye33r1U6ejtOWvSmnKSw2eH0VJTNw3PVz1Vcq5y+Kqqqqqeud/jceMNdfb6Li8auCuvsABoaQAAAAAACqiJlVwiAYxqC9sp9e6Y0+1342tSqqnJ/Mii5f1yp9Rk5Du2l2TXe92pNVU1RDUWey0bbXbXMXKPV7kc+RF8crGvXxRW9yYiGO3VEyrx264mfoABNYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARfxTVMlPsleWxOVrp5KaJVRevKs7OZPpRFT6SUCKeK/KbL3FfKppvtlan/MqzzrHb9lPInWK37Sq9spNFBu7pWSZcMW5RMT+k71W/aqF9zXRpqvZatSWq7SI7loa2GqXl7/i5Gv8A+RsPpa2lqbdFcIZ2OpZYkmZLnDVYqZR2fLHUx+m2jomGH0u36LR/d+tRNFTU8lRPI2KGJivke5cI1qJlVVfLBrz1vdIL3rK83im51grq6aeJXphyte9XNz5dFToThxEb1Q3WlqtIaQnV1K9Vjrq9jsJKiKqOiZ06tXxci9U6JlFyV/ttFVXK401uoYfTVVVKyGCNFxzPc7lamV7ZVUTJTzs8ZJjHVR6hnjLaMdO6W+GbbJmsr2+/3qHnsdtkREjdhUqp0wqMcnXLWoqKvnlE80S4jURqIiIiInRETwMe250xSaP0XbbBSxtb8GhT0zm/ykqpmR/XzdlTITocfDGKkR9unxsEYccV+/sOHta9isciK1yYVF8UOQXtCh++Ok4tGblXKz0kcrKF+KmkR/X8U/rhF8UR3M3z9Xr5r6vDJdaO1bxWqSukjijqY5aVkj+iNe9vq/SqojfpJb4ztOzVenbPqWnYjkoJnU9ThvVI5MK12fJHNRMfzyrcT3xyNljcrXsVHNci9Wqi5RThZq+xn3H52+ezxHH5G4/O4bJAYLsdrmLXmhKa4SStdc6bFPcWI3lVJUT42PJyYcmOnVU8FM6O3W0WiLQ79bReItAACSQAAAAAEK8UG5f7l7CumbNUK283GP8AGSRuTmpoM9V8fWcmUT6V6YQzbd/cG27e6YdcapEnrp8x0FJnCzSY8V8Gp3VfcndUQrfsXpi5bobnzan1G5a2jo5kqa+R+ESWbH4uNETwyiKqImMNRPFDLyMs7jFTzP8ADHyc07jFT5T/ABCwPD1o9dH7aUNPVUqwXOtzV1yL8bnd8Vq+StZypjzRSQwDRWsVrFYaqUilYrH0AAkkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYZvhYXak2o1Bao/31ab08aZ7vickrU+lWIhmZ8yxslifFI1HMe1WuavZUXuh5aOqJiUbV6qzE/bW2n/rBPtt1NW6t4W7rYaadkNw08kTJoYpF5pqFitXOO+EblF8F9H7cEVbq6Wdo3Xt0sDYpmUsMvNSOkRfxkLurFRcdcJ0z5tU8/SGoKrTd4+H03rxywvpqqFVwk8EiYexfenbyVEXHTB8/jv7N5rb9nzmK84bzWf2l4/csnwtbVOa6DXuoadOqc1qpnouU/wCvXr7+VPbn80hHbWy0modybHYnpJPR1de1j0k9Rz4W5e5HcvZVY1c46dS/tNDDTU8dPTxMhhiYjI42NRGsaiYREROyIhq4HHiZ9yfpr9O48Wmclvr/ALfoADru0AADHdytLw6y0Rc9OzSLEtXF+KlT+TkaqOY73I5EynimSjmvdGX/AERd2WzUFMyCaSL0sSxyI9kjFVUyiovmmMLhTYKRDxF7V3LcKK2V1jqaOG40KPjcypVWNljcqL8ZGqqK1UXCKmPWXt44+Zx/dr1V8ww87je7XqrH6oV72C16/QmuIZamV/3or+WnrmIqYRMryyL7WKv1K72F4IpGSxNlie18b0RzXNXKOReyovkVA/Bt3EXCen0/37rWSYT/AMIsztVZb1pzQFpsV/qKSorqGH0CvpXOWPkaqoxEVyIq4byp2TsR4UZKVml40jwIy0rNLxqGUAA3OgAAAYhuhuDYdAWVa66yrLVSoqUlHGv4ydyJ9jfNy9E+wxfeDeuwaKjlttsdHdr9y4bBG7MUC5/lXIvTxXlTquOuM5KqPk1XuVrVjXyVF2vNc5GNz2YzPbyZG3PuRMr4qY+Ry4pPRTvZh5PMjH+inez1aqp1bvJuRG1ypNX1aqyJnaGkhTK49jGoq5Xuqr5qXN290nbdFaUpNP2tFWOFMySuT1ppF+M93tVfqTCeB4Gy22dt27sKxNc2qu9U1q11Xj4y4+IzyYi9vFe6+zPyXGwTT9V/lKfF4844m9/lPkABqawAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEO8T+3Uur9Mx3y0U7pbzaWuVI2d54O7mImPWciplqf0kTqpTvwNkxWviI2TnkqajV2i6J0qyKslfbokVXK5V6yxJn62J708UObzeLN/wBdPLl8/iTf/Up5+0FbfagXSmtrPqNIVn+AVHpXxouFexWua5E9vK5f+fQvRoTWentaWhlxsNfHOitRZYVVElhXye3unb3L3TKGvpe+Oy+KKmDv2C9XewXFlxslxqbfVtTCSwPwqp5Kn5SZTsqKhk4vLnD+me8MXE5k4P0zG4lsXBWbQnEzPFGlNrOzrUcrU5aygREe5UxnmjcuM91yionsQmvS25ehdSQwOtepbess68rKeeVIZub83kfh2fcnuOvj5GPJ8ZdrFyceX4yy4BFRUyioqL4guXgAAAHRvF4tNmpvhN3udHQQZx6SpnbG3Pllyp16DweHeBFmrt+9vbDJ6CCvmvNR1yygj52t971VG/UqkK664i9W3plRSWCCGwUsnqtkYvpanl8V5lTlaq+xMp4KZsnLxY/MsuXmYcfmd/ss3rbWumdHUD6q/wB1gpnIxXsp0cizS98IxndcqmPL2lad1uIG+6gWW26TSayW1VwtQi4qpU8fWRcRp/R69O/XBDVfWV11uDqmtqamuq5lRqySvdJI9V7JlcqvuJj2p4fr5qH0Vy1Ws1jtuV/xdWYqpUTt6qpiNF81yvT4vXJityM3InpxxqGC3Jz8menHGo/++0b6A0XqDXd8+91jpllei809TJlIoc5Xme/C4z4dMqvh3xczajbaw7e2r0NAz4TcJmolVXSNT0kq+Sfmsz2b9aqvUyPTNhtGmrRFabJQQ0VJEnRkaY5lwiczl7ucuOqr1U9M2cfi1w9/MtvG4dcPee8gANTYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIl3d2PsGtHTXS1uZZ725FVZY2J6Gd2c5kanivX106+ecYKv6/261boiokbe7VK2la7lZXQor6eTvj18YTsuEdhS/R8VEMNRC+CoiZLE9MPY9qOa5PJUXuZM3Dx5e/iWPPwsebv4lrcOHNa5qo5qKi90VOil29XbGbeaiqXVS2p9qqHJhX216QtVfPkwrM9e/LlSLr5wvXFtRI6yappZIVVfRsrIHMcieCK5mUX3o1DnX4GWvju5l/Ts1fj3QhbdW6qtsLYbdqW8UcbPitgrZI0TpjsjkTt0MstG+G59uajP3TPq2YwiVVNE9fZ63Ki/adu97B7mW1+ILPT3Nvbno6tn14erV+w8V20e5jVw7RtyRfZyKn2OIRXkU8RP8q4pysc9t/yyJvELuUiYWvoF/wBiYfhV7/bm1EKxsvNNTqqfHio4uZPraqHh/wCCTcrHTRtzX6Gf/wBHpWnYzdC4TIx2m/gLF/lKqqia1Poa5zvsPd8qZ13S6uXM67vBuO5O4Fwm9LV6zvjneUdW6Fn+7Hyt+wxy4VdXcKr4VX1U1VP1T0kz1e729VJxtvDDqqVqLcNRWekVV/kWyTYT3Kjev0kgad4a9FUUMa3iuul1nTrJ+NSGJV9jWpzIn+spOOJyL/L+U44fJyfL+VTKOmqayqjpKOnmqaiVUbHFCxXveq9kRqdVUljQfD/rbUTW1N1bHp+k50RfhbVWdydMq2NP/wAlTqWw03pXTWnIWxWKxW+3o1vLzQwNa9yfznfGcvtVVU9k1YvTqR3vO2vF6bSO952wLbraTRmicT0FB8NuCKi/DaxEklaqJ+R0wz6Ez17qZ6Ab61isaiHRrStI1WNQAAkkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABw5zWtVzlRqJ3VV7AcgiPX/EVtdpCSopZL06718C8rqW2M9MvN4pz5SNMePrdOvj0IluHGhTtX/J+38siZ7z3RGrj3NjXr9IeTaIW2BT2LjRrOb8Zt5Tub/Nu6p/5RkOn+MjTFTXMhvekbpboHLhZqeoZUcntVFRi493X3h511WhBh2gNz9B68V8eltSUldUMbzPplzFMiefo3ojlRMp1RMGYhIAAAESbrcQGjNttV/ucv9uvstV6Bk6PpKeN8atdnHV0jVz0XwMS/C/2w/RWqv6nD/fB51RCxAK8fhf7X/orVX9Th/vh+F/th+itVf1OH++DzqhYcEBWzi12oq6lIqhmoLexU/faiha5qf/be532EgaJ3j211lXx2+wasop62RFWOmlR0Mj8dVRrZETmX2JkPYmJZ6AA9ADEd2NwLPttpduob5S3CppXVLKZGUUTXyczkcqLhzmpj1V8fIDLgV3/C/wBsP0Vqv+pw/wB8Pwv9r/0Vqr+pw/3wedULEArv+F/tf+i9Vf1OH++O3bOLXamrqUiqGaht7P8AO1FC1zf/AA3uX7AdUJ9BhWh919vNa1S0mm9U0NZV8vMlO5XRSuTvlGPRFcnuRTNQ9ADztUXin09pq6X+sjmlprbRzVkzIkRXuZGxXuRqKqIq4auMqgHogrw7i92yY7lktGq2uTui0cPT/wAY4/DA2v8A0Vqv+pw/3wedULEArv8AhgbYeFq1Wv8AscP98S9tZru07i6UbqOzUtfTUrpnwpHWRtZJluMrhrlTHVPEETEsqBC+/O/lDtRqm32Oq09PdPhdJ8JdJHUpGsaK9zUTCtXOeVfExa3cYe30sKOrtP6lppMdWxxQyJn3+kTp7cAm0QsiCvCcX+1y97bqlPfRQ/3p2YeLbah7Ec5moIlXwdQtyn1PVAdUJ+BAUvFttQxuWs1BKvk2gbn7XodVeL/a79G6pX/Yof70HVCw4K6y8YG2aMVYrRql7vBFpYEz9PpjjQnFPa9Y7gWfSlt0dXQpc6r0Daioq2IsaYVebka1c9E7Z/8A2DqhYsAB6AAAAAAAAAAAAAAAAAAAAAAAAAAAAfFRNFTwSVE8jIoomq+R73Ya1qJlVVfBEQDw9fawsGhtM1GodR1raWigTHm+Vy9mMb+U5fL6eyKpQffHfvV25FXPQwVE1n06rk9Hb4ZMLIidlmcmFeq4zy9kVEx1TJ1uJbdWt3M11O6GZzbBbpHw22FHZY5qOws3ZPWf0X2JhM9FU7HCrtjFuVuMjLpC2Ww2pqVNyYr1RZc5SOJMdfWciqvsa7sqoFVrTadQ9rh+4cbzuLRs1BfKuWx6ecqLA9kaLPVojsO9Gi9Gt6KnM5F69kVC1+m9gNorE1votFW+vkRnIslxRarm7ZVWyZairjuiISbGxkUbY42NYxiI1rWphEROyIh9BOKxDBLls1tRX0j6WfbvTLGPxl1Pb44JEx5PjRrk+hSGt2uEmw3CmluG3tZJaa1kaqlvqpFkp5nJjCI9cuYvfqvMirjt1UtAA9mIlqh1BZ79o/U1RarpT1Fru9DLyyN58PY5OqK1yL18FRUVUVFRUVULH8PvFFXW2an07uVUS11A5UjhvC+tNToiIiJNjrI3p1f1dlVzzd0mPi02mptwNDz3q3wNbqSzwOlppOuZ4W5c+FeuOvdqr4pjoiqa9l6BTO6T2bcKOpp6ykhq6SeOop5mJJFLG5HNe1UyjkVOioqeJ+pTXgi3fnpLnDtpqGtR1FUc33nklVcxS/GWBF6pyu6qmV6O6JnKIXKC6J3G3jan0ppnU9JLSagsNuucUzOR6VNO1649jlTKKmeioqKnga7eJbQtv283Yr7BaJHrb5ImVVMx65dEyTPqZXvhUXv4YNlZQTjtT/p4f7bVTfrkCGSP0oIhRHSsavZXIhsM/Bl2ckpmtTTUzHK1MvbXz57e16p9hr0pv4Qz3obb4v3pn9FAjijyrLr7g/0pW0z59G3qvtFW1i8sFW709O9cdOuEe335cnsKd6rsF30nqOssF8pVo7lRPRs0XMi8qqiKi5TphUVF6eCobYCmH3Q2yUNJqbS99gpmR1dxpqiGolb0WT0Kxq3PtRJVTPuQJXpGtw/PhP4gK+23Wh0LraufVWupe2nt1dM7mfSvVcNjevVXMcqoiKvxfPHa6ZqLje+N7XscrXMVHNc1eqKnZTaRs3eq7UW1Glr3c3+krqy1wSVL8Y55OROZ2PDK5XHtBjtMx3ZYfM0Uc0bo5o2SMcmFa5Mov0H0AsU147NtdN2CmtWtLBb6e2zVlU6lroKeNGRzPVqvbJyphEd6rkXCdcovguaqF4fuhHyWWL57b+wlKOhnyfJdfh+2I2x1bszYL7fLA+e5VsMjpqhtZMxVVJHNRUajuVOiJ4eB0d2eEezraam57eV9bDXRRq5ttrJEkinxj1WPXDmLjPxlcirhPV6qS1wm/wAXvSf+jyftnkphd0xpqP8Ax9JVKirJDPE5UXCqjmqi4X3KilyuDffG66lrv3A6xrZK24JEr7XWyIqyTNYiq+OR35TkROZHL1XDsr2IE4srTR2fiA1RT0ELYYZpo6pWN7I+SJj3qnvc5y/Sp4Ow1VW0e9Gj57dn4T994GNRHY5ke9GuRfe1XZ9ihTWZrbTZ+FRFRUVEVF7ooAaEDcYm2+n75tTddTU9rpYL3Z4/hUdVDE1j5I0cnpGPVMcycqqqZ7KnTuuaB+Bs44ifkL1p8z1H/AprH/WFOVajgM27s16mu2t71RwVr7dUtpbfHM1Htil5Ue6TC9OZEczlXw6r5KXMYxjG8rGta3yRMIVr+57fJbf/AJ8d/Z4SyoWU+MKJ8btPXX7iGobPbKaWrrXWqlpYII25c97pJXIifS8yXSfBvcqi1QVGpdXw0FbIirLTUlKsyReSc6ubzLjGfVwi9lXuTTVbS11bxMQ7pVtXQPttJRJFS0yK70yTJGrOZ3TlwnM5U6r4dCXg86I3uVUvwMLT/wDPtb/2c3+8K071aMh2+3Iumkqeulro6JI+WeSNGK/mja5eiKuEy5fM2hmufjDVF4htSKmF/g/7BgRyRER2R5oKyw6k1rZtP1FU+kiuNbFTOmaxHqxHuRuURVTPcte3gxtHMnNryuVPFEt7cr9b1Kw7N9N2dJ/PFL+2YbSgY4iY7qg6h4NJWUFRLYdapNVMYqwQVVFyNkcnZrno9eXPRM8q+4i7hosVxsPFZp2wXqldS19DV1cc8TlReV7KWZe6ZRe2UVOmMKbDyIL1tHV1PE3ZN16GpoIKGlo3R10Cq9J5pvQyxI9OnL8V8adVTozsEuiN7hL4ACYAAAAAAAAAAAAAAAAAAAAAAAAAABCPGnq+q0tsvU0lExFmvs6W1z1X97icxzpFx45a3k/18+BNxS/7obeqiXV2mdPNkclPTUD6xzEd0c+R6sRVTzRI1/3lCNp1CrRfzgY0/FadkYrstOkdRea2aoe9W4c5jHeiZ9HqOVP6S+ZQNDaPstborVtFpKhhREbHZ6ZVx4udG1zl+lVVQrxR3mWXAALgAADW/wAVui10VvRdqeKKOOgua/fOjSNuGtZK53M3CdsPa9MeSJ2RUNkBUX7ofYP/AIV1QzP8tQS9PdIz/wAwIXjcKmWqvq7Xc6W5W+ofTVlLK2aCZveN7Vyjk9y9evQ2o7fX9uqdD2TUbWsb98qGKpc1irytc5qK5Ez5LlDVKbC+Ca4uruH60wPdzOoaqpp/HonpXPT7HoEMU+YTWUE47vl3d81U365C/ZQTju+Xd3zTTfrkCeT4oJpv4Qz3obb4v3tvuQ1IU38Ij/pIbb4/3tvuQI4vD6Kg/dGZWOn0PAmedja96+53wdE/UpZ/XGs9MaKs8t01LeKW3wRsVzWyPT0kuPBjPjPX2Ihro383Hq9ztw6u/OSeC3MxDbqWV2VhhRE64TojnLly9e646ogSyTqEfp16Y79kNouyNrrLLtBpK13GJYayntNO2eNUwrH8iKrV9qKuF9xTDhT2XuOu9U0mor1RzwaXt8rZnSSIrPhj2rlsbMp6zcp66p0x0zlTYAEcVdQAALVa/uhHyWWL57b+wlKOl4vuhHyWWL57b+wlKOhRk8tkfCb/ABe9J/6PJ+2eSdV1EFJSy1VVKyGCFivkkeuGtaiZVVXyKHbYcT990LoW2aUpNLW2tht8bmMmkqHtc7Lld1ROn5WOh4W8PEPrnca0rZJ2UlmtEn7/AEtFzZqEyioj3uVVVMp2bhPPPQLPciIYfvdq1muN1b/qWFHJS1VUraZHL1WFiIyNV8stai49pL/A1tvXXjXTde11O6O02bnSmdJGuKioc1WeovZUYiqqr1wvL49o52Rpdn5LpBPuZdL1C5lQ3lpoabNI9nh6SRqrJjPfDU7d+vTYno6bTcunaRukprZLZomJHTfe57HQNan5LeToEaV3PVL1wAFrAuIn5C9aY/Q8/wDwqax/A2ccRHyGa0+Z6j/gU1jhTl+l4Pue3yW3/wCfHf2eEsqVq+57fJbf/n139nhLKhZT4wAAJBrn4xf4w2pPdT/sIzYwa5+MX+MPqT/Z/wBhGFeX4sN2d+VfSfzzSftmG0o1a7O/KvpP55pP2zDaUDH4AAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFFfugEb2bwW2RyerJZIlYvulmz9X/MvUVO+6G6cZJbNMatjVEfDNJbpUx1cj09Izr7OR/1hG8bqp2nfJtI2Yr47ntJpKticjmyWelRVRenMkTWuT60U1bKbBOCG+tu2xVHQOnSSotNXNSvRXZc1qu9IzKeCYfhP6IV4p8pyAAXAAAFbvuhGP8EdjX/6gj/s85ZEqV90RvuKLSmmWOT15Zq+VM/mokbPanxpPf8AQoRt4U+L+cCcMkexbJXsc1s1zqHMVUwjkTlblPZlqp9ClA/aqoieamznh50/+5jZTStoVj2SNoGzyo/ukkqrK9P9569PAK8Ud5Z6UD47fl3f800365C/hQPju+Xd3zTTfreE8nxQMiK5eVqZVeyE10u0fElaaSR1FatS0kKZc9lNfIkVcJ1w1s2V+hFyQtTfwiP+khtzTsgV46xO2pO61Nwqa+Z90qKmara9WyuqXudIjkXqjld1znzJu4NdLbcat1tUW/WUUtZdo2+lttFK5Pg1S1EXn5m4y5zUwuFXGM9Fwp7nG/tZJYNV/u9s1I9bXd35r0jh9SmqemXKqdkkznr+VzdfWwV4sd0r7JeKS72upkpa2klbNBNG7DmuavTr/wCsplA8+Nu7bHRUtNQ0cNHRU0NNTQMSOKGFiMZG1EwjWtToiIngh+xgOxG5FBufoGlv0Hooq+P8TcaVir+InTuiZ/JVPWRfJcd0Uz4NAAAK1/dCPkssXz239hKUdLxfdCPkssXz239hKUdCjJ5X94ZNvtBXjYvTNxu+idN3CtngkWapqbVDJLIvpXplXOaqr2TxMj1pw97U6mtjqRNMU1mmx+LqbU1KeRi+eETkd/rNU/ThN/i96T/0eT9s8lILtNbvEBstfdqbpHLJJ98bDVyK2jrmMxhU68kifkux264XC48UTxdoN0tVbY31tfYqpZKR7s1Vvmcq09SmMZc1F6OTphydUwndMouxTdbSFv11oC7aZuTXejq4F9G9qetFK3qx7fajkT39U8TVnKxYpXRu+M13KvvRcBTeOmdw2n7Z62se4OkKTU1gle6lqMtdFJhJIZGrhzHoirhyd+/VFRU6KhkpR/gC1bV2/cK5aQd69DdqRalE6+pPDjCp4Iisc5F81a3yLwBdWdxtgPEVn/AXrTH6In/4TWQbNuIzH+ArWmUz/kif/hNZCqFWVeH7nt12tv8A8+O/s8JZUrV9z2+S2/8Az67+zwllQsp8YAAEg10cYv8AGH1J/s37CM2LmufjF/jD6k/2f+zxhXk+LDdnPlX0n880n7ZhtKNWuznyr6T+eaT9sw2lB5i8AAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAADDd6tFQbgbaXjTMkULqieBX0T5eiR1DUzG7KdU69FVPBV8zMgBqSutDV2u51dsr4HU9ZSTvgqInd2SNdyuavuVFQm/gt3Eg0ZuU+y3ORkVs1A1lO+Z8qNZDM3KxOXK4wquc3z9ZPImniz2Ddq5s2ttG0qff6Nn+O0TMIlaxM+s1Eb1l6+K+siefekVRFLTzyU88bo5Y3rG9j24cxyLhUVF7KihnmJpbbbkCqvDRxK0FXb6fSm5FxZSV0DUZS3eociRztROjZnL8V6fnr0XxwvVbUsc17EexyOa5MoqLlFQL4mJjcOQD5lkZFE6WV7WRsRXOc5cI1E7qqh65e5rGK97ka1qZVVXCIhrg4qdeRa+3guFbRSxy2u2tS3UL2dWyMY5VdJnsqOe5yoqd28pNfFJxG26a01OjNvLi2rdUsWOvu0DsxtjVFR0cTvFVTGXouETtleraxbcaI1Fr7UkNh03QPqZ34WWTH4unjVyIskjvyWpn3+CZXoFV7b7Qy3hi28n3D3SoKWWBH2i2vbWXJz2KrFjauUjXwy9ycqJ5cy9cYNkpgmyO2ln2v0bHZLavp6uVUlr6tyetUTYRFX2NTryp4J5qqqudhOtemAoJx3fLs75qpv1vL9mv7jmqIJ9+qpkUrJFgt1NHIjVzyuw52F8ujk+tA8yfFBtN/CI/6SG3NvxUNRcLuWZjsdlNttuqY6y301XE5HRzxNkYqLlFRyIqL9oRxfbzNcaZtesdJ3HTV5h9LQ18KxSY7tXu17fJzVRHIvmiGsbcrR900HrW46XvCNWqo3oiSMRUZKxUyyRuUyqKmP1eBtTIQ4stn/8ACPpVt4ssCLqa0xuWmaio1KqLKK6J3RVVUwqs6p1VU/KVQleu4U/4etzq7bDXsF0a6SW01StgudMjlxJFn46N/PblVTPtTojlNk1rr6O6W2muVuqYqqjqomzQTRO5myMcmUci+SopqTc1WPcxzVa5qqioqYVFTuioWY4Qd9oNKypofWde5lkmfm31sz8to3r3jcvhEvfPZq5z0VVQhjtrtK7oPmGWOeFk0MjJIpGo5j2LlrkXqioqd0PoLla/uhHyWWL57b+wlKOl1/uhlwpGaC05anSt+FzXN1QxmUzyMic1y4795GlKAoyeWyThO/i96T/0eT9s8lIifhDqY6nh40s6J2UZHPG7zRWzyIqfYSu5Ua1XOVEREyqr4BdHh8zSMhhfNIuGMarnL5InU1L3uZtTeq6pYmGy1MkiIvgjnKvX3ZwXT4puIGxWzS1bpLRN3iuF4r4309RWUUyOjomL0eiPTKekVMomO3VcoqIUmpKaerqoqWlgknnmkbHFFG3mc9zlwjWondVUKsk94iE4cDNHPU78008cb3R0tvqZZXIi4aitRiZ+l6GwEhLhH2nqdt9GT197j5L/AHnkfUxLhVpo255Isp4+srne1UT8nJNoWUjUMB4i0zsVrTC4/wAkT/8ACax06mybirvFJZthNUvqpEa6rpfgcDc9XySqjURPciqq+xFNbIV5V4fue3yW3/58d/Z4SypV77nldaOTRGpbIkrfhsNzbVuYvdY5ImtRU805o3J9RaELKfGAABINc3GL/GH1L7qb9hGbGTWfxM32k1Fvlqi40E0U9MlUlOyWNctf6JqRqqL4pli9ewV5PDxdm/lY0n88Uv7ZptKNVO2tfHbNw9OXCZyNip7rSySOcuERqTNVV+hEVTasDH4AAFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARVvFsNobchZK6rpXWq9KxUbcaNEa5y+CyM7SYXzwvhlCVQBQHXnCvudYKhv3kgpdT0jk6y0krYZGefNHIqL3/ADVcY9a7zvrtTOkcK6qs8MTUd6Cop3y0qNXxRr0czv49F+o2PgIdEfTX9FxR7xVafBaWuoZJ19VFitrHPz7ExjP0HVu1DxHbrMfLW0WqrhSuw1YXt+B0y9vyF5I17eRsLAe9P91MNtOEC9VjqWu15eobbAqo6a30WJZlT81ZPiNXwynN7C12gdF6Z0LYmWbTFqhoKVvV6tTMkrvznvXq5faqmQgPYrEeAAB6iLfB2+rr5TwbWx2ltqfRIk81QsXpWT87s8vOuMcvJ4L1yVfufDLvXdLjUXG40tDVVdTI6SaaW5Mc+RzlyqqvX3l/QEZrE+Wvr8Ffd79G2z/tBhMuz2nuJnRk1j09VJa6nTMFZCydJ6iKWSCl9InpGsdlHdGq7CdcdEROhaAAisR4AAEkCb98Nlh3BrpdQWCqjsV/mdzVD1YrqeqXGMuanVruies3v4oq9Stt94YN47dWrBR6epbvFlcT0lwga1UTsuJXMd9nibDQEZpEqV7XaV4sdExLb7NbZIrfjDae43CkngjwnTlb6RysT2NwWg3Tk3Fj0LG7QENum1J6WFJG1OPRcn8oqcyonuypmgD2I0o1r/YziE17f333VDKCrrHNRjM10TWRMTs1jW9Gp49O65z3yY1UcLe8MMavZZaCdU/JjuEWV/3lRDYUAjNIlrztuxvERZ2uitWn7rRMcuXJSXumiRy9e+J081OzNslxHXXFJcrZeJIHL1+F3+GSNPenplX7DYGA96IUh0twd6zrWsfqHUVotDV7sga+pkT6PVb/AN5SyG0Wx2hNtntrbVQvrbv6NGPuFYqPkRfFWJjEeevZM+CqpJwBFYjwGPbjv1VHou4v0TFTS6gRjfgbajHo1dzJnOVRPi83iZCAkpfubtdxL7kyQLqlbdJBT9YqSGuiigY787kb3d1XquV8M4MJ/BX3f/Rlr/r7DYMAjNInyotofYfiC0Pfo75pdKKgrmIrVcyvjc2Rq92va7o5PYqeCL0VC12y0u5cunqxd0ILfDdEq1SmSjVvKsHI3CryqqZ5uYzsB7FYjwAAPVe97bfxH3y/3qzaOdb6PS86Njpp454o6h0axtR6K5fWb6yv6phU6YK/rwr7vuyq222Iq983BnX6TYIAjNYny19fgrbvfo61/wDaDCbdu7fxTacZZ7NWts1faKaWKKaSpnjlnbAjk5k58orlRueq5UswARWI8AACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z" alt="Nova Orbit Logo" />
+      </div>
+      <div class="brand-name">Nova Orbit</div>
+      <div class="brand-tagline">Market Pulse Reports</div>
+    </div>
+  </header>
+ 
+  <main>
+    <div class="section-header">
+      <h2 class="section-title">Reports</h2>
+      <span class="report-count" id="reportCount"></span>
+    </div>
+ 
+    <!-- ── Config banner (visible only if not configured) ── -->
+    <div class="config-banner" id="configBanner">
+      <strong>⚙️ Quick Setup:</strong> Open this file and set your GitHub details at the bottom inside the <code>&lt;script&gt;</code> tag:<br/>
+      &bull; <code>GITHUB_USER</code> — your GitHub username<br/>
+      &bull; <code>GITHUB_REPO</code> — the repository name<br/>
+      &bull; <code>REPORTS_FOLDER</code> — subfolder for reports (leave <code>""</code> if reports sit alongside index.html)
+    </div>
+ 
+    <div id="reportContainer">
+      <div class="state-message">
+        <div class="spinner"></div>
+        <p>Loading reports…</p>
+      </div>
+    </div>
+  </main>
+ 
+  <footer>
+    &copy; <span id="year"></span> Nova Orbit. All rights reserved.
+  </footer>
+ 
+  <script>
+    // ╔══════════════════════════════════════════════════════╗
+    // ║   CONFIGURE THESE THREE VALUES FOR YOUR REPO        ║
+    // ╚══════════════════════════════════════════════════════╝
+    const GITHUB_USER    = "novarobitcap";
+    const GITHUB_REPO    = "NovaOrbit";
+    const REPORTS_FOLDER = "";
+ 
+    // ── End of config ──
+ 
+    document.getElementById('year').textContent = new Date().getFullYear();
+ 
+    const container   = document.getElementById('reportContainer');
+    const countBadge  = document.getElementById('reportCount');
+    const configBanner = document.getElementById('configBanner');
+ 
+    const FILE_ICON = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>`;
+    const ARROW = `<svg class="report-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`;
+ 
+    async function loadReports() {
+      // Check if configured
+      if (!GITHUB_USER || !GITHUB_REPO) {
+        configBanner.classList.remove('hidden');
+        container.innerHTML = `
+          <div class="state-message">
+            <div class="icon">📝</div>
+            <p>Set your GitHub details above to get started.</p>
+          </div>`;
+        return;
+      }
+      configBanner.classList.add('hidden');
+ 
+      const path = REPORTS_FOLDER ? `/${REPORTS_FOLDER}` : '';
+      const apiUrl = `https://api.github.com/repos/${GITHUB_USER}/${GITHUB_REPO}/contents${path}`;
+ 
+      try {
+        const res = await fetch(apiUrl);
+        if (!res.ok) throw new Error(`GitHub API returned ${res.status}`);
+        const files = await res.json();
+ 
+        // Filter to .html files, exclude index.html
+        const reports = files
+          .filter(f => f.type === 'file' && f.name.endsWith('.html') && f.name.toLowerCase() !== 'index.html')
+          .sort((a, b) => b.name.localeCompare(a.name)); // newest first (works well for date-named files)
+ 
+        if (reports.length === 0) {
+          countBadge.textContent = '0 reports';
+          container.innerHTML = `
+            <div class="state-message">
+              <div class="icon">📂</div>
+              <p>No reports found yet. Upload your first .html report to the repo!</p>
+            </div>`;
+          return;
+        }
+ 
+        countBadge.textContent = `${reports.length} report${reports.length > 1 ? 's' : ''}`;
+ 
+        // Build the base URL for GitHub Pages
+        const pagesBase = `https://${GITHUB_USER}.github.io/${GITHUB_REPO}${path}`;
+ 
+        const list = document.createElement('ul');
+        list.className = 'report-list';
+ 
+        reports.forEach((file, i) => {
+          const li = document.createElement('li');
+          li.className = 'report-item';
+          li.style.animationDelay = `${i * 0.05}s`;
+ 
+          const displayName = file.name.replace('.html', '').replace(/[-_]/g, ' ');
+          const sizeKB = (file.size / 1024).toFixed(1);
+ 
+          li.innerHTML = `
+            <a class="report-link" href="${pagesBase}/${file.name}">
+              <div class="report-icon">${FILE_ICON}</div>
+              <div class="report-info">
+                <div class="report-name">${displayName}</div>
+                <div class="report-meta">${file.name} · ${sizeKB} KB</div>
+              </div>
+              ${ARROW}
+            </a>`;
+ 
+          list.appendChild(li);
+        });
+ 
+        container.innerHTML = '';
+        container.appendChild(list);
+ 
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `
+          <div class="state-message">
+            <div class="icon">⚠️</div>
+            <p>Could not load reports. Check your config or try again later.<br/>
+            <small style="color:#aaa">${err.message}</small></p>
+          </div>`;
+      }
+    }
+ 
+    loadReports();
+  </script>
+ 
 </body>
 </html>
