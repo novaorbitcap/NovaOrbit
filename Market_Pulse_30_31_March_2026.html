@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Pulse — 30-31 March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1a1a;--paper:#faf8f4;--accent:#c0392b;--accent2:#2c3e50;--rule:#d4c5a9;--muted:#7a7062;--tag-bg:#f0ece4;--card-bg:#fff;--shadow:0 2px 12px rgba(0,0,0,.06)}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+.masthead{text-align:center;padding:32px 20px 0;border-bottom:4px double var(--ink)}.masthead-date{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}.masthead h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(36px,7vw,64px);letter-spacing:-1px;line-height:1.05;margin-bottom:4px}.masthead-sub{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;padding-bottom:14px}
+.edition-bar{background:var(--ink);color:var(--paper);font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}.stat-pill{background:rgba(255,255,255,.12);padding:3px 10px;border-radius:3px;font-size:11px}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+.filter-bar{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--rule);padding:12px 0;margin-bottom:24px}.filter-bar .container{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.filter-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;padding:6px 14px;border:1.5px solid var(--rule);border-radius:20px;background:0 0;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap}.filter-btn:hover{border-color:var(--ink);color:var(--ink)}.filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.search-box{font-family:'DM Sans',sans-serif;font-size:13px;padding:6px 14px;border:1.5px solid var(--rule);border-radius:20px;background:var(--card-bg);color:var(--ink);width:200px;outline:0;margin-left:auto}.search-box:focus{border-color:var(--accent)}
+.section-header{display:flex;align-items:center;gap:12px;margin:36px 0 18px;padding-bottom:8px;border-bottom:2px solid var(--ink)}.section-icon{font-size:22px;width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);border-radius:6px;flex-shrink:0}.section-header h2{font-family:'Playfair Display',serif;font-weight:800;font-size:22px}.section-count{font-family:'DM Sans',sans-serif;font-size:11px;background:var(--tag-bg);padding:2px 8px;border-radius:10px;color:var(--muted);font-weight:600}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;margin-bottom:12px}
+.card{background:var(--card-bg);border:1px solid var(--rule);border-radius:8px;padding:20px;transition:all .25s;cursor:default;position:relative;overflow:hidden}.card:hover{box-shadow:var(--shadow);border-color:#bbb;transform:translateY(-2px)}
+.card-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:6px;flex-wrap:wrap}.card-ticker{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:12px;background:var(--accent2);color:#fff;padding:2px 8px;border-radius:4px;letter-spacing:.5px}.card-date{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted)}
+.card-tag{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;padding:2px 8px;border-radius:3px;background:var(--tag-bg);color:var(--muted)}.card-tag.acq{background:#e8f5e9;color:#2e7d32}.card-tag.order{background:#e3f2fd;color:#1565c0}.card-tag.div{background:#fff3e0;color:#e65100}.card-tag.expand{background:#f3e5f5;color:#7b1fa2}.card-tag.fund{background:#fce4ec;color:#c62828}.card-tag.jv{background:#e0f2f1;color:#00695c}.card-tag.legal{background:#fff8e1;color:#f57f17}.card-tag.tech{background:#ede7f6;color:#4527a0}.card-tag.divest{background:#efebe9;color:#4e342e}.card-tag.restructure{background:#fafafa;color:#424242}.card-tag.mgmt{background:#e8eaf6;color:#283593}.card-tag.psu{background:#e3f2fd;color:#0d47a1}.card-tag.alert{background:#ffebee;color:#c62828}
+.card h3{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;line-height:1.3;margin-bottom:8px}.card p{font-size:14px;color:#444;line-height:1.6}.card .source{font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted);margin-top:10px}.card .source a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent)}.card .source a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.connector{background:linear-gradient(135deg,#2c3e50,#34495e);color:#fff;border-radius:8px;padding:20px 24px;margin:20px 0 28px;position:relative;overflow:hidden}.connector::before{content:'🔗';position:absolute;right:16px;top:14px;font-size:20px;opacity:.4}.connector h4{font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;color:#f1c40f}.connector p{font-size:14px;line-height:1.65;opacity:.92}
+.headline-card{grid-column:1/-1;border-left:4px solid var(--accent)}.headline-card h3{font-size:20px}
+.report-footer{text-align:center;padding:32px 20px;margin-top:40px;border-top:2px solid var(--ink);font-family:'DM Sans',sans-serif;font-size:12px;color:var(--muted)}
+.nova{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--ink);letter-spacing:1px;margin-top:16px}
+.hidden{display:none!important}
+@media(max-width:600px){.card-grid{grid-template-columns:1fr}.search-box{width:100%;margin-left:0;margin-top:8px}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}.card,.connector{animation:fadeUp .4s ease both}
+</style>
+</head>
+<body>
+<header class="masthead">
+<div class="masthead-date">Monday — Last Trading Day of FY26</div>
+<h1>Market Pulse</h1>
+<div class="masthead-sub">NSE Corporate Announcements Intelligence Report &bull; 30–31 March 2026 &bull; Edition #1</div>
+</header>
+<div class="edition-bar">
+<span>Daily Equity Research Digest</span>
+<div style="display:flex;gap:12px;flex-wrap:wrap;">
+<span class="stat-pill">693 Total Filings</span>
+<span class="stat-pill">~30 Material Updates</span>
+<span class="stat-pill">FY26 Final Day — Flurry of FY-End Corporate Actions</span>
+</div>
+</div>
+<div class="filter-bar"><div class="container">
+<button class="filter-btn active" onclick="filterCards('all')">All</button>
+<button class="filter-btn" onclick="filterCards('acq')">Acquisitions</button>
+<button class="filter-btn" onclick="filterCards('order')">Orders</button>
+<button class="filter-btn" onclick="filterCards('expand')">Expansion</button>
+<button class="filter-btn" onclick="filterCards('fund')">Fund Raise</button>
+<button class="filter-btn" onclick="filterCards('divest')">Divestment</button>
+<button class="filter-btn" onclick="filterCards('legal')">Legal / Tax</button>
+<button class="filter-btn" onclick="filterCards('tech')">Tech / Product</button>
+<input class="search-box" type="text" placeholder="Search ticker or keyword…" oninput="searchCards(this.value)">
+</div></div>
+
+<main class="container">
+
+<!-- ══════ HEADLINE: NXTRA $1B ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">📡</div>
+<h2>Telecom & Data Infrastructure</h2>
+<span class="section-count">3 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card headline-card" data-tags="fund acq" data-ticker="BHARTIARTL">
+<div class="card-meta">
+<span class="card-ticker">BHARTIARTL</span>
+<span class="card-tag fund">$1 Billion Raise</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Bharti Airtel's Nxtra Data Raises $1 Billion at $3.1B Valuation — Alpha Wave, Carlyle, Anchorage Back AI Data Centre Push</h3>
+<p>The biggest corporate action of the day. Bharti Airtel announced a <strong>$1 billion investment</strong> into its data centre subsidiary Nxtra Data, led by <strong>Alpha Wave Global ($435M)</strong>, <strong>Carlyle ($240M)</strong>, and <strong>Anchorage Capital ($35M)</strong>, with Airtel contributing ~$290M. Post-money valuation: <strong>~$3.1 billion</strong>. Airtel retains controlling stake. Nxtra will scale from 300 MW to <strong>1 GW capacity</strong>, targeting ~25% of India's DC market. It operates 14 large core DCs and 120+ edge facilities. Recently partnered with Google for a gigawatt-scale AI DC campus backed by $15B. Alpha Wave — the firm behind Anthropic and OpenAI investments — leading this round signals serious global AI infrastructure conviction in India.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/BHARTIARTL_30032026205429_BhartiAirtelReg30DisclosureNxtraMarch30.pdf" target="_blank">NSE Filing (1)</a> · <a href="https://nsearchives.nseindia.com/corporate/BHARTIARTL_30032026210037_BhartiAirtelReg30DisclosureNxtraMarch30.pdf" target="_blank">NSE Filing (2)</a> · <a href="https://www.business-standard.com/companies/news/bharti-airtel-carlyle-alpha-wave-global-to-invest-1-bn-in-nxtra-data-126033001271_1.html" target="_blank">Business Standard</a> · <a href="https://www.cnbc.com/2026/03/31/pe-alpha-wave-carlyle-1-billion-airtel-data-center.html" target="_blank">CNBC</a></div>
+</div>
+
+<div class="card" data-tags="tech" data-ticker="TEJASNET">
+<div class="card-meta">
+<span class="card-ticker">TEJASNET</span>
+<span class="card-tag tech">BharatNet Milestone</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Tejas Networks Ships 17,000 IP/MPLS Routers for BharatNet Phase III — Major Execution Milestone</h3>
+<p>Tata Group's Tejas Networks announced cumulative shipment of <strong>17,000+ TJ1400 routers</strong> for BharatNet Phase III, deployed across 9 states and 5 UTs with live traffic at multiple locations. Total order: ~60,000 routers across 55,000+ Gram Panchayats. Tejas won 7 of 12 BharatNet III packages — the largest supplier. This is a critical execution proof-point for a company still reporting losses (₹197 Cr in Q3) while waiting on BSNL 4G add-on orders.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/TEJASNET_30032026092720_PR_Bharatnet.pdf" target="_blank">NSE Filing</a> · <a href="https://www.business-standard.com/content/press-releases-ani/tejas-networks-completes-delivery-of-17-000-ip-mpls-routers-for-bharatnet-phase-iii-126033000562_1.html" target="_blank">Business Standard</a></div>
+</div>
+
+<div class="card" data-tags="tech" data-ticker="INTELLECT">
+<div class="card-meta">
+<span class="card-ticker">INTELLECT</span>
+<span class="card-tag tech">Press Release</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Intellect Design Arena Files Press Release</h3>
+<p>Banking and insurance tech platform Intellect Design filed a press release — the fintech products company has been gaining traction in AI-powered banking solutions globally.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/INTELLECT_30032026112524_PR30032026_Signed.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+<div class="connector">
+<h4>Sector Signal — India's AI Infrastructure Moment</h4>
+<p>Nxtra's $1B raise (with Alpha Wave — backers of Anthropic and OpenAI — leading) is arguably the strongest signal yet that <strong>India's AI data centre buildout is entering hyper-scale mode</strong>. Paired with Tejas Networks' BharatNet execution and NTPC Green's Khavda solar COD (for powering data centres), the infrastructure stack for India's AI ambitions is materializing fast. Watch for Adani, Reliance, and STL to follow with their own DC/fibre announcements.</p>
+</div>
+</div>
+
+<!-- ══════ ACQUISITIONS & M&A ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🤝</div>
+<h2>Acquisitions, M&A & FY-End Deals</h2>
+<span class="section-count">7 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="acq" data-ticker="ADANIENT">
+<div class="card-meta">
+<span class="card-ticker">ADANIENT</span>
+<span class="card-tag acq">Acquisition</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Adani Enterprises Acquires Skyiwave Technologies</h3>
+<p>Adani Enterprises disclosed the <strong>acquisition of Skyiwave</strong> — a tech company. Filed at 8:06 PM on FY26's last working day, this appears to be a strategic addition to Adani's digital/tech portfolio. Details on valuation and business area to be tracked.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/ADANIENT_30032026200605_AELIntimationAcqofSkyiwave30032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="acq" data-ticker="TATASTEEL">
+<div class="card-meta">
+<span class="card-ticker">TATASTEEL</span>
+<span class="card-tag acq">Acquisition</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Tata Steel Files Acquisition Disclosure</h3>
+<p>Tata Steel disclosed an acquisition under Regulation 30. The steel major has been actively restructuring — European operations rationalization + India capacity expansion. Any bolt-on acquisition adds to this transformation narrative.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NIDHIFADNAVIS_30032026212421_BSENSE.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="acq" data-ticker="LLOYDSME">
+<div class="card-meta">
+<span class="card-ticker">LLOYDSME</span>
+<span class="card-tag acq">International Acquisition</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Lloyds Metals Acquires Chemaf — International Mining Push</h3>
+<p>Lloyds Metals & Energy disclosed the <strong>acquisition of Chemaf</strong>, a mining/metals company. This marks an international expansion for the Gadchiroli-based iron ore miner that has been one of the market's best performers. A transformative move if it's a significant mineral resource acquisition.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/LLOYDSME_30032026142807_20260330_Intimation_of_accquisition_of_Chemaf.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="acq" data-ticker="UNOMINDA">
+<div class="card-meta">
+<span class="card-ticker">UNOMINDA</span>
+<span class="card-tag acq">Acquisition</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>UNO Minda: Board Approves Acquisition + Management Changes</h3>
+<p>Auto components leader UNO Minda filed board outcome with an acquisition disclosure and management changes. The company has been on an acquisition spree across lighting, sensors, and EV components.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/MINDAIND1_30032026135626_Outcome30032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="acq" data-ticker="GMRP&UI">
+<div class="card-meta">
+<span class="card-ticker">GMR P&UI</span>
+<span class="card-tag acq">GKEL Disclosure</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>GMR Power & Urban Infra Files Acquisition Disclosure — GKEL Related</h3>
+<p>GMR Group's infra arm disclosed an acquisition related to GKEL (GMR Kamalanga Energy). Filed at 10:55 PM — a late-night FY-end filing suggesting deal closure on the last day.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/GPUIL_30032026225513_DisclosureGKEL.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="divest" data-ticker="AMBER">
+<div class="card-meta">
+<span class="card-ticker">AMBER</span>
+<span class="card-tag divest">Disinvestment</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Amber Enterprises Divests Stake in Shivalik</h3>
+<p>AC components maker Amber Enterprises disclosed <strong>disinvestment from Shivalik</strong> — filed twice (agreement + disinvestment category). A portfolio rationalization move, possibly exiting a non-core or underperforming investment.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/AMBER_30032026183844_SEIntimationofDisinvestmentfromShivalik_30032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="divest" data-ticker="BASF">
+<div class="card-meta">
+<span class="card-ticker">BASF</span>
+<span class="card-tag divest">Sale + Closure</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>BASF India: ECF Unit Sale + MCD Division Closure</h3>
+<p>BASF India filed <strong>two restructuring disclosures</strong>: the sale/disposal of its ECF unit and the closure of its MCD (Mobile Consumer Devices) division. The German chemicals major's India arm is sharpening focus on core chemical segments.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/BASFIL_30032026171506_SE_Letter30032026ECF.pdf" target="_blank">ECF Sale</a> · <a href="https://nsearchives.nseindia.com/corporate/BASFIL_30032026171641_SELetterMCDCloasureF.pdf" target="_blank">MCD Closure</a></div>
+</div>
+
+</div>
+<div class="connector">
+<h4>Sector Signal — FY-End M&A Rush</h4>
+<p>11 acquisitions filed on a single day is extraordinary. Companies are clearly closing deals before the FY26 books shut: <strong>Adani (Skyiwave), Tata Steel, Lloyds Metals (Chemaf), UNO Minda, GMR, Bharti Airtel (Nxtra), Refex</strong> and others all executed on the last day. Simultaneously, <strong>8 sale/disposal filings</strong> (HG Infra×2, Torrent Power×2, BASF, Asahi India, Nibe, PFocus) suggest portfolio clean-ups to optimize FY26 balance sheets. This pattern is classic March-end corporate finance — expect these deals to feature prominently in FY26 annual reports.</p>
+</div>
+</div>
+
+<!-- ══════ INFRA & ORDERS ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🏗️</div>
+<h2>Infrastructure & Order Wins</h2>
+<span class="section-count">5 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="order" data-ticker="BEL">
+<div class="card-meta">
+<span class="card-ticker">BEL</span>
+<span class="card-tag order">Defence Order</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Bharat Electronics Bags New Order</h3>
+<p>Defence electronics PSU BEL disclosed an order win via press release. BEL has been a consistent order winner across radars, EW systems, and communication equipment. Every FY-end order adds to the backlog that drives next year's revenue visibility.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/BEL_30032026141536_Letter_PR_Signed.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="BHEL">
+<div class="card-meta">
+<span class="card-ticker">BHEL</span>
+<span class="card-tag order">Order Win</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>BHEL Receives New Order</h3>
+<p>Power equipment giant BHEL disclosed an order win on the FY's last day. The PSU has been benefiting from the thermal power capacity addition cycle and defence diversification.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/BHELCC_30032026124752_Info_for_SE_30_03_2026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="GRINFRA">
+<div class="card-meta">
+<span class="card-ticker">GRINFRA</span>
+<span class="card-tag order">Another LOA!</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>G R Infraprojects: Yet Another LOA — The Order Machine Doesn't Stop</h3>
+<p>G R Infra filed <strong>another LOA</strong> on 30 March. This company has been on an extraordinary winning streak — multiple LOAs within days. Highway infra investors should track this closely as FY27 revenue visibility builds up sharply.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/GRINFRA_30032026172536_LOA_Intimation_30032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="DIACABS">
+<div class="card-meta">
+<span class="card-ticker">DIACABS</span>
+<span class="card-tag order">2 LOIs + Press Release</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Dia Cables: 2 Letters of Intent + Press Release on Same Day</h3>
+<p>Recently listed wire & cable company Dia Cables filed <strong>2 separate LOIs</strong> and a press release on 30 March. For a small-cap, this is a significant signal of growing order traction in the power cable/infra wiring space.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/DIACABS_30032026174537_Regulation_30-Receipt_of_Letter_of_Intent.pdf" target="_blank">LOI 1</a> · <a href="https://nsearchives.nseindia.com/corporate/DIACABS_30032026130426_Regulation_30-Receipt_of_Letter_of_Intent.pdf" target="_blank">LOI 2</a> · <a href="https://nsearchives.nseindia.com/corporate/DIACABS_30032026175120_Press_Release-30032026.pdf" target="_blank">Press Release</a></div>
+</div>
+
+<div class="card" data-tags="order" data-ticker="WELCORP">
+<div class="card-meta">
+<span class="card-ticker">WELCORP</span>
+<span class="card-tag order">Early Morning Filing</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Welspun Corp Bags Order — Filed at 8:27 AM Pre-Market</h3>
+<p>Pipes & plates manufacturer Welspun Corp filed an order win at 8:27 AM — pre-market timing typically signals the company wants the stock to open with this news priced in. Energy infrastructure pipes remain in high demand.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/WELCORP_30032026082749_SELetterOrdersigned.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ PHARMA & HEALTHCARE ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">💊</div>
+<h2>Pharmaceuticals & Healthcare</h2>
+<span class="section-count">3 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="restructure" data-ticker="WOCKPHARMA">
+<div class="card-meta">
+<span class="card-ticker">WOCKPHARMA</span>
+<span class="card-tag restructure">Merger</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Wockhardt: "Zayich" Merger Press Release — Corporate Restructuring</h3>
+<p>Wockhardt filed a press release titled "Zayich merged" — likely referring to a subsidiary or business line merger. The pharma company has been on a recovery path with its anti-bacterial pipeline (Nafithromycin, Zaynich) gaining traction.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/WOCKPHARMA_30032026085235_WLpressreleaseZayichmergedfinalsd.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="HCG">
+<div class="card-meta">
+<span class="card-ticker">HCG</span>
+<span class="card-tag expand">Vizag Investment</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>HCG: Board Approves Investment in Vizag Hospital & NCHRI LLP</h3>
+<p>Healthcare Global Enterprises board approved investment in the <strong>Vizag hospital and HCG NCHRI LLP</strong>. The cancer hospital chain continues its expansion in Tier 2 cities — Vizag amendment was also filed on 29 Mar.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/HCG2_30032026155822_Investment_in_Vizag_Hospital_and_HCG_NCHRI_LLP_30_March_2026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="LUPIN">
+<div class="card-meta">
+<span class="card-ticker">LUPIN</span>
+<span class="card-tag fund">Buyback by Subsidiary</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Lupin Discloses Buyback by Subsidiary MPPI</h3>
+<p>Lupin filed an intimation regarding a share buyback by its subsidiary MPPI (Medisol Pharma Private India). Also filed a press release on 31 Mar. The pharma major has been executing well on its US generics and specialty strategy.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/Lupin2_30032026094010_SE_intimation_of_Buyback_by_MPPI.pdf" target="_blank">Buyback</a> · <a href="https://nsearchives.nseindia.com/corporate/Lupin2_31032026082730_SE_Letter_25032026.pdf" target="_blank">Press Release</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ GAMING, CONSUMER & RETAIL ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🎮</div>
+<h2>Gaming, Consumer & Retail</h2>
+<span class="section-count">4 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="fund" data-ticker="NAZARA">
+<div class="card-meta">
+<span class="card-ticker">NAZARA</span>
+<span class="card-tag fund">Pref Issue + Investments</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Nazara Technologies: Board Approves Preferential Issue + Rusk Pre-Series C + Nextwave Update</h3>
+<p>Gaming company Nazara filed <strong>4 disclosures</strong>: board meeting outcome, preferential issue approval, investment update on Rusk (pre-Series C CCPS), and Nextwave update. A flurry of capital deployment into the gaming ecosystem — Nazara continues its roll-up strategy across esports, casual gaming, and adtech.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/NAZARA_30032026181621_BMOutcome30032026Final.pdf" target="_blank">Pref Issue</a> · <a href="https://nsearchives.nseindia.com/corporate/NAZARA_30032026231641_UpdateIntimationRuskPreSeriesCCCPSFinal.pdf" target="_blank">Rusk</a> · <a href="https://nsearchives.nseindia.com/corporate/NAZARA_30032026230731_UpdateNextwave.pdf" target="_blank">Nextwave</a> · <a href="https://nsearchives.nseindia.com/corporate/NAZARA_30032026181945_PRIntimation.pdf" target="_blank">Press Release</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="WESTLIFE">
+<div class="card-meta">
+<span class="card-ticker">WESTLIFE</span>
+<span class="card-tag expand">McDonald's Expansion</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Westlife Foodworld (McDonald's India) Files Press Release — Hyderabad</h3>
+<p>McDonald's India (West & South) operator Westlife filed a Hyderabad-focused press release. The QSR operator has been expanding aggressively in South India and Tier 2 cities.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/RadhaWestlife_30032026190838_Press_Release_Hyderabad.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="JUBLFOOD">
+<div class="card-meta">
+<span class="card-ticker">JUBLFOOD</span>
+<span class="card-tag divest">Phoenix Closure</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Jubilant FoodWorks: Board Approves Closure of Phoenix Operations</h3>
+<p>Domino's operator Jubilant filed <strong>both a board outcome and closure of operations</strong> for its "Phoenix" venture. This follows the LPG situation disclosure and IDT case from recent days. Jubilant is cutting non-core initiatives to focus on its core pizza and Popeyes brands.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/JUBLFOOD_30032026165123_SEIntimationPhoenix30thMarch.pdf" target="_blank">Board Outcome</a> · <a href="https://nsearchives.nseindia.com/corporate/JUBLFOOD_30032026165723_SEIntimationPhoenix30thMarch.pdf" target="_blank">Closure</a></div>
+</div>
+
+<div class="card" data-tags="tech" data-ticker="MOBIKWIK">
+<div class="card-meta">
+<span class="card-ticker">MOBIKWIK</span>
+<span class="card-tag tech">Press Release</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>MobiKwik Files Press Release</h3>
+<p>Fintech-payments platform MobiKwik (recently listed) filed a press release. The company has been expanding its credit, payments, and insurance distribution stack post-IPO.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/MOBIKWIK_30032026115643_Press_Release_30032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ ENERGY & POWER ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">⚡</div>
+<h2>Energy, Power & Renewables</h2>
+<span class="section-count">3 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="expand" data-ticker="NTPCGREEN">
+<div class="card-meta">
+<span class="card-ticker">NTPCGREEN</span>
+<span class="card-tag expand">Press Release + Disclosures</span>
+<span class="card-date">30-31 Mar 2026</span>
+</div>
+<h3>NTPC Green Energy: Press Release + Multiple Reg 30 Disclosures on FY's Last Day</h3>
+<p>NTPC's renewable arm filed a press release (31 Mar morning) and multiple Reg 30 disclosures. Coming after the 105 MW Khavda-II COD that pushed group capacity to 9,907 MW, NTPC Green is rapidly approaching the <strong>symbolic 10 GW milestone</strong>.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/gauravrai02_31032026075748_Disclosure_Reg_30_Press_Release.pdf" target="_blank">Press Release</a> · <a href="https://nsearchives.nseindia.com/corporate/gauravrai02_30032026223126_Disclosure_-_Reg_30.pdf" target="_blank">Reg 30</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="OIL">
+<div class="card-meta">
+<span class="card-ticker">OIL</span>
+<span class="card-tag expand">Press Release</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Oil India Files Press Release</h3>
+<p>E&P major Oil India filed a press release. The company has been expanding production in Assam and exploring new basins, while also venturing into renewables.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/OIL_30032026193448_Pressrelease30032026_signed.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="PREMIERENE">
+<div class="card-meta">
+<span class="card-ticker">PREMIERENE</span>
+<span class="card-tag tech">Module Line</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Premier Energies: New Module Line Press Release</h3>
+<p>Solar cell and module manufacturer Premier Energies filed a press release on a new module production line. The recently listed solar play is scaling up manufacturing to ride India's solar capacity boom.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/PEL2024_30032026115910_pressreleasemoduleline.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ BANKING & FINANCIALS ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🏦</div>
+<h2>Banking & Financial Services</h2>
+<span class="section-count">4 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="legal" data-ticker="INDUSINDBK">
+<div class="card-meta">
+<span class="card-ticker">INDUSINDBK</span>
+<span class="card-tag legal">News Clarification</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>IndusInd Bank: Files News Clarification + SEBI Disclosure on Same Day</h3>
+<p>IndusInd Bank filed a <strong>news clarification</strong> and a separate SEBI disclosure. The bank has been under market scrutiny after derivatives accounting concerns earlier this year. Any clarification filing carries heightened significance.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/INDUSINDBK3_30032026150259_SEIntimationnewsclarification30032026R1.pdf" target="_blank">Clarification</a> · <a href="https://nsearchives.nseindia.com/corporate/INDUSINDBK3_30032026122411_SEDisclosure30032026.pdf" target="_blank">SEBI Disclosure</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="VEDL">
+<div class="card-meta">
+<span class="card-ticker">VEDL</span>
+<span class="card-tag legal">News Clarification</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Vedanta Files Reply to News Clarification Request</h3>
+<p>Vedanta responded to an exchange news clarification query. The metals-to-oil conglomerate has been in news around its demerger plans and debt restructuring.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/VEDL_30032026115020_VEDLReplytoNewsClarificationMarch2026signed.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="MANAPPURAM">
+<div class="card-meta">
+<span class="card-ticker">MANAPPURAM</span>
+<span class="card-tag mgmt">Board Outcome + SEBI</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Manappuram Finance: Double Board Outcome + Takeover Disclosure</h3>
+<p>Manappuram filed <strong>2 board meeting outcomes</strong> and a separate SEBI takeover regulation disclosure. The gold loan NBFC is at the centre of the proposed Bain Capital acquisition — any board outcome or takeover disclosure is material for deal tracking.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/MANAPPURAM_30032026211959_Outcome30032026.pdf" target="_blank">Board 1</a> · <a href="https://nsearchives.nseindia.com/corporate/MANAPPURAM_30032026210450_Outcome30032026.pdf" target="_blank">Board 2</a> · <a href="https://nsearchives.nseindia.com/corporate/team_bbodade_30032026164149_30032026105104_disc.pdf" target="_blank">Takeover</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="AMBUJACEM">
+<div class="card-meta">
+<span class="card-ticker">AMBUJACEM</span>
+<span class="card-tag restructure">Scheme of Arrangement</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Ambuja Cements Files Scheme of Arrangement</h3>
+<p>Adani Group's Ambuja Cements disclosed a scheme of arrangement. Given Adani's ongoing consolidation of its cement empire (Ambuja + ACC + Sanghi + Orient), any scheme filing could signal further internal restructuring. News verification also filed by exchange.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/AMBUJACEM_30032026210310_ACL_Intimation_30032026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ AUTO & MOBILITY ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🚗</div>
+<h2>Auto & Mobility</h2>
+<span class="section-count">2 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="tech" data-ticker="TVSMOTOR">
+<div class="card-meta">
+<span class="card-ticker">TVSMOTOR</span>
+<span class="card-tag tech">Press Release</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>TVS Motor Files Press Release</h3>
+<p>India's 3rd largest two-wheeler maker TVS Motor filed a press release. The company has been aggressively expanding its EV portfolio (iQube) and international operations in Europe and Africa.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/TVSMOTOR_30032026161901_TVSMBSENSEPRESSRELEASE_sd.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="COROMANDEL">
+<div class="card-meta">
+<span class="card-ticker">COROMANDEL</span>
+<span class="card-tag mgmt">Board Outcome + Management</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Coromandel International: Board Outcome + Management Change</h3>
+<p>Murugappa Group's agri-solutions arm Coromandel filed board outcome and management change disclosures. The fertilizer and crop protection major has been diversifying into specialty chemicals and biologicals.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/COROMANDELINT_30032026132059_SELetter_SD.pdf" target="_blank">Board</a> · <a href="https://nsearchives.nseindia.com/corporate/COROMANDELINT_30032026132556_SELetter_SD.pdf" target="_blank">Management</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ TAX & LEGAL ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">⚖️</div>
+<h2>Tax Orders & Legal</h2>
+<span class="section-count">3 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="legal" data-ticker="RRKABEL">
+<div class="card-meta">
+<span class="card-ticker">RRKABEL</span>
+<span class="card-tag alert">IT Search Order — Again</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>RR Kabel: Another Income Tax Search Order Filed — 2nd in 3 Days</h3>
+<p>RR Kabel disclosed yet another <strong>IT Search Order dated 30 Mar 2026</strong>. This is the second search order in 3 days (first was 27 Mar). Cumulative tax demands now approach ₹85+ Cr across multiple assessment years (2015-2025). The persistence of search orders (as opposed to routine assessments) suggests an active investigation by the IT Department. Company maintains no material impact.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/RRKL1995_30032026181812_Intimation_Reg_30_IT_Search_Order_30_03_2026.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="RACE">
+<div class="card-meta">
+<span class="card-ticker">RACE</span>
+<span class="card-tag alert">Search Intimation</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Race Eco Chain: Search Intimation Disclosed Under Reg 30</h3>
+<p>Race Eco Chain filed a "Reg 30 Search Intimation" — indicating a search/raid operation. For a small-cap company, such events can have outsized stock price impact.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/RACEECOCHAIN_30032026171352_Reg_30_Search_Intimation.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="legal" data-ticker="RKEC">
+<div class="card-meta">
+<span class="card-ticker">RKEC</span>
+<span class="card-tag alert">Default</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>RKEC Projects: Default on Payment of Interest/Principal</h3>
+<p>Infrastructure company RKEC Projects disclosed a <strong>default on payment of interest/principal</strong>. This is the most serious type of disclosure — indicating cash flow stress. Investors and lenders will watch for further deterioration or resolution.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/RKEC_30032026204630_NSEIntimation.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+<!-- ══════ REAL ESTATE ══════ -->
+<div class="section-wrapper">
+<div class="section-header">
+<div class="section-icon">🏢</div>
+<h2>Real Estate</h2>
+<span class="section-count">2 updates</span>
+</div>
+<div class="card-grid">
+
+<div class="card" data-tags="expand" data-ticker="INDIQUBE">
+<div class="card-meta">
+<span class="card-ticker">INDIQUBE</span>
+<span class="card-tag expand">Press Release</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>IndiQube Spaces Files Press Release (Revised)</h3>
+<p>Co-working and managed office player IndiQube filed a press release with a subsequent revision. The recently listed company is expanding its flex workspace portfolio across Bengaluru and other tech cities.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/INDIQUBE_30032026165452_Press_release_30_3_36.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+<div class="card" data-tags="expand" data-ticker="ASHIANA">
+<div class="card-meta">
+<span class="card-ticker">ASHIANA</span>
+<span class="card-tag expand">Panvel Launch</span>
+<span class="card-date">30 Mar 2026</span>
+</div>
+<h3>Ashiana Housing: Panvel (Navi Mumbai) Project Press Release</h3>
+<p>Senior living and residential developer Ashiana Housing filed a press release for its <strong>Panvel (Navi Mumbai)</strong> project — marking its entry into the Mumbai Metropolitan Region, a significant geographic expansion from its North India stronghold.</p>
+<div class="source"><a href="https://nsearchives.nseindia.com/corporate/ASHIANA_30032026155956_PressReleaseMarch2026PanvelSIGNED.pdf" target="_blank">NSE Filing</a></div>
+</div>
+
+</div>
+</div>
+
+</main>
+
+<footer class="report-footer">
+<p><strong>Market Pulse — Edition #1</strong> — Compiled from 693 NSE corporate filings on 30–31 March 2026</p>
+<p style="margin-top:6px;">Market Context: Last trading day of FY26 (31 Mar). Heavy FY-end corporate action volume — 11 acquisitions, 8 disposals, multiple board outcomes and restructurings filed before books close.</p>
+<p style="margin-top:6px;">All information sourced from NSE filings and cited news sources. This is an informational digest, not investment advice.</p>
+<p class="nova">Presented by Nova Orbit</p>
+</footer>
+
+<script>
+function filterCards(tag){document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');document.querySelectorAll('.card').forEach(card=>{if(tag==='all'||card.dataset.tags.includes(tag))card.classList.remove('hidden');else card.classList.add('hidden')});document.querySelectorAll('.section-wrapper').forEach(s=>{const v=s.querySelectorAll('.card:not(.hidden)');const h=s.querySelector('.section-header');const c=s.querySelector('.connector');if(!v.length){h&&h.classList.add('hidden');c&&c.classList.add('hidden')}else{h&&h.classList.remove('hidden');c&&c.classList.remove('hidden')}})}
+function searchCards(q){q=q.toLowerCase().trim();document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));document.querySelector('.filter-btn').classList.add('active');document.querySelectorAll('.card').forEach(card=>{const t=card.textContent.toLowerCase();const tk=(card.dataset.ticker||'').toLowerCase();if(!q||t.includes(q)||tk.includes(q))card.classList.remove('hidden');else card.classList.add('hidden')});document.querySelectorAll('.section-wrapper').forEach(s=>{const v=s.querySelectorAll('.card:not(.hidden)');const h=s.querySelector('.section-header');const c=s.querySelector('.connector');if(!v.length){h&&h.classList.add('hidden');c&&c.classList.add('hidden')}else{h&&h.classList.remove('hidden');c&&c.classList.remove('hidden')}})}
+</script>
+</body>
+</html>
