@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Pulse — 4–10 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1a1a1a; --paper:#faf8f4; --accent:#c0392b; --accent2:#2c3e50; --rule:#d4c5a9; --muted:#7a7062; --tag-bg:#f0ece4; --card-bg:#fff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--paper); color:var(--ink); font-family:'Source Serif 4',Georgia,serif; line-height:1.55; padding:28px 40px 60px; max-width:1320px; margin:0 auto; }
+.masthead { text-align:center; border-bottom:4px double var(--ink); padding-bottom:18px; }
+.masthead .date-sub { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.masthead h1 { font-family:'Playfair Display',serif; font-size:76px; font-weight:900; letter-spacing:-2px; line-height:1; }
+.masthead .tagline { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+.masthead .ed-info { font-family:'Playfair Display',serif; font-style:italic; font-size:14px; color:var(--muted); margin-top:8px; }
+.edition-bar { background:var(--ink); color:#f5f1e8; display:flex; justify-content:center; gap:36px; padding:14px 20px; flex-wrap:wrap; }
+.stat-pill { display:flex; flex-direction:column; align-items:center; font-family:'DM Sans',sans-serif; }
+.stat-pill .num { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:#f5f1e8; }
+.stat-pill .lab { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:#b8ac96; margin-top:2px; }
+.filter-bar { position:sticky; top:0; background:var(--paper); border-bottom:1px solid var(--rule); padding:14px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; z-index:10; margin-bottom:24px; }
+.filter-btn { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.5px; padding:6px 14px; border:1px solid var(--rule); background:transparent; color:var(--ink); border-radius:999px; cursor:pointer; transition:all 0.15s ease; text-transform:uppercase; }
+.filter-btn:hover { border-color:var(--ink); }
+.filter-btn.active { background:var(--ink); color:#f5f1e8; border-color:var(--ink); }
+.search-wrap { margin-left:auto; }
+.search-wrap input { font-family:'DM Sans',sans-serif; font-size:12px; padding:6px 12px; border:1px solid var(--rule); background:#fff; border-radius:999px; width:220px; outline:none; color:var(--ink); }
+.search-wrap input:focus { border-color:var(--ink); }
+.section { margin:36px 0 14px; }
+.sec-head { display:flex; align-items:center; gap:14px; margin-bottom:18px; border-bottom:1px solid var(--rule); padding-bottom:10px; }
+.sec-emoji { background:var(--ink); color:#f5f1e8; width:36px; height:36px; display:grid; place-items:center; border-radius:4px; font-size:18px; }
+.sec-title { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; letter-spacing:-0.3px; }
+.sec-count { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); background:var(--tag-bg); padding:3px 10px; border-radius:999px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; }
+.card { background:var(--card-bg); border:1px solid var(--rule); padding:20px 22px 18px; display:flex; flex-direction:column; transition:transform 0.18s ease,box-shadow 0.18s ease; animation:fadeUp 0.5s ease backwards; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px -10px rgba(0,0,0,0.18); }
+.card.headline { grid-column:1/-1; border-left:4px solid var(--accent); padding-left:26px; }
+.card-meta { display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+.ticker { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; letter-spacing:1px; background:var(--accent2); color:#f5f1e8; padding:3px 9px; border-radius:3px; }
+.tag { font-family:'DM Sans',sans-serif; font-size:10px; font-weight:600; letter-spacing:0.6px; padding:3px 10px; border-radius:999px; text-transform:uppercase; background:var(--tag-bg); color:var(--ink); }
+.tag.acq { background:#e8f5e9; color:#2e7d32; }
+.tag.order { background:#e3f2fd; color:#1565c0; }
+.tag.div { background:#fff3e0; color:#e65100; }
+.tag.expand { background:#f3e5f5; color:#7b1fa2; }
+.tag.fund { background:#fce4ec; color:#c62828; }
+.tag.legal { background:#fff8e1; color:#f57f17; }
+.tag.tech { background:#ede7f6; color:#4527a0; }
+.tag.mgmt { background:#e8eaf6; color:#283593; }
+.tag.data { background:#e8f5e9; color:#1b5e20; }
+.tag.alert { background:#ffebee; color:#c62828; }
+.tag.gov { background:#f3e5f5; color:#6a1b9a; }
+.tag.credit { background:#e0f7fa; color:#006064; }
+.date-meta { font-family:'DM Sans',sans-serif; font-size:10.5px; color:var(--muted); letter-spacing:0.5px; margin-left:auto; }
+.card h3 { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; line-height:1.25; margin-bottom:10px; color:var(--ink); }
+.card.headline h3 { font-size:22px; }
+.card p { font-family:'Source Serif 4',serif; font-size:14px; line-height:1.55; color:#3a3a3a; margin-bottom:9px; }
+.num-highlight { font-family:'JetBrains Mono',monospace; font-weight:500; color:var(--accent2); font-size:13.5px; }
+.num-highlight.up { color:#1b5e20; }
+.num-highlight.down { color:#c62828; }
+.sources { margin-top:auto; padding-top:12px; border-top:1px dashed var(--rule); font-family:'DM Sans',sans-serif; font-size:10.5px; color:var(--muted); }
+.sources a { color:var(--accent); text-decoration:underline dotted; margin-right:14px; font-weight:500; }
+.sources a:hover { color:var(--ink); text-decoration:underline; }
+.sources .src-label { font-size:9px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin-right:6px; }
+.connector { background:linear-gradient(135deg,#2c3e50,#34495e); color:#f5f1e8; padding:22px 26px; margin:22px 0; position:relative; border-radius:2px; }
+.connector::before { content:"🔗"; position:absolute; top:14px; right:18px; font-size:22px; opacity:0.4; }
+.connector .ctitle { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f1c40f; font-weight:600; margin-bottom:8px; }
+.connector .cbody { font-family:'Source Serif 4',serif; font-size:13.5px; line-height:1.6; opacity:0.92; }
+.foot { margin-top:56px; padding-top:22px; border-top:4px double var(--ink); text-align:center; font-family:'DM Sans',sans-serif; }
+.foot .ctx { font-family:'Source Serif 4',serif; font-size:13px; color:var(--muted); font-style:italic; margin:12px auto; max-width:760px; line-height:1.55; }
+.foot .scope { font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-top:16px; }
+.foot .signoff { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; margin-top:18px; letter-spacing:0.5px; }
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+.card:nth-child(1) { animation-delay:0.04s; }
+.card:nth-child(2) { animation-delay:0.08s; }
+.card:nth-child(3) { animation-delay:0.12s; }
+.card:nth-child(4) { animation-delay:0.16s; }
+.card:nth-child(5) { animation-delay:0.2s; }
+@media (max-width:700px) { body { padding:18px 18px 40px; } .masthead h1 { font-size:48px; letter-spacing:-1px; } .grid { grid-template-columns:1fr; } .search-wrap { width:100%; } .search-wrap input { width:100%; } .filter-bar { padding:10px 0; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="date-sub">Monday · 4 May – Sunday · 10 May 2026</div>
+  <h1>Market Pulse</h1>
+  <div class="tagline">NSE Corporate Announcements Intelligence Report</div>
+  <div class="ed-info">Master-List Coverage · Filtered from 3,745 NSE filings · Expanded universe (349 tickers)</div>
+</header>
+
+<div class="edition-bar">
+  <div class="stat-pill"><span class="num">15</span><span class="lab">Cards Tracked</span></div>
+  <div class="stat-pill"><span class="num">121</span><span class="lab">Companies w/ Filings</span></div>
+  <div class="stat-pill"><span class="num">₹191Cr</span><span class="lab">Headline Capex</span></div>
+  <div class="stat-pill"><span class="num">4</span><span class="lab">M&A Moves</span></div>
+  <div class="stat-pill"><span class="num">7</span><span class="lab">Trading Days</span></div>
+</div>
+
+<nav class="filter-bar">
+  <button class="filter-btn active" data-tag="all">All</button>
+  <button class="filter-btn" data-tag="expand">Capex / Expansion</button>
+  <button class="filter-btn" data-tag="acq">M&A</button>
+  <button class="filter-btn" data-tag="order">Orders</button>
+  <button class="filter-btn" data-tag="data">Q4 Results</button>
+  <button class="filter-btn" data-tag="credit">Credit Rating</button>
+  <button class="filter-btn" data-tag="alert">Watch / Litigation</button>
+  <div class="search-wrap"><input id="search" type="text" placeholder="Search ticker, theme, keyword…"></div>
+</nav>
+
+<!-- ===== HEADLINE ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">🎯</div>
+    <h2 class="sec-title">Lead Story — Record Year + Brownfield Investment</h2>
+    <span class="sec-count">1 Card</span>
+  </div>
+  <div class="grid">
+
+    <article class="card headline" data-tags="expand data div">
+      <div class="card-meta">
+        <span class="ticker">GRWRHITECH</span>
+        <span class="tag expand">₹191 Cr Capex</span>
+        <span class="tag data">Record FY26</span>
+        <span class="tag div">120% Dividend</span>
+        <span class="date-meta">6 May 2026</span>
+      </div>
+      <h3>Garware Hi-Tech Films delivers record FY26, doubles down with ₹191 Cr Sun Control Film line at Waluj</h3>
+      <p>Garware Hi-Tech Films posted its best-ever annual numbers and immediately committed to brownfield expansion. <span class="num-highlight up">FY26 consolidated revenue ₹2,120 Cr</span>, with full-year PAT <span class="num-highlight up">₹338 Cr</span>. Q4 alone delivered record momentum: revenue <span class="num-highlight up">₹597 Cr (+30.1% QoQ, +8.9% YoY)</span> — the highest quarterly profitability in the company's 90-year history. Board recommended a <span class="num-highlight">final dividend ₹12/share (120% of face value)</span>.</p>
+      <p>On the same day, the Board approved a new Sun Control Film (SCF) lamination line at Waluj, Chhatrapati Sambhajinagar — total investment <span class="num-highlight">₹191 Cr</span> plus taxes, adding <span class="num-highlight">1,200 LSF/yr</span> on top of existing 4,200 LSF/yr base (already at optimum utilisation). Funded entirely through internal accruals; commissioning in 14 months. New facility incorporates advanced robotics and automation.</p>
+      <p>Management's FY27 guidance: revenue growth <span class="num-highlight up">15–20%</span>, EBITDA margin <span class="num-highlight">22–25%</span>, exports >70% of revenue, Value-Added Products >85%. Notably, the company has delivered this record year while absorbing a <span class="num-highlight down">50% US tariff structure</span> on key export products — Q3 FY26 revenue had declined only 1.6% YoY despite tariffs, and Q4 reversed the trend entirely. Monika Garware re-appointed Vice-Chairperson & Joint MD for 5 years (Nov 2026 – Oct 2031).</p>
+      <p style="font-style:italic; color:var(--muted); font-size:13px;">Why it matters: A specialty-films business turning record numbers in spite of crippling tariffs is unusual. The 1,200 LSF capex (≈29% capacity addition) signals management sees consumer-direct demand pull-through from the Garware Application Studio and Garware Home Solutions retail expansion holding up — and isn't waiting for tariff relief to commit.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GRWRHITECH_06052026135237_GHFL_Capacity_addition_Reg_30.pdf" target="_blank">NSE — Capacity Addition</a>
+        <a href="https://www.investywise.com/garware-hi-tech-films-q4-fy26-results-and-capacity-expansion/" target="_blank">FY26 Results Detail</a>
+        <a href="https://scanx.trade/stock-market-news/companies/garware-hi-tech-films-approves-new-lamination-line-project-in-waluj-maharashtra-at-191-crores/39600558" target="_blank">Capex Detail</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== M&A / STRATEGIC INVESTMENTS ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">🤝</div>
+    <h2 class="sec-title">M&A & Strategic Investments</h2>
+    <span class="sec-count">4 Cards</span>
+  </div>
+
+  <div class="connector">
+    <div class="ctitle">Sector Signal — Subsidiary Consolidation Wave</div>
+    <div class="cbody">Four master-list companies moved on group restructuring during the window: Kirloskar Pneumatic took its Systems &amp; Components subsidiary to 100%, Entero Healthcare got MCA fast-track approval merging two pharma distributors, Thyrocare infused fresh equity into its diagnostics subsidiary, and Park Hospitals (Park Mediworld) incorporated a new wholly-owned subsidiary. All four signal mid-cap appetite for simplification of group structure — typically the precursor to either margin expansion, capital recycling, or further bolt-on M&amp;A under the consolidated entity.</div>
+  </div>
+
+  <div class="grid">
+
+    <article class="card" data-tags="acq credit data">
+      <div class="card-meta">
+        <span class="ticker">KIRLPNU</span>
+        <span class="tag acq">100% Acquisition</span>
+        <span class="tag credit">CRISIL Upgrade</span>
+        <span class="date-meta">4–5 May 2026</span>
+      </div>
+      <h3>Kirloskar Pneumatic takes Systems & Components India to 100% for ₹12.55 Cr; CRISIL upgrades to AA-Stable</h3>
+      <p>On 4 May, KPCL completed acquisition of the remaining <span class="num-highlight">44.74% stake</span> in Systems & Components India Private Limited from the existing promoter shareholder for <span class="num-highlight">₹12.55 Cr</span>, taking ownership to <span class="num-highlight">100%</span>. The subsidiary now becomes wholly-owned, effective immediately.</p>
+      <p>Next day, CRISIL upgraded the company's long-term rating from <span class="num-highlight">CRISIL AA-/Positive → CRISIL AA/Stable</span>, with short-term rating reaffirmed at A1+. The rating covers an enhanced facility limit of <span class="num-highlight">₹840 Cr (from ₹636 Cr)</span> — both rating and limit increases reflect sustained operational improvement and a robust financial risk profile.</p>
+      <p>Context: KPCL closed FY26 (per 30 Apr call) with Revenue <span class="num-highlight up">₹706 Cr</span> for Q4 and FY26 net profit <span class="num-highlight up">₹258 Cr</span>; final dividend <span class="num-highlight">₹8.50/share</span> recommended; stock split approved. Market leader in CNG systems (60%+ share) and ammonia refrigeration (70%+ share). Market cap ~₹10,355 Cr; almost debt-free.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/truneshgujar_04052026122612_KPCL_Disclosure.pdf" target="_blank">NSE — Acquisition Disclosure</a>
+        <a href="https://www.investywise.com/kirloskar-pneumatic-full-acquisition-of-subsidiary/" target="_blank">Acquisition Detail</a>
+        <a href="https://www.investywise.com/kirloskar-pneumatic-company-limited-credit-rating-upgrade/" target="_blank">CRISIL Upgrade</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq">
+      <div class="card-meta">
+        <span class="ticker">ENTERO</span>
+        <span class="tag acq">Subsidiary Merger</span>
+        <span class="date-meta">6 May 2026</span>
+      </div>
+      <h3>Entero Healthcare gets MCA fast-track nod to merge Chethana & CPD Pharma into Rada Medisolutions</h3>
+      <p>MCA Southern Region (Chennai) approved on <span class="num-highlight">17 Apr 2026</span> (order received 5 May, disclosed 6 May) the fast-track amalgamation under Section 233 — folding two wholly-owned subsidiaries (<strong>Chethana Pharma Distributors</strong> and <strong>CPD Pharma</strong>) into another subsidiary <strong>Rada Medisolutions</strong>. Effective from appointed date <span class="num-highlight">15 Apr 2025</span>. No new shares issued since all are wholly-owned; transferor entity capital cancelled. Authorised capital of Rada to be enhanced to ₹1.35 Cr post-merger.</p>
+      <p>Rationale: operational efficiencies, scale economies, reduction in overhead and compliance costs, simplification of group structure. All three companies were in pharmaceutical/surgical distribution. Recent operating trajectory remains strong — Q2 FY26 PAT ₹31.6 Cr (+33.78% YoY) on revenue ₹1,571 Cr (+20.78%). Jefferies has the stock at Buy with target ₹1,320. Market cap ₹5,507 Cr; P/E 58.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/ENTERO_06052026192810_SEletter.pdf" target="_blank">NSE Filing — MCA Order</a>
+        <a href="https://www.indiaipo.in/news/detail/mca-approves-fast-track-amalgamation-of-two-entero-healthcare-subsidiaries-with-rada-medisolutions" target="_blank">Merger Detail</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq data div">
+      <div class="card-meta">
+        <span class="ticker">THYROCARE</span>
+        <span class="tag data">FY26 Record</span>
+        <span class="tag acq">Subsidiary Equity</span>
+        <span class="tag div">₹7 Dividend</span>
+        <span class="date-meta">7 May 2026</span>
+      </div>
+      <h3>Thyrocare PAT +81% in FY26; ₹5.5 Cr infused into Think Health Diagnostics, MD re-appointed for 5 years</h3>
+      <p>FY26 consolidated headline numbers: revenue <span class="num-highlight up">₹829 Cr (+21% YoY)</span>, PAT <span class="num-highlight up">₹163 Cr (+81%)</span>. Q4 alone: PAT <span class="num-highlight up">₹49 Cr (+128% YoY)</span>, EBITDA margin <span class="num-highlight">33.71%</span>. Standalone FY26 PAT ₹149 Cr on revenue ₹774 Cr.</p>
+      <p>Board approved up to <span class="num-highlight">₹5.5 Cr equity investment</span> in wholly-owned subsidiary Think Health Diagnostics (filed under "Acquisition" category) — funding for capex, working capital, and an affordable high-volume diagnostics platform. Final dividend <span class="num-highlight">₹7/share</span> recommended; combined with prior interim, total FY26 payout is <span class="num-highlight">₹9.33/share</span> post-bonus.</p>
+      <p>Governance moves: MD & CEO Rahul Franklin Guha re-appointed for a fresh 5-year term (May 2027 onwards); PwC LLP appointed new statutory auditor (succeeding MSKA & Associates); Uday Kadam and Gaurav Verma inducted as Non-Executive Non-Independent Directors. Resignations of Dharmil Sheth and Dr. Dhaval Shah noted. <strong>Earnings call rescheduled</strong> from cancelled 7 May to <span class="num-highlight">12 May 2026, 9:00 AM IST</span>.</p>
+      <p>Operating colour: 250+ specialty SKUs on Phadia platform; first Indian diagnostic chain to achieve 3.43hr average turnaround time; 10,800 active franchisees (+15% YoY); brand ambassador Madhuri Dixit onboarded.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/THYROCARE_07052026201714_Outcomewithoutresults.pdf" target="_blank">NSE — Acquisition Disclosure</a>
+        <a href="https://www.investywise.com/thyrocare-technologies-q4-financial-results-and-leadership-changes/" target="_blank">FY26 Results & Board Actions</a>
+        <a href="https://scanx.trade/stock-market-news/companies/thyrocare-technologies-cancels-q4-fy26-earnings-conference-call-scheduled-for-may-07-2026/39747983" target="_blank">Earnings Call Reschedule</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq">
+      <div class="card-meta">
+        <span class="ticker">PARKHOSPS</span>
+        <span class="tag acq">New Subsidiary</span>
+        <span class="date-meta">4 May 2026</span>
+      </div>
+      <h3>Park Mediworld incorporates new wholly-owned subsidiary</h3>
+      <p>Park Hospitals (Park Mediworld 2025) disclosed the incorporation of a new wholly-owned subsidiary on 4 May under SEBI Reg 30. The specifics — name, business scope, capital structure — are in the NSE filing PDF. The pattern fits with mid-cap healthcare chains setting up SPVs for specific facility/geography expansions (similar to Rainbow's Gurugram expansion playbook).</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/PARKMEDIWORLD2025_04052026170650_Intimation-_Incorporation_of_Subsidiary.pdf" target="_blank">NSE — Subsidiary Incorporation</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== CAPACITY EXPANSION ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">🏭</div>
+    <h2 class="sec-title">Capacity Expansion</h2>
+    <span class="sec-count">2 Cards</span>
+  </div>
+  <div class="grid">
+
+    <article class="card" data-tags="expand">
+      <div class="card-meta">
+        <span class="ticker">RAINBOW</span>
+        <span class="tag expand">NCR Greenfield</span>
+        <span class="date-meta">4 May 2026</span>
+      </div>
+      <h3>Rainbow Children's Medicare formalises ~400-bed NCR expansion across Gurugram Sectors 44 & 56</h3>
+      <p>Filed update on the previously announced Delhi-NCR expansion: two new greenfield hospitals to be set up at Gurugram on HSVP-allotted land parcels — <span class="num-highlight">~9,391 sq m (2.32 acres) at Sector 44</span> for a ~300-bed pediatric tertiary/quaternary hub, and <span class="num-highlight">~4,987 sq m (1.23 acres) at Sector 56</span> for a ~125-bed facility. The Sector 44 build will be Rainbow's largest single-facility addition outside Hyderabad.</p>
+      <p>Funding stance is notable: management has committed to <span class="num-highlight">no incremental debt</span> for expansion. The company entered FY26 with a net cash position ~₹495 Cr per disclosures. Q3 FY26 already showed strength — Revenue <span class="num-highlight up">₹445 Cr (+12% YoY)</span>, EBITDA <span class="num-highlight">₹147 Cr</span> at 33% margin. Operating leverage kicks in materially once occupancy crosses 55% at new facilities. ICICI Direct target ₹1,650 (post Jan-26 note).</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/RAINBOWUSER_04052026155816_Intimation.pdf" target="_blank">NSE — Capacity Addition</a>
+        <a href="https://www.businesstoday.in/latest/corporate/story/rainbow-childrens-hospital-takes-its-paediatric-model-to-north-india-518395-2026-02-27" target="_blank">Expansion Strategy</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="expand data">
+      <div class="card-meta">
+        <span class="ticker">NRBBEARING</span>
+        <span class="tag expand">Capacity Addition</span>
+        <span class="tag data">Q4 Outcome</span>
+        <span class="date-meta">7 May 2026</span>
+      </div>
+      <h3>NRB Bearings Board flags capacity addition alongside Q4 results outcome</h3>
+      <p>NRB Bearings — a master-list bearings supplier to OEMs — bundled a capacity addition disclosure with its Q4 board outcome on 7 May (filed late evening). The filing carries Reg 30 specifics on the addition; readers should consult the PDF for project size, location, and timelines. Bearing industry context: capex announcements from this segment over recent quarters indicate OEM pull-through from CV, two-wheeler, and EV programs is hardening order books.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/NRBBEARING1_07052026221230_NRB_Outcome_of_the_Board_Meeting_May_07_2026_for_upload.pdf" target="_blank">NSE — Board Outcome + Capacity</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== ORDER WINS ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">📜</div>
+    <h2 class="sec-title">Order Wins</h2>
+    <span class="sec-count">3 Cards</span>
+  </div>
+  <div class="grid">
+
+    <article class="card" data-tags="order">
+      <div class="card-meta">
+        <span class="ticker">HFCL</span>
+        <span class="tag order">Order Win</span>
+        <span class="date-meta">4 May 2026</span>
+      </div>
+      <h3>HFCL adds to telecom order book momentum; backdrop is the ₹10,159 Cr March mega-order</h3>
+      <p>HFCL filed a fresh order intimation on 4 May (Reg 30, "Bagging/Receiving of orders/contracts"). Comes against a backdrop of accelerating order intake — the company's <span class="num-highlight up">cumulative order book recently touched ₹21,206 Cr (all-time high)</span> following a <span class="num-highlight">$1.1 bn (₹10,159 Cr) global optical fiber contract</span> awarded in March 2026 (largest in company history, running till 2030). Stock has roughly doubled in 30 days; <span class="num-highlight up">52-week high ₹146.8</span> recently hit.</p>
+      <p>Wider thesis: HFCL is transitioning beyond pure cable/OFC into <strong>defence electronics</strong> (artillery fuzes, military wire harnesses for T-72) — defence + aerospace order book now ~₹2,230 Cr. Promoter group recently committed <span class="num-highlight">₹555 Cr via convertible warrants at ₹74</span> to fund backward integration capex. Capacity scaling to 42.36 mn fiber km by June 2026. EU tariff advantage gives structural pricing edge over peers.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/AHMED_04052026133039_HFCL_STX_Announcement_04052026.pdf" target="_blank">NSE — Order Disclosure</a>
+        <a href="https://www.indmoney.com/blog/stocks/hfcl-ltd-the-company-powering-your-internet-is-now-entering-defence" target="_blank">Order Book & Strategy</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta">
+        <span class="ticker">DEEPINDS</span>
+        <span class="tag order">Order Win</span>
+        <span class="date-meta">7 May 2026</span>
+      </div>
+      <h3>Deep Industries flags new order receipt</h3>
+      <p>Deep Industries (oilfield services / natural gas value chain — gas compression, drilling, workover, dehydration) filed an order intimation on 7 May under Reg 30. Project specifics, contract size, and customer details are in the linked NSE PDF. The category by itself confirms material contract receipt warranting market disclosure.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/DEEPINDS_07052026160226_Intimation.pdf" target="_blank">NSE — Order Disclosure</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta">
+        <span class="ticker">DSSL</span>
+        <span class="tag order">Order Win</span>
+        <span class="date-meta">4 May 2026</span>
+      </div>
+      <h3>Dynacons Systems & Solutions intimates fresh order — disclosure also to RBI</h3>
+      <p>Dynacons Systems & Solutions (IT infrastructure, system integration) filed an order intimation on 4 May, noting that the disclosure is being filed to both stock exchanges and the RBI — suggesting a regulated financial-sector counterparty (typically banking IT infrastructure deals fall in this disclosure pattern). Details in linked PDF.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/DSSL_04052026185431_INTIMATIONTOSTOCKEXCHANGESRBI.pdf" target="_blank">NSE — Order Disclosure (also to RBI)</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== CREDIT RATING ACTIONS ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">📈</div>
+    <h2 class="sec-title">Credit Rating Actions</h2>
+    <span class="sec-count">2 Cards</span>
+  </div>
+  <div class="grid">
+
+    <article class="card" data-tags="credit">
+      <div class="card-meta">
+        <span class="ticker">SYRMA</span>
+        <span class="tag credit">New Rating Filed</span>
+        <span class="date-meta">5 May 2026</span>
+      </div>
+      <h3>Syrma SGS files credit rating intimation</h3>
+      <p>Syrma SGS Technology (EMS — electronic manufacturing services) filed a credit rating intimation on 5 May. Operating context is strong — Syrma is a key beneficiary of the India electronics manufacturing push and PLI scheme, with growing presence in automotive electronics, industrial, healthcare, and consumer segments. Details of the rating action are in the linked PDF.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/SYRMA_05052026123043_SEIntimationCrRating050526.pdf" target="_blank">NSE — Credit Rating</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="credit">
+      <div class="card-meta">
+        <span class="ticker">PARAGMILK</span>
+        <span class="tag credit">Rating Revision</span>
+        <span class="date-meta">7 May 2026</span>
+      </div>
+      <h3>Parag Milk Foods receives credit rating revision</h3>
+      <p>Parag Milk Foods filed a credit rating revision intimation on 7 May. The dairy/value-added-dairy company has been working through margin pressure from raw milk procurement cost cycles; any rating direction (positive or negative) is material context for the stock. Specifics in linked PDF.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/PARAGMILK_07052026191108_Intimation.pdf" target="_blank">NSE — Rating Revision</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== WATCH LIST / LITIGATIONS / CLARIFICATIONS ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">⚠️</div>
+    <h2 class="sec-title">Watch List — Litigations, Regulatory Actions, Clarifications</h2>
+    <span class="sec-count">3 Cards</span>
+  </div>
+
+  <div class="connector">
+    <div class="ctitle">Pattern — Regulatory Heat Picking Up in Mid-Caps</div>
+    <div class="cbody">Six master-list companies drew regulatory-level scrutiny within the window: Rainbow's GST appeal was disallowed, Bata India disclosed a pending material litigation, 5Paisa / Indus Towers (INDGN) / Urban Company faced "Actions initiated or orders passed", Spectrum issued a price-movement clarification, and Piccadily Agro filed a reply to NSE clarification on financial results. Most are not yet financially material individually, but a cluster like this is worth tracking — GST tribunal timelines and any escalation could move provisions.</div>
+  </div>
+
+  <div class="grid">
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta">
+        <span class="ticker">RAINBOW</span>
+        <span class="tag alert">GST Appeal</span>
+        <span class="date-meta">8 May 2026</span>
+      </div>
+      <h3>Rainbow Children's Medicare GST demand appeal disallowed; will pursue further legal recourse</h3>
+      <p>Rainbow disclosed that the appeal it had filed against a <span class="num-highlight">GST demand notice under Section 74(5) CGST Act</span> (issued by DGGI Bengaluru Zonal Unit) was disallowed by the <strong>Principal Commissioner of Customs & Central Tax (Appeals-1)</strong>, with order received by post on 7 May. The company is now preparing a further appeal before the appropriate appellate authority on subject-matter-expert advice. No payment/compensation/penalty made yet, and management states no material impact on financial position or operations at this stage. Action does not involve KMP, promoter, or ultimate person in control.</p>
+      <p style="font-style:italic; color:var(--muted); font-size:13px;">Why it matters: Healthcare GST exposure (input-credit eligibility on inpatient care, room-rent thresholds) has been a recurring industry-wide issue. Worth tracking the next forum's view; if the matter goes to the GST Appellate Tribunal, timelines could stretch 12-24 months.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/RAINBOWUSER_08052026170524_Intimation.pdf" target="_blank">NSE — Litigation Disclosure</a>
+        <a href="https://scanx.trade/stock-market-news/companies/rainbow-children-s-medicare-s-gst-demand-appeal-disallowed-company-to-pursue-further-legal-recourse/39774854" target="_blank">Disclosure Detail</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta">
+        <span class="ticker">BATAINDIA</span>
+        <span class="tag alert">Litigation</span>
+        <span class="date-meta">8 May 2026</span>
+      </div>
+      <h3>Bata India intimates pending litigation/dispute under Reg 30</h3>
+      <p>Bata India filed a "Pendency of Litigation(s)/dispute(s) or outcome impacting the Company" disclosure on 8 May. Filed under SEBI's revised materiality framework (Reg 30 read with the 30 Jan 2026 SEBI Master Circular), this category is triggered when the company itself assesses the matter as material. Specifics in linked PDF — recommended reading before tomorrow's open if Bata is in portfolio.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/BATAINDIA_08052026164207_SE_Intimation_Litigation.pdf" target="_blank">NSE — Litigation Disclosure</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert gov">
+      <div class="card-meta">
+        <span class="ticker">5PAISA · INDGN · URBANCO · BHAGYANGR · SPECTRUM · PICCADIL</span>
+        <span class="tag alert">Regulatory Cluster</span>
+        <span class="date-meta">1–8 May 2026</span>
+      </div>
+      <h3>Cluster: Show-cause notices, price-movement clarifications, and financial-results clarifications</h3>
+      <p>Six master-list names received regulatory/exchange queries within the window. <strong>5Paisa Capital</strong> (4 May), <strong>Indus Towers / INDGN</strong> (5 May), and <strong>Urban Company / URBANCO</strong> (5 May, SCN issued) each filed under "Action(s) initiated or orders passed". <strong>Spectrum Electrical</strong> filed a clarification on price movement (5 May, plus a second placeholder URL on a later date). <strong>Bhagyanagar India</strong> received another "Clarification – Financial Results" (no specific date, URL placeholder) — the third such request in a month. <strong>Piccadily Agro</strong> filed a "Reply to Clarification – Financial Results" on 1 May. None individually appears to be a market-moving event, but the cluster volume is unusual.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/PICCADIL_01052026105414_PAIL_Outcome_-_converted.pdf" target="_blank">PICCADIL Reply</a>
+        <a href="https://nsearchives.nseindia.com/corporate/5PAISA_04052026144110_EXINTIMATION.pdf" target="_blank">5PAISA Action</a>
+        <a href="https://nsearchives.nseindia.com/corporate/INDGN_05052026161842_Intimation_Reg30.pdf" target="_blank">INDGN Action</a>
+        <a href="https://nsearchives.nseindia.com/corporate/SPECTRUM_05052026164434_SPECTRUM_Clarification_on_price_movement_in_the_shares.pdf" target="_blank">SPECTRUM Clarification</a>
+        <a href="https://nsearchives.nseindia.com/corporate/URBANCO_05052026195720_SCN_UC_05052026.pdf" target="_blank">URBANCO SCN</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== ALREADY-COVERED IN PRIOR REPORTS ===== -->
+<section class="section">
+  <div class="sec-head">
+    <div class="sec-emoji">🔁</div>
+    <h2 class="sec-title">Already Covered in Prior Reports — Carried for Audit Trail</h2>
+    <span class="sec-count">3 Mentions</span>
+  </div>
+  <div class="grid">
+
+    <article class="card" data-tags="expand acq order">
+      <div class="card-meta">
+        <span class="ticker">GINNIFILA · PAKKA · REMSONSIND</span>
+        <span class="tag expand">Already Covered</span>
+        <span class="date-meta">5–8 May 2026</span>
+      </div>
+      <h3>Overlap with 1–6 May and 7–8 May editions — no fresh material change</h3>
+      <p>Three master-list names re-appear with the same filings already detailed in earlier reports under the same broadcast window: <strong>Ginni Filaments'</strong> ₹132 Cr four-pronged expansion (5 May; covered in the 1-6 May Market Pulse), <strong>Pakka's</strong> EGM-approved ₹130 Cr Jagriti Project raise (5 May; covered in 1-6 May report), and <strong>Remsons Industries'</strong> order win plus postal-ballot resolution (8 May; covered in the 7-8 May report). The current Excel re-broadcasts these into the 4-10 May window, but no new substantive update has been filed.</p>
+      <div class="sources">
+        <span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GINNIFILA1_05052026174633_capacity_addition.pdf" target="_blank">GINNIFILA Capex</a>
+        <a href="https://nsearchives.nseindia.com/corporate/yashpakka_05052026221812_EGM_Proceedings_05052026.pdf" target="_blank">PAKKA EGM</a>
+        <a href="https://nsearchives.nseindia.com/corporate/REMSONSIND_08052026123618_SE.pdf" target="_blank">REMSONSIND Order</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="ctx">Coverage scope: expanded master list of 349 companies (279 Non-SME + 70 SME). Period: 4-10 May 2026 broadcast window (overlaps with prior 1-6 May and 7-8 May reports on May 4-8). Of 3,745 NSE filings in this period, 380 belonged to master-list tickers (across 121 companies); 15 cards above represent the material core after excluding 31 newspaper publications, 28 routine SAST disclosures, and routine compliance noise. SME segment filings continue to be missing from source NSE feed.</div>
+  <div class="scope">Coverage Period · 4 May 2026 → 10 May 2026 · Cards: 15 · Companies: 121 · Filings Reviewed: 3,745</div>
+  <div class="signoff">Presented by Nova Orbit</div>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.card');
+const sections = document.querySelectorAll('.section');
+const search = document.getElementById('search');
+function applyFilters() {
+  const activeTag = document.querySelector('.filter-btn.active').dataset.tag;
+  const term = (search.value||'').trim().toLowerCase();
+  cards.forEach(card => {
+    const tags = (card.dataset.tags||'').split(' ');
+    const text = card.innerText.toLowerCase();
+    const tagMatch = activeTag==='all' || tags.includes(activeTag);
+    const textMatch = !term || text.includes(term);
+    card.style.display = (tagMatch && textMatch) ? '' : 'none';
+  });
+  sections.forEach(sec => {
+    const visible = Array.from(sec.querySelectorAll('.card')).some(c => c.style.display !== 'none');
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+buttons.forEach(b => b.addEventListener('click', () => {
+  buttons.forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  applyFilters();
+}));
+search.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>
