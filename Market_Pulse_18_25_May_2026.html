@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Pulse — 18–25 May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1a1a1a; --paper:#faf8f4; --accent:#c0392b; --accent2:#2c3e50; --rule:#d4c5a9; --muted:#7a7062; --tag-bg:#f0ece4; --card-bg:#fff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--paper); color:var(--ink); font-family:'Source Serif 4',Georgia,serif; line-height:1.55; padding:28px 40px 60px; max-width:1320px; margin:0 auto; }
+.masthead { text-align:center; border-bottom:4px double var(--ink); padding-bottom:18px; }
+.masthead .date-sub { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.masthead h1 { font-family:'Playfair Display',serif; font-size:76px; font-weight:900; letter-spacing:-2px; line-height:1; }
+.masthead .tagline { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+.masthead .ed-info { font-family:'Playfair Display',serif; font-style:italic; font-size:14px; color:var(--muted); margin-top:8px; }
+.edition-bar { background:var(--ink); color:#f5f1e8; display:flex; justify-content:center; gap:34px; padding:14px 20px; flex-wrap:wrap; }
+.stat-pill { display:flex; flex-direction:column; align-items:center; font-family:'DM Sans',sans-serif; }
+.stat-pill .num { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:#f5f1e8; }
+.stat-pill .lab { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:#b8ac96; margin-top:2px; }
+.filter-bar { position:sticky; top:0; background:var(--paper); border-bottom:1px solid var(--rule); padding:14px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; z-index:10; margin-bottom:24px; }
+.filter-btn { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.5px; padding:6px 14px; border:1px solid var(--rule); background:transparent; color:var(--ink); border-radius:999px; cursor:pointer; transition:all 0.15s ease; text-transform:uppercase; }
+.filter-btn:hover { border-color:var(--ink); }
+.filter-btn.active { background:var(--ink); color:#f5f1e8; border-color:var(--ink); }
+.search-wrap { margin-left:auto; }
+.search-wrap input { font-family:'DM Sans',sans-serif; font-size:12px; padding:6px 12px; border:1px solid var(--rule); background:#fff; border-radius:999px; width:220px; outline:none; color:var(--ink); }
+.search-wrap input:focus { border-color:var(--ink); }
+.section { margin:36px 0 14px; }
+.sec-head { display:flex; align-items:center; gap:14px; margin-bottom:18px; border-bottom:1px solid var(--rule); padding-bottom:10px; }
+.sec-emoji { background:var(--ink); color:#f5f1e8; width:36px; height:36px; display:grid; place-items:center; border-radius:4px; font-size:18px; }
+.sec-title { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; letter-spacing:-0.3px; }
+.sec-count { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); background:var(--tag-bg); padding:3px 10px; border-radius:999px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; }
+.card { background:var(--card-bg); border:1px solid var(--rule); padding:18px 20px 16px; display:flex; flex-direction:column; transition:transform 0.18s ease,box-shadow 0.18s ease; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px -10px rgba(0,0,0,0.18); }
+.card.headline { grid-column:1/-1; border-left:4px solid var(--accent); padding-left:26px; }
+.card-meta { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.ticker { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; letter-spacing:1px; background:var(--accent2); color:#f5f1e8; padding:3px 9px; border-radius:3px; }
+.tag { font-family:'DM Sans',sans-serif; font-size:9.5px; font-weight:600; letter-spacing:0.5px; padding:3px 9px; border-radius:999px; text-transform:uppercase; background:var(--tag-bg); color:var(--ink); }
+.tag.acq { background:#e8f5e9; color:#2e7d32; }
+.tag.order { background:#e3f2fd; color:#1565c0; }
+.tag.div { background:#fff3e0; color:#e65100; }
+.tag.expand { background:#f3e5f5; color:#7b1fa2; }
+.tag.fund { background:#fce4ec; color:#c62828; }
+.tag.legal { background:#fff8e1; color:#f57f17; }
+.tag.tech { background:#ede7f6; color:#4527a0; }
+.tag.mgmt { background:#e8eaf6; color:#283593; }
+.tag.data { background:#e8f5e9; color:#1b5e20; }
+.tag.alert { background:#ffebee; color:#c62828; }
+.tag.gov { background:#f3e5f5; color:#6a1b9a; }
+.tag.credit { background:#e0f7fa; color:#006064; }
+.tag.q4 { background:#f1f8e9; color:#33691e; }
+.tag.buyback { background:#fff9c4; color:#827717; }
+.date-meta { font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); letter-spacing:0.5px; margin-left:auto; }
+.card h3 { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; line-height:1.25; margin-bottom:9px; color:var(--ink); }
+.card.headline h3 { font-size:22px; }
+.card p { font-family:'Source Serif 4',serif; font-size:13.5px; line-height:1.55; color:#3a3a3a; margin-bottom:8px; }
+.num-highlight { font-family:'JetBrains Mono',monospace; font-weight:500; color:var(--accent2); font-size:13px; }
+.num-highlight.up { color:#1b5e20; }
+.num-highlight.down { color:#c62828; }
+.sources { margin-top:auto; padding-top:10px; border-top:1px dashed var(--rule); font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); }
+.sources a { color:var(--accent); text-decoration:underline dotted; margin-right:12px; font-weight:500; }
+.sources a:hover { color:var(--ink); }
+.sources .src-label { font-size:8.5px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin-right:5px; }
+.connector { background:linear-gradient(135deg,#2c3e50,#34495e); color:#f5f1e8; padding:20px 24px; margin:20px 0; position:relative; border-radius:2px; }
+.connector::before { content:"🔗"; position:absolute; top:14px; right:18px; font-size:22px; opacity:0.4; }
+.connector .ctitle { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f1c40f; font-weight:600; margin-bottom:8px; }
+.connector .cbody { font-family:'Source Serif 4',serif; font-size:13.5px; line-height:1.6; opacity:0.92; }
+.div-table { background:#fff; border:1px solid var(--rule); padding:20px 22px; grid-column:1/-1; }
+.div-table table { width:100%; border-collapse:collapse; font-family:'DM Sans',sans-serif; font-size:12px; }
+.div-table th { text-align:left; padding:8px 10px; border-bottom:2px solid var(--ink); font-weight:600; letter-spacing:0.5px; text-transform:uppercase; font-size:10px; color:var(--muted); }
+.div-table td { padding:6px 10px; border-bottom:1px solid var(--rule); }
+.div-table td:first-child { font-family:'JetBrains Mono',monospace; font-weight:500; color:var(--accent2); }
+.foot { margin-top:56px; padding-top:22px; border-top:4px double var(--ink); text-align:center; font-family:'DM Sans',sans-serif; }
+.foot .ctx { font-family:'Source Serif 4',serif; font-size:13px; color:var(--muted); font-style:italic; margin:12px auto; max-width:780px; line-height:1.55; }
+.foot .scope { font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-top:16px; }
+.foot .signoff { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; margin-top:18px; letter-spacing:0.5px; }
+@media (max-width:700px) { body { padding:18px 18px 40px; } .masthead h1 { font-size:46px; letter-spacing:-1px; } .grid { grid-template-columns:1fr; } .search-wrap { width:100%; } .search-wrap input { width:100%; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="date-sub">Monday · 18 May – Monday · 25 May 2026</div>
+  <h1>Market Pulse</h1>
+  <div class="tagline">NSE Corporate Announcements Intelligence Report</div>
+  <div class="ed-info">Master-List Coverage · Filtered from 6,197 NSE filings · 349-ticker universe</div>
+</header>
+
+<div class="edition-bar">
+  <div class="stat-pill"><span class="num">70+</span><span class="lab">Cards Tracked</span></div>
+  <div class="stat-pill"><span class="num">186</span><span class="lab">Companies</span></div>
+  <div class="stat-pill"><span class="num">81</span><span class="lab">Q4 Outcomes</span></div>
+  <div class="stat-pill"><span class="num">31</span><span class="lab">Dividends</span></div>
+  <div class="stat-pill"><span class="num">3</span><span class="lab">Buybacks</span></div>
+  <div class="stat-pill"><span class="num">₹209Cr</span><span class="lab">Top Order</span></div>
+</div>
+
+<nav class="filter-bar">
+  <button class="filter-btn active" data-tag="all">All</button>
+  <button class="filter-btn" data-tag="order">Orders</button>
+  <button class="filter-btn" data-tag="acq">M&A</button>
+  <button class="filter-btn" data-tag="buyback">Buyback / Capital</button>
+  <button class="filter-btn" data-tag="expand">Capex</button>
+  <button class="filter-btn" data-tag="q4">Q4 Results</button>
+  <button class="filter-btn" data-tag="div">Dividend</button>
+  <button class="filter-btn" data-tag="credit">Credit Rating</button>
+  <button class="filter-btn" data-tag="alert">Watch / Litigation</button>
+  <button class="filter-btn" data-tag="gov">Governance</button>
+  <div class="search-wrap"><input id="search" type="text" placeholder="Search ticker, theme…"></div>
+</nav>
+
+<!-- HEADLINE -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🎯</div><h2 class="sec-title">Lead Story — Marquee Order Win</h2><span class="sec-count">1 Card</span></div>
+  <div class="grid">
+    <article class="card headline" data-tags="order">
+      <div class="card-meta"><span class="ticker">MARINE</span><span class="tag order">₹208.72 Cr Order</span><span class="date-meta">18 May 2026</span></div>
+      <h3>Marine Electricals bags ₹208.72 Cr twin order from Adani Infra & Udupi Cochin Shipyard — ~25% of annual revenue in a single day</h3>
+      <p>Marine Electricals (India) — one of India's largest LV/MV switchgear makers, Tier-1 electrical supplier to the Indian Navy and global shipyards — announced orders worth <span class="num-highlight">₹208.72 Cr (ex-taxes)</span> on 18 May. Two contracts: a <strong>power distribution system for Adani Infra</strong> (12-14 month delivery) and an <strong>Alarm Monitoring System for Udupi Cochin Shipyard</strong> (24 month delivery). No related-party involvement.</p>
+      <p>Scale context: against FY-trailing revenue of ~<span class="num-highlight">₹850 Cr</span>, this single-day award is roughly a quarter of annual revenue and meaningfully lifts order-book visibility. The company has a 50% share in its electrical segment, 68.2% promoter holding, and has compounded profit at <span class="num-highlight up">45.9% CAGR over 5 years</span>. Recent order momentum has been strong (₹284 Cr in data-centre/marine in earlier weeks, ₹70.86 Cr from Princeton Digital + C-Torq in late April). Watch item: high debtor days (~157) mean working-capital discipline as the book scales is the key execution risk.</p>
+      <p style="font-style:italic; color:var(--muted); font-size:13px;">Why it matters: the Adani Infra power-distribution award signals data-centre / infrastructure electrical demand, while the Cochin Shipyard alarm-monitoring order reinforces the defence-shipbuilding moat. Two structurally different demand drivers in one filing.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/MARINE_18052026130433_Signed_Regulation_30_208cr.pdf" target="_blank">NSE — Order Disclosure</a>
+        <a href="https://www.businessupturn.com/business/marine-electricals-secures-rs-208-72-crore-orders-from-adani-infra-and-udupi-cochin-shipyard/" target="_blank">Order Detail</a>
+        <a href="https://www.screener.in/company/MARINE/consolidated/" target="_blank">Screener</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ORDERS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📜</div><h2 class="sec-title">Order Wins</h2><span class="sec-count">2 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">REMSONSIND</span><span class="tag order">Order Awarded</span><span class="tag div">Dividend</span><span class="date-meta">19, 22 May 2026</span></div>
+      <h3>Remsons Industries logs another order ("Awarding of orders/contracts") + final dividend</h3>
+      <p>Remsons filed an "Awarding of order(s)/contract(s)" disclosure on 19 May — its second order-related filing in as many weeks (after the 8 May win covered earlier). Continues the auto-component maker's strong contract rhythm anchored by the ₹300 Cr Stellantis programme and ₹60 Cr CV-OEM gear-shifter contract. Final dividend filed 22 May alongside FY26 results. FY26 revenue target ₹900 Cr; postal-ballot-approved ₹200 Cr borrowing headroom now in place for capacity build.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/REMSONSIND_19052026_ORDER.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">REFEX</span><span class="tag order">New Order</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Refex Industries logs another order win — third in three weeks</h3>
+      <p>Refex Industries filed another "Bagging/Receiving of orders/contracts" disclosure on 20 May, continuing the cadence after the ₹36.5 Cr Navratna steel-PSU order on 13 May and the ₹70.2 Cr win in early April. The ash-handling / industrial-logistics specialist (also refrigerant gases, power trading, EV mobility via subsidiaries) keeps adding to order-book visibility. Specifics in linked PDF; the rhythm of PSU-anchored wins is the key positive read-through.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/REFEX2002_20052026_RIL_Order_20052026_sd.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- M&A -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🤝</div><h2 class="sec-title">M&A & Strategic Investments</h2><span class="sec-count">4 Cards</span></div>
+  <div class="connector">
+    <div class="ctitle">Sector Signal — Healthcare Roll-up Acceleration</div>
+    <div class="cbody">Three hospital chains in the master list moved on inorganic growth in the same week: HCG (cancer care) divested its non-core fertility business while adding a Nagpur cancer institute and North Bangalore capacity; Park Hospitals announced two acquisitions (HealPlus, plus a "V3" target); and earlier-window Entero/Rainbow activity continues. India's listed hospital space is in active consolidation — buyers are pruning non-core verticals (HCG's Milann exit) while bolting on geography-specific assets.</div>
+  </div>
+  <div class="grid">
+    <article class="card" data-tags="acq expand q4">
+      <div class="card-meta"><span class="ticker">HCG</span><span class="tag acq">SPA Divestment</span><span class="tag expand">North Bangalore</span><span class="tag q4">Q4 FY26</span><span class="date-meta">19 May 2026</span></div>
+      <h3>HealthCare Global: fertility-business divestment + North Bangalore cancer centre + Q4 results in one board sitting</h3>
+      <p>A dense corporate-action day (16 filings). HCG's Board on 19 May approved: (1) <strong>divestment of its entire stake in BACC Health Care (the "Milann" fertility brand)</strong> to Inviga Healthcare Fund for <span class="num-highlight">₹37.64 Cr</span> — a related-party deal (Inviga controlled by promoter Dr B.S. Ajaikumar), arm's-length valuation, closing in 4-5 weeks; BACC was 4.45% of standalone revenue (₹60.45 Cr FY26); (2) a <strong>new North Bangalore cancer centre</strong> (capacity addition); and (3) Q4/FY26 results — consol revenue <span class="num-highlight up">₹441 Cr (vs ₹364 Cr)</span>, consol PAT <span class="num-highlight up">₹8.37 Cr (vs ₹5.99 Cr)</span>. Strategic logic: prune non-core (fertility) to concentrate capital on the core oncology network, now under KKR majority control.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/HCG_19052026_Stock_Exchange_Intimation_Execution_of_SPA.pdf" target="_blank">NSE — SPA (Divestment)</a>
+        <a href="https://nsearchives.nseindia.com/corporate/HCG_19052026_SE_Intimation_19_May_2026_North_Bangalore.pdf" target="_blank">NSE — North Bangalore Capacity</a>
+        <a href="https://scanx.trade/stock-market-news/companies/hcg-fy26-net-profit-rises-to-2-278-lakh/40762432" target="_blank">Divestment & Q4 Detail</a>
+      </div>
+    </article>
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">PARKHOSPS</span><span class="tag acq">Twin Acquisitions</span><span class="date-meta">20, 25 May 2026</span></div>
+      <h3>Park Mediworld announces two acquisitions — "HealPlus" (20 May) and "V3" (25 May)</h3>
+      <p>Park Hospitals (Park Mediworld) filed two separate "Acquisition" disclosures during the window — one referencing <strong>HealPlus</strong> on 20 May and another referencing a <strong>"V3"</strong> target on 25 May. Following its new-subsidiary incorporation earlier this month, the chain is in active inorganic-expansion mode. Deal sizes, target geographies, and bed counts are in the respective PDFs — both worth reading for the hospital network's growth runway. Auditor change also filed 15 May.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/PARKMEDIWORLD2025_20052026_healplus200526.pdf" target="_blank">NSE — HealPlus Acquisition</a>
+        <a href="https://nsearchives.nseindia.com/corporate/PARKMEDIWORLD2025_25052026_V3250526.pdf" target="_blank">NSE — V3 Acquisition</a>
+      </div>
+    </article>
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">ENTERO</span><span class="tag acq">Acquisition</span><span class="tag gov">Mgmt Changes</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Entero Healthcare announces fresh acquisition via board outcome</h3>
+      <p>Entero Healthcare (pharma distribution platform) filed a new "Acquisition" disclosure on 25 May via board outcome — its second M&A move in a month after the MCA-approved subsidiary merger covered earlier. The roll-up distributor continues consolidating regional pharma distributors; the board outcome PDF carries the target, consideration, and rationale. Three management-change filings also during the window. Recent: Q2 PAT +33.78% to ₹31.6 Cr; Jefferies Buy, target ₹1,320.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/ENTERO_25052026_BMoutcomesd.pdf" target="_blank">NSE — Board Outcome (Acquisition)</a>
+      </div>
+    </article>
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">GUJTHEM · BLISSGVS · ADVAIT</span><span class="tag acq">SPA / MoU Cluster</span><span class="date-meta">19-23 May 2026</span></div>
+      <h3>More strategic agreements: Gujarat Themis SPA, Bliss GVS agreement, Advait MoUs</h3>
+      <p><strong>Gujarat Themis Biosyn</strong> (GUJTHEM) filed a Share Purchase Agreement disclosure on 22 May (Reg30 SPA). <strong>Bliss GVS Pharma</strong> (BLISSGVS) filed an "Agreements" board outcome on 23 May (followed by an open-offer public announcement on 25 May — see Capital Actions). <strong>Advait Energy Transitions</strong> (ADVAIT) filed an "Agreements / MoUs" disclosure on 19 May. Each represents inorganic/partnership activity; specifics in the respective PDFs.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GUJTHEM_22052026_Reg30SPA22052026.pdf" target="_blank">GUJTHEM SPA</a>
+        <a href="https://nsearchives.nseindia.com/corporate/BLISSGVS_23052026_Outcome_of_BM.pdf" target="_blank">BLISSGVS Agreement</a>
+        <a href="https://nsearchives.nseindia.com/corporate/ADVAIT_19052026_SE_MoU_s.pdf" target="_blank">ADVAIT MoU</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- BUYBACKS & CAPITAL ACTIONS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">💸</div><h2 class="sec-title">Buybacks & Capital Actions</h2><span class="sec-count">4 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="buyback q4">
+      <div class="card-meta"><span class="ticker">CMSINFO</span><span class="tag buyback">₹167.93 Cr Buyback</span><span class="date-meta">18, 25 May 2026</span></div>
+      <h3>CMS Info Systems launches ₹167.93 Cr tender buyback at ₹340/share</h3>
+      <p>CMS Info Systems approved a buyback of <span class="num-highlight">49,39,126 equity shares (3% of capital) at ₹340/share</span>, aggregate up to <span class="num-highlight">₹167.93 Cr</span>, via tender route — board approved 14 May, public announcement 18 May, record date <span class="num-highlight">22 May</span>. At the time the CMP (~₹303-324) implied a meaningful premium to market. The cash-logistics leader paired this with FY26 results showing a quarterly services-revenue milestone and EBITDA-margin expansion. This is a capital-return signal — buyback alongside dividends — from a cash-generative business covering ~97% of India's districts.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/CMSINFO_18052026_Binder2.pdf" target="_blank">NSE — Buyback PA</a>
+        <a href="https://www.multibagg.ai/market-pulse/articles/cms-info-systems-buyback-2026-cmp68er36hpkbt70jpob3bmei" target="_blank">Buyback Detail</a>
+      </div>
+    </article>
+    <article class="card" data-tags="buyback q4 div">
+      <div class="card-meta"><span class="ticker">GANDHITUBE</span><span class="tag buyback">Buyback Approved</span><span class="tag div">Dividend</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Gandhi Special Tubes approves buyback + FY26 results + dividend on 25 May</h3>
+      <p>Gandhi Special Tubes (seamless & welded steel tubes for auto/hydraulics/refrigeration) held its board on 25 May approving FY26 audited results, a final dividend, <strong>and</strong> a share buyback. The triple capital-return + results combo is a strong management-confidence signal from a low-equity-base (₹7.35 Cr), historically buyback-friendly company (prior buybacks in 2017, 2021). Trading window reopens 28 May. Buyback size/price in the outcome PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GANDHITUBE_25052026_final_outcome_signed.pdf" target="_blank">NSE — Board Outcome (Buyback)</a>
+      </div>
+    </article>
+    <article class="card" data-tags="buyback">
+      <div class="card-meta"><span class="ticker">WINDLAS</span><span class="tag buyback">Buyback Closed</span><span class="date-meta">18 May 2026</span></div>
+      <h3>Windlas Biotech files closure of buyback</h3>
+      <p>Windlas Biotech (CDMO / pharma formulations) filed a "Closure of Buy Back" intimation on 18 May, completing a previously-announced repurchase programme. The closure filing typically details total shares bought back, amount deployed, and extinguishment status. Windlas also filed a dividend during the window (19 May).</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/WINDLAS_18052026_Extt_18052026_up.pdf" target="_blank">NSE — Buyback Closure</a>
+      </div>
+    </article>
+    <article class="card" data-tags="acq alert">
+      <div class="card-meta"><span class="ticker">BLISSGVS</span><span class="tag acq">Open Offer</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Bliss GVS Pharma — Public Announcement of Open Offer</h3>
+      <p>Bliss GVS Pharma filed a "Public Announcement-Open Offer" on 25 May, following its agreement disclosure on 23 May. An open offer under SEBI SAST typically signals a change in control / substantial acquisition — i.e., an acquirer triggering the mandatory tender to public shareholders. This is a potentially significant ownership-change event; offer price, acquirer identity, and trigger details are in the PDF and warrant close reading.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/BLISSGVS_25052026_BLISSGVS.pdf" target="_blank">NSE — Open Offer PA</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- SCHEME & CORPORATE STRUCTURE -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🏛️</div><h2 class="sec-title">Scheme of Arrangement & Corporate Structure</h2><span class="sec-count">3 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">GABRIEL</span><span class="tag acq">Scheme Effective</span><span class="date-meta">22 May 2026</span></div>
+      <h3>Gabriel India — scheme of arrangement reaches effective date</h3>
+      <p>Gabriel India (auto-component major — ride-control products / shock absorbers, part of the ANAND Group) filed intimation that its <strong>Scheme of Arrangement has become effective</strong> on 22 May. Gabriel's parent-level restructuring (consolidation of ANAND Group auto businesses under the listed entity) had been working through approvals; the effective-date filing marks completion — typically triggering share allotment/swap mechanics and a re-rated, larger consolidated entity. The post-scheme financials and revised capital structure are the key read.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GABRIEL_22052026_SE_Intimation_Effective_Date_GIL_signed.pdf" target="_blank">NSE — Scheme Effective Date</a>
+      </div>
+    </article>
+    <article class="card" data-tags="acq alert">
+      <div class="card-meta"><span class="ticker">MOBIKWIK</span><span class="tag acq">Sale/Disposal + AOA</span><span class="date-meta">22 May 2026</span></div>
+      <h3>MobiKwik — board approves a sale/disposal and AOA/MOA amendment</h3>
+      <p>One week after its Q4 results (and 11% stock drop), MobiKwik's board met again on 22 May, approving a <strong>sale or disposal</strong> transaction and an <strong>amendment to its Articles/Memorandum</strong>. Following the RBI NBFC-licence approval and the strategic reset toward merchant payments + lending, this likely relates to subsidiary/asset restructuring for the MFSPL lending arm. The board-outcome PDF carries the specifics — material for understanding the new operating structure.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/MOBIKWIK_22052026_Outcome_of_Board_Meeting.pdf" target="_blank">NSE — Board Outcome</a>
+      </div>
+    </article>
+    <article class="card" data-tags="gov mgmt">
+      <div class="card-meta"><span class="ticker">DEVX · SHAILY</span><span class="tag gov">Securities Issue / Allotment</span><span class="date-meta">19 May 2026</span></div>
+      <h3>DevX issue of securities; Shaily Engineering share allotment + ESOP grant</h3>
+      <p><strong>DevX</strong> (Dev Accelerator — managed workspaces) filed an "Issue of Securities" via board outcome on 19 May — likely a fundraise/preferential issue to fund centre expansion. <strong>Shaily Engineering Plastics</strong> filed two "Disclosure of material issue" items on 19 May — a share allotment and an ESOP grant letter. Shaily also recommended a dividend (19 May). The precision-plastics/pharma-devices maker (GLP-1 pen-injector exposure) continues to be a structural growth story; the allotment likely relates to a prior preferential/warrant conversion.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/DEVX_19052026_SE_Outcome_of_Board_Meeting.pdf" target="_blank">DEVX Securities</a>
+        <a href="https://nsearchives.nseindia.com/corporate/SHAILY_19052026_Intimation_for_Allotment_of_Shares_FINAL.pdf" target="_blank">SHAILY Allotment</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CAPACITY & PRODUCTION -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🏭</div><h2 class="sec-title">Capacity Additions & Commercial Production</h2><span class="sec-count">3 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="expand">
+      <div class="card-meta"><span class="ticker">BALAMINES</span><span class="tag expand">Commercial Production</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Balaji Amines commences commercial production at new capacity</h3>
+      <p>Balaji Amines filed a "Commencement of commercial production/operations" disclosure on 20 May — confirming a new plant/line has gone live (following its Q4 results in the prior window). For a specialty-amines maker emerging from a margin down-cycle, fresh capacity coming on-stream is a forward-volume signal. The specific product line and nameplate capacity are in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/BALAMINES_20052026_Intimation_Signed.pdf" target="_blank">NSE — Commercial Production</a>
+      </div>
+    </article>
+    <article class="card" data-tags="expand">
+      <div class="card-meta"><span class="ticker">GANECOS</span><span class="tag expand">Odisha Plant</span><span class="date-meta">21 May 2026</span></div>
+      <h3>Ganesha Ecosphere — capacity addition with new Odisha plant</h3>
+      <p>Ganesha Ecosphere (rPET / recycled polyester — circular-economy play) filed a capacity-addition disclosure on 21 May referencing a <strong>new Odisha plant</strong>. The recycled-PET leader has been expanding to meet rising EPR-driven demand for recycled fibre and rPET resin. New-plant location, capacity, and capex in the PDF — a positive forward signal for a structurally growing segment.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GANECOS_21052026_odisha_plant_s.pdf" target="_blank">NSE — Odisha Plant</a>
+      </div>
+    </article>
+    <article class="card" data-tags="expand acq">
+      <div class="card-meta"><span class="ticker">HCG</span><span class="tag expand">North Bangalore</span><span class="date-meta">19 May 2026</span></div>
+      <h3>HCG North Bangalore cancer centre (capacity) — see M&A section for full context</h3>
+      <p>Cross-referenced from the M&A section: HCG's 19 May board also approved a North Bangalore capacity addition alongside the fertility-business divestment and Q4 results. Grouped here for the capex view — the new centre extends HCG's oncology network in its home market.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/HCG_19052026_SE_Intimation_19_May_2026_North_Bangalore.pdf" target="_blank">NSE — North Bangalore</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Q4 RESULTS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📊</div><h2 class="sec-title">Q4 FY26 Results — Major Filings</h2><span class="sec-count">~18 Cards</span></div>
+  <div class="connector">
+    <div class="ctitle">Sector Pulse — Peak Q4 Reporting Week</div>
+    <div class="cbody">81 board outcomes and 50 investor presentations from master-list companies during 18-25 May — the densest result week of the season. GHCL led filing volume (32 disclosures). Picks below cover the higher-profile standalone stories; the dividend roundup lists 31 payout announcements; and a roundup card sweeps additional Q4 filers. Where company-specific numbers weren't separately verified, cards point to the primary filing for the figures.</div>
+  </div>
+  <div class="grid">
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">GHCL</span><span class="tag q4">Q4 Results</span><span class="date-meta">18-22 May 2026</span></div>
+      <h3>GHCL — heaviest filer of the week (32 disclosures) around FY26 results</h3>
+      <p>GHCL (soda ash major + textiles via GHCL Textiles) filed the most disclosures of any master-list company this window. Soda ash pricing and volume, the home-textiles segment, and any capex/expansion commentary on the new soda-ash capacity are the key reads. The board outcome and investor presentation PDFs carry the detail; the filing density usually reflects results + dividend + multiple intimations (analyst meets, press release, deviations).</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/GHCL/consolidated/" target="_blank">Screener — GHCL</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">SUBROS</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">18 May 2026</span></div>
+      <h3>Subros — FY26 board outcome with dividend</h3>
+      <p>Subros (auto AC systems — dominant share in passenger-vehicle thermal products) posted Q4 on 18 May with dividend. PV volume cycle, EV-thermal product wins, and the diversification into home-AC components and railway/bus HVAC are the forward watch points.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/SUBROS/consolidated/" target="_blank">Screener — SUBROS</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">TRITURBINE</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">18 May 2026</span></div>
+      <h3>Triveni Turbine — FY26 board outcome with dividend (14 filings)</h3>
+      <p>Triveni Turbine (steam turbines, global market leader in sub-30 MW range) was highly active (14 disclosures). The export-heavy capital-goods play benefits from global industrial decarbonisation and waste-heat-recovery demand; order book and FY27 guidance from the deck are the key reads.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/TRITURBINE/consolidated/" target="_blank">Screener — TRITURBINE</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">RAINBOW</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">23 May 2026</span></div>
+      <h3>Rainbow Children's Medicare — FY26 results, dividend, multiple appointments</h3>
+      <p>Rainbow (pediatric & perinatal hospital chain) posted Q4 on 23 May with dividend and five governance/appointment filings. Following the NCR greenfield expansion and the GST-appeal matter (both covered earlier), the FY26 numbers — occupancy, ARPOB, new-unit ramp — are the key. ICICI Direct target ₹1,650.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/RAINBOW/consolidated/" target="_blank">Screener — RAINBOW</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">POLYMED</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Poly Medicure — FY26 board outcome with dividend (11 filings)</h3>
+      <p>Poly Medicure (medical devices — infusion therapy, renal care, exports to 125+ countries) posted Q4 on 25 May. The medical-device exporter has been a consistent compounder; capacity expansion, US/Europe penetration, and new-product (renal, oncology) momentum are the forward reads.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/POLYMED/consolidated/" target="_blank">Screener — POLYMED</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">KRSNAA</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Krsnaa Diagnostics — FY26 board outcome with dividend</h3>
+      <p>Krsnaa Diagnostics (PPP-model diagnostics, radiology & pathology) posted Q4 on 25 May. The government-PPP-heavy diagnostics chain's margin profile, new-tender wins, and B2C expansion are key. Diagnostics has been a competitive space (vs Thyrocare, Dr Lal); FY26 print shows where Krsnaa sits on the growth-margin trade-off.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/KRSNAA/consolidated/" target="_blank">Screener — KRSNAA</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">PROTEAN</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="tag gov">Mgmt Changes</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Protean eGov Technologies — FY26 results, dividend, board changes (13 filings)</h3>
+      <p>Protean eGov (formerly NSDL e-Governance — PAN issuance, NPS infra, ONDC, digital public infrastructure) posted Q4 on 20 May with dividend and four management-change filings. The DPI play faces a key question on PAN 2.0 transition and new-business (Open Network, account aggregator) monetisation; the deck and management commentary are essential reading.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/PROTEAN/consolidated/" target="_blank">Screener — PROTEAN</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">KRONOX</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">21 May 2026</span></div>
+      <h3>Kronox Lab Sciences — FY26 board outcome with dividend</h3>
+      <p>Kronox Lab Sciences (high-purity inorganic chemicals / specialty fine chemicals for pharma, food, scientific research) posted Q4 on 21 May. The recent IPO has limited coverage; FY26 numbers and any capex/customer-addition commentary are valuable for the fine-chemicals niche play.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/KRONOX/" target="_blank">Screener — KRONOX</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">CARYSIL</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Carysil — FY26 board outcome with dividend</h3>
+      <p>Carysil (quartz kitchen sinks, appliances — export-heavy to Europe/US) posted Q4 on 20 May. Tariff exposure, UK/EU retail demand, and the appliances-segment scale-up are the watch items for the home-products exporter.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/CARYSIL/consolidated/" target="_blank">Screener — CARYSIL</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">SANGHVIMOV</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Sanghvi Movers — FY26 board outcome with dividend</h3>
+      <p>Sanghvi Movers (crane rental — heavy lifting for wind, infra, refinery, power) posted Q4 on 20 May. Wind-energy capex cycle is the primary revenue driver; order book from renewable-energy EPC and the fleet-utilisation trajectory are the key reads.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/SANGHVIMOV/consolidated/" target="_blank">Screener — SANGHVIMOV</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">XPROINDIA</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Xpro India — FY26 board outcome with dividend (10 filings)</h3>
+      <p>Xpro India (dielectric films for capacitors, coextruded plastics) posted Q4 on 20 May. The dielectric-film business rides the EV/renewable-capacitor demand boom and import-substitution; the new Greenfield BOPP/dielectric capacity ramp is the structural growth lever.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/XPROINDIA/consolidated/" target="_blank">Screener — XPROINDIA</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">SALZERELEC</span><span class="tag q4">Q4 Results</span><span class="tag div">Dividend</span><span class="date-meta">23 May 2026</span></div>
+      <h3>Salzer Electronics — FY26 board outcome with dividend (11 filings)</h3>
+      <p>Salzer Electronics (industrial switchgear, wires & cables, building products — Schneider partnership) posted Q4 on 23 May. The electrical-products maker benefits from infra/housing demand and the smart-meter opportunity; FY27 capex and the wires-&-cables vertical scale-up are key.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/SALZERELEC/consolidated/" target="_blank">Screener — SALZERELEC</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">SUDEEPPHRM · SMSPHARMA · AARTIPHARM</span><span class="tag q4">Pharma Q4</span><span class="tag div">Dividend</span><span class="date-meta">21-25 May 2026</span></div>
+      <h3>Pharma/API cluster Q4: Sudeep, SMS Pharma, Aarti Pharma</h3>
+      <p>Three pharma/API names posted Q4 with dividends: <strong>Sudeep Pharma</strong> (mineral-based excipients/nutrition; recent IPO; 21 May), <strong>SMS Pharmaceuticals</strong> (APIs, contract manufacturing; 22 May, 10 filings), and <strong>Aarti Pharmalabs</strong> (CDMO/APIs, Aarti group; 25 May). Each rides the API/CDMO localisation theme; sector tailwind from China+1 and PLI continues. Individual numbers in respective decks.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/AARTIPHARM/consolidated/" target="_blank">AARTIPHARM</a>
+        <a href="https://www.screener.in/company/SMSPHARMA/consolidated/" target="_blank">SMSPHARMA</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">ELECTCAST · YASHO · RISHABH · STYL · GPTHEALTH</span><span class="tag q4">18 May Cluster</span><span class="tag div">Dividend</span><span class="date-meta">18 May 2026</span></div>
+      <h3>18 May results cluster: Electrosteel Castings, Yasho, Rishabh, Style Baazar, GPT Healthcare</h3>
+      <p>Five master-list names reported with dividends on 18 May: <strong>ELECTCAST</strong> (Electrosteel Castings — DI pipes, water infra), <strong>YASHO</strong> (Yasho Industries — specialty chemicals/aroma), <strong>RISHABH</strong> (Rishabh Instruments — electrical measurement/precision), <strong>STYL</strong> (Baazar Style Retail — value fashion), <strong>GPTHEALTH</strong> (GPT Healthcare — eastern-India hospitals). Numbers in each company's deck; sector spread spans water infra, specialty chemicals, instrumentation, retail, and hospitals.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/ELECTCAST/consolidated/" target="_blank">ELECTCAST</a>
+        <a href="https://www.screener.in/company/YASHO/consolidated/" target="_blank">YASHO</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4 div">
+      <div class="card-meta"><span class="ticker">MAPMYINDIA · NUCLEUS · DAMCAPITAL · ROSSELLIND · TINNARUBR · VINCOFE</span><span class="tag q4">More Q4 + Dividend</span><span class="date-meta">19-22 May 2026</span></div>
+      <h3>Additional dividend-paying Q4 filers across tech, BFSI, plantations, tyres</h3>
+      <p>Six more reported Q4 with dividends: <strong>MAPMYINDIA</strong> (C.E. Info Systems — digital maps/geospatial/IoT, 19 May), <strong>NUCLEUS</strong> (Nucleus Software — banking software, 21 May), <strong>DAMCAPITAL</strong> (DAM Capital Advisors — investment banking, 22 May), <strong>ROSSELLIND</strong> (Rossell India — tea plantations + aerospace/defence components, 21 May), <strong>TINNARUBR</strong> (Tinna Rubber — recycled rubber/crumb, 22 May), <strong>VINCOFE</strong> (Vintage Coffee — instant coffee exporter, 21 May). Wide sector spread; figures in respective filings.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/MAPMYINDIA/consolidated/" target="_blank">MAPMYINDIA</a>
+        <a href="https://www.screener.in/company/NUCLEUS/consolidated/" target="_blank">NUCLEUS</a>
+      </div>
+    </article>
+    <article class="card" data-tags="q4">
+      <div class="card-meta"><span class="ticker">CANTABIL · DEEDEV · CRIZAC · JAINREC · GEMAROMA · AMANTA · PROSTARM</span><span class="tag q4">Q4 Roundup</span><span class="date-meta">18-25 May 2026</span></div>
+      <h3>High-filing-count Q4 reporters — read each PDF for detail</h3>
+      <p>Several master-list names with dense filing activity reported during the window: <strong>CANTABIL</strong> (apparel retail, 12 filings), <strong>DEEDEV</strong> (Deccan Dev / real estate, 12), <strong>CRIZAC</strong> (education/recruitment services, 9), <strong>JAINREC</strong> (Jainam / recycling, 10), <strong>GEMAROMA</strong> (Gem Aromatics — essential oils, 10), <strong>AMANTA</strong> (Amanta Healthcare — IV fluids/sterile, 9), <strong>PROSTARM</strong> (Prostarm Info — power solutions, 10). Each combo of board outcome + investor presentation carries the numbers.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/CANTABIL/consolidated/" target="_blank">CANTABIL</a>
+        <a href="https://www.screener.in/company/CRIZAC/" target="_blank">CRIZAC</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- DIVIDEND ROUNDUP -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">💰</div><h2 class="sec-title">Dividend Roundup — All 31 Filings</h2><span class="sec-count">1 Table</span></div>
+  <div class="grid">
+    <div class="div-table" data-tags="div">
+      <table>
+        <thead><tr><th>Ticker</th><th>Filing Date</th><th>Company / Sector</th></tr></thead>
+        <tbody>
+          <tr><td>ELECTCAST</td><td>18 May</td><td>Electrosteel Castings — DI pipes</td></tr>
+          <tr><td>GPTHEALTH</td><td>18 May</td><td>GPT Healthcare — hospitals</td></tr>
+          <tr><td>RISHABH</td><td>18 May</td><td>Rishabh Instruments — instrumentation</td></tr>
+          <tr><td>STYL</td><td>18 May</td><td>Baazar Style Retail — value fashion</td></tr>
+          <tr><td>SUBROS</td><td>18 May</td><td>Subros — auto AC systems</td></tr>
+          <tr><td>TRITURBINE</td><td>18 May</td><td>Triveni Turbine — steam turbines</td></tr>
+          <tr><td>YASHO</td><td>18 May</td><td>Yasho Industries — specialty chemicals</td></tr>
+          <tr><td>MAPMYINDIA</td><td>19 May</td><td>C.E. Info Systems — geospatial</td></tr>
+          <tr><td>SHAILY</td><td>19 May</td><td>Shaily Engineering — precision plastics</td></tr>
+          <tr><td>SHAREINDIA</td><td>19 May</td><td>Share India Securities — broking</td></tr>
+          <tr><td>CARYSIL</td><td>20 May</td><td>Carysil — kitchen sinks/appliances</td></tr>
+          <tr><td>PROTEAN</td><td>20 May</td><td>Protean eGov — digital public infra</td></tr>
+          <tr><td>SANGHVIMOV</td><td>20 May</td><td>Sanghvi Movers — crane rental</td></tr>
+          <tr><td>XPROINDIA</td><td>20 May</td><td>Xpro India — dielectric films</td></tr>
+          <tr><td>KRONOX</td><td>21 May</td><td>Kronox Lab — specialty chemicals</td></tr>
+          <tr><td>NUCLEUS</td><td>21 May</td><td>Nucleus Software — banking software</td></tr>
+          <tr><td>ROSSELLIND</td><td>21 May</td><td>Rossell India — tea + aerospace</td></tr>
+          <tr><td>SUDEEPPHRM</td><td>21 May</td><td>Sudeep Pharma — excipients</td></tr>
+          <tr><td>VINCOFE</td><td>21 May</td><td>Vintage Coffee — instant coffee</td></tr>
+          <tr><td>DAMCAPITAL</td><td>22 May</td><td>DAM Capital — investment banking</td></tr>
+          <tr><td>REMSONSIND</td><td>22 May</td><td>Remsons Industries — auto components</td></tr>
+          <tr><td>SMSPHARMA</td><td>22 May</td><td>SMS Pharmaceuticals — APIs</td></tr>
+          <tr><td>TINNARUBR</td><td>22 May</td><td>Tinna Rubber — recycled rubber</td></tr>
+          <tr><td>RAINBOW</td><td>23 May</td><td>Rainbow Children's — pediatric hospitals</td></tr>
+          <tr><td>SALZERELEC</td><td>23 May</td><td>Salzer Electronics — switchgear</td></tr>
+          <tr><td>AARTIPHARM</td><td>25 May</td><td>Aarti Pharmalabs — CDMO/APIs</td></tr>
+          <tr><td>GANDHITUBE</td><td>25 May</td><td>Gandhi Special Tubes — steel tubes (+ buyback)</td></tr>
+          <tr><td>KALYANIFRG</td><td>25 May</td><td>Kalyani Forge — forgings</td></tr>
+          <tr><td>KRSNAA</td><td>25 May</td><td>Krsnaa Diagnostics — diagnostics</td></tr>
+          <tr><td>POLYMED</td><td>25 May</td><td>Poly Medicure — medical devices</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIT RATINGS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📈</div><h2 class="sec-title">Credit Rating Actions</h2><span class="sec-count">6 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">GINNIFILA</span><span class="tag credit">Rating Revision</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Ginni Filaments — credit rating revision (post ₹132 Cr capex announcement)</h3>
+      <p>Ginni Filaments filed a credit rating revision on 25 May — notable given the ₹132 Cr four-pronged expansion announced in early May (75% debt-funded). A revision following a leverage-increasing capex plan is exactly what to watch; direction and rationale in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GINNIFILA_25052026_Creditratingdisclosure_2026.pdf" target="_blank">NSE — Rating Revision</a>
+      </div>
+    </article>
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">OLECTRA</span><span class="tag credit">Credit Rating</span><span class="date-meta">22 May 2026</span></div>
+      <h3>Olectra Greentech — credit rating filed</h3>
+      <p>Olectra Greentech (electric buses — Megha Engineering group; also composite insulators) filed a credit rating disclosure on 22 May. The e-bus leader has a large order book (state STU tenders) but faces working-capital and execution scrutiny; the rating action is a key signal on the funding profile.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/OLECTRA_22052026_Creditrating.pdf" target="_blank">NSE — Credit Rating</a>
+      </div>
+    </article>
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">TEGA</span><span class="tag credit">Credit Rating (ICRA)</span><span class="date-meta">20 May 2026</span></div>
+      <h3>Tega Industries — ICRA rating intimation</h3>
+      <p>Tega Industries (mill liners, mining consumables; global supplier) filed an ICRA credit rating intimation on 20 May (separate from the 15 May revision noted in the prior window). The global-mining-cycle-exposed business's rating trajectory matters for its acquisition-led growth funding.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/TEGA_20052026_Intimation_of_Credit_Rating_ICRA_sd.pdf" target="_blank">NSE — ICRA Rating</a>
+      </div>
+    </article>
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">POKARNA</span><span class="tag credit">Credit Rating FY26</span><span class="date-meta">21 May 2026</span></div>
+      <h3>Pokarna — FY26 credit rating disclosure</h3>
+      <p>Pokarna (engineered quartz surfaces / Quantra brand, granite; US-export heavy) filed its FY26 credit rating on 21 May. US tariff and housing-demand exposure makes the rating commentary on the quartz-surfaces business especially relevant.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/POKARNA_21052026_Pokarna_Credit_Ratings_FY26.pdf" target="_blank">NSE — Credit Rating</a>
+      </div>
+    </article>
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">OMNI</span><span class="tag credit">Credit Rating</span><span class="date-meta">19 May 2026</span></div>
+      <h3>Omni Agate / Omni Axe — credit rating disclosure</h3>
+      <p>OMNI filed a Reg 30 credit rating disclosure on 19 May. Rating grade and rated-facility detail in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/OMNI_19052026_Disclosure_of_Credit_Rating.pdf" target="_blank">NSE — Credit Rating</a>
+      </div>
+    </article>
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">PICCADIL</span><span class="tag credit">Rating Revision</span><span class="date-meta">23 May 2026</span></div>
+      <h3>Piccadily Agro Industries — credit rating revision</h3>
+      <p>Piccadily Agro (Indri single-malt whisky, sugar, distillery) filed a credit rating revision on 23 May. The premium-whisky growth story (Indri's global awards) has been driving a re-rating; an upgrade would validate the cash-flow strength of the maturing malt inventory. Direction in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/PICCADIL_23052026_Letter_-_converted.pdf" target="_blank">NSE — Rating Revision</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- WATCH LIST -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">⚠️</div><h2 class="sec-title">Watch List — Litigations, Tax Actions, Clarifications</h2><span class="sec-count">5 Cards</span></div>
+  <div class="connector">
+    <div class="ctitle">Pattern — GST/Tax Action Cluster Continues</div>
+    <div class="cbody">The mid-cap GST/tax-action theme persists: Finance Cables and SEDEMAC both disclosed GST notices/actions, E2E Networks disclosed an order under Reg 30, and Share India Securities filed another penalty update. Separately, six master-list names carry "Clarification – Financial Results" entries with placeholder URLs (BORANA, NRBBEARING, PARKHOSPS, SAKAR, SIRCA, STLNETWORK) — pending publication. FirstCry filed a spurt-in-volume clarification. None individually appears severe, but the cluster volume continues to build.</div>
+  </div>
+  <div class="grid">
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">FINCABLES</span><span class="tag alert">GST Action</span><span class="date-meta">22 May 2026</span></div>
+      <h3>Finolex Cables — GST action/notice disclosed</h3>
+      <p>Finolex Cables filed an "Action(s) initiated or orders passed" disclosure on 22 May concerning a GST matter. For a large cables-and-wires maker, the quantum and nature (demand, penalty, period) determine materiality — in the linked PDF. Two appointment filings also during the window.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/FINCABLES_22052026_GST22052026_signed.pdf" target="_blank">NSE — GST Action</a>
+      </div>
+    </article>
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">SEDEMAC</span><span class="tag alert">GST Notice</span><span class="date-meta">22 May 2026</span></div>
+      <h3>Sedemac Mechatronics — GST notice intimation</h3>
+      <p>Sedemac Mechatronics (engine control units, motor controllers — recent IPO) filed a GST-notice intimation on 22 May. Newly-listed with thin coverage; the GST matter's scale relative to the company's size is the key read. 10 total filings during the window suggests this coincided with Q4 results.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/SEDEMAC2007_22052026_20260522-IntimationforGSTNotice.pdf" target="_blank">NSE — GST Notice</a>
+      </div>
+    </article>
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">E2E</span><span class="tag alert">Order / Action</span><span class="date-meta">19 May 2026</span></div>
+      <h3>E2E Networks — "Action(s) initiated or orders passed" under Reg 30</h3>
+      <p>E2E Networks (cloud/GPU infrastructure — an AI-infra beneficiary) filed an "Action(s) initiated or orders passed" disclosure on 19 May. Given the company's high-growth AI-cloud positioning and prior financial-clarification cycle (27 Apr reply), any regulatory/tax action warrants reading. Substance in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/E2E_19052026_OrderReg_30_.pdf" target="_blank">NSE — Order/Action</a>
+      </div>
+    </article>
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">SHAREINDIA</span><span class="tag alert">Penalty Update</span><span class="date-meta">25 May 2026</span></div>
+      <h3>Share India Securities — another Reg 30 penalty update</h3>
+      <p>Share India Securities filed a further penalty update on 25 May (after a similar one on 16 May in the prior window). For a broking/capital-markets business, recurring penalty disclosures — typically exchange/SEBI compliance-related — are worth tracking as a pattern. Quantum and nature in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/SHAREINDIA_25052026_Reg30Penalt25052026.pdf" target="_blank">NSE — Penalty Update</a>
+      </div>
+    </article>
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">FIRSTCRY · BORANA · NRBBEARING · SAKAR · SIRCA · STLNETWORK · EMUDHRA</span><span class="tag alert">Clarification Cluster</span><span class="date-meta">18-25 May 2026</span></div>
+      <h3>Spurt clarifications and pending financial-results clarifications</h3>
+      <p><strong>FirstCry</strong> (Brainbees) filed a spurt-in-volume clarification on 19 May (plus a second placeholder entry). Six names carry "Clarification – Financial Results" entries with placeholder URLs — pending publication: <strong>BORANA</strong> (Borana Weaves), <strong>NRBBEARING</strong>, <strong>PARKHOSPS</strong>, <strong>SAKAR</strong>, <strong>SIRCA</strong> (Sirca Paints), <strong>STLNETWORK</strong>. <strong>eMudhra</strong> filed a reply-to-clarification on 18 May (with a real PDF this time). These are exchange-driven queries; substance pending for the placeholders.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/FIRSTCRY_19052026_ClarificationLetterNSE.pdf" target="_blank">FIRSTCRY</a>
+        <a href="https://nsearchives.nseindia.com/corporate/EMUDHRA_18052026_Clari_and_Declaration_upload.pdf" target="_blank">EMUDHRA Reply</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- GOVERNANCE -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">👥</div><h2 class="sec-title">Governance — Appointments, Auditor & Management Changes</h2><span class="sec-count">2 Roundup Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="gov">
+      <div class="card-meta"><span class="ticker">32 APPOINTMENTS · 12 MGMT CHANGES</span><span class="tag gov">Board / KMP Moves</span><span class="date-meta">18-25 May 2026</span></div>
+      <h3>Dense board/KMP change activity tied to FY26 AGM cycle</h3>
+      <p>32 appointment filings and 12 management-change filings across master-list companies — consistent with the FY26 board-cycle (new directors, KMP re-appointments, committee reconstitutions ahead of AGMs). Most active: <strong>HCG</strong> (6 governance filings — likely board reshuffle post KKR control), <strong>RAINBOW</strong> (5), <strong>PROTEAN</strong> (4), <strong>SULA</strong> (4 — Sula Vineyards), <strong>JAINREC</strong> (4), <strong>ENTERO/DAMCAPITAL/BOROSCI/AJAXENGG</strong> (3 each). Individually routine; HCG's cluster is the one to read given the ownership transition.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/HCG/consolidated/" target="_blank">HCG</a>
+        <a href="https://www.screener.in/company/SULA/consolidated/" target="_blank">SULA</a>
+      </div>
+    </article>
+    <article class="card" data-tags="gov">
+      <div class="card-meta"><span class="ticker">15 AUDITOR CHANGES</span><span class="tag gov">Auditor Rotation</span><span class="date-meta">18-25 May 2026</span></div>
+      <h3>15 statutory auditor-change filings — FY26 rotation cycle continues</h3>
+      <p>Following last week's 13 auditor changes, another 15 master-list companies filed auditor-change intimations this window — the SEBI 5-year rotation expiry concentrated in FY26 board meetings. Most are routine appointments in casual vacancy or post-rotation, requiring AGM ratification. As always, the appointed firm and any prior-period qualifications are the items to verify; no single filing flags a governance concern on the surface.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.nseindia.com/companies-listing/corporate-filings-announcements" target="_blank">NSE Announcements Portal</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="ctx">Coverage scope: expanded master list of 349 companies (279 Non-SME + 70 SME, suffixes normalised). Period: 18-25 May 2026 broadcast window. Of <strong>6,197 NSE filings</strong>, <strong>819 belonged to master-list tickers across 186 companies</strong>. Editorial filter excluded 71 newspaper publications, 65 routine SAST disclosures, 57 general updates, 7 Reg 32 deviation statements, and other compliance-noise. Where individual Q4 figures were not separately verified, cards link the primary NSE filing / Screener profile for the numbers. SME segment filings continue to be missing from source NSE feed.</div>
+  <div class="scope">Coverage Period · 18 May 2026 → 25 May 2026 · Cards: 70+ · Companies: 186 · Filings Reviewed: 6,197</div>
+  <div class="signoff">Presented by Nova Orbit</div>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.card, .div-table');
+const sections = document.querySelectorAll('.section');
+const search = document.getElementById('search');
+function applyFilters() {
+  const activeTag = document.querySelector('.filter-btn.active').dataset.tag;
+  const term = (search.value||'').trim().toLowerCase();
+  cards.forEach(card => {
+    const tags = (card.dataset.tags||'').split(' ');
+    const text = card.innerText.toLowerCase();
+    const tagMatch = activeTag==='all' || tags.includes(activeTag);
+    const textMatch = !term || text.includes(term);
+    card.style.display = (tagMatch && textMatch) ? '' : 'none';
+  });
+  sections.forEach(sec => {
+    const visible = Array.from(sec.querySelectorAll('.card, .div-table')).some(c => c.style.display !== 'none');
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+buttons.forEach(b => b.addEventListener('click', () => {
+  buttons.forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  applyFilters();
+}));
+search.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>
