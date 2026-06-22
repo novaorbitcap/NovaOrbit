@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Pulse — 15–22 June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Source+Serif+4:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#1a1a1a; --paper:#faf8f4; --accent:#c0392b; --accent2:#2c3e50; --rule:#d4c5a9; --muted:#7a7062; --tag-bg:#f0ece4; --card-bg:#fff; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { background:var(--paper); color:var(--ink); font-family:'Source Serif 4',Georgia,serif; line-height:1.55; padding:28px 40px 60px; max-width:1320px; margin:0 auto; }
+.masthead { text-align:center; border-bottom:4px double var(--ink); padding-bottom:18px; }
+.masthead .date-sub { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.masthead h1 { font-family:'Playfair Display',serif; font-size:76px; font-weight:900; letter-spacing:-2px; line-height:1; }
+.masthead .tagline { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); margin-top:10px; }
+.masthead .ed-info { font-family:'Playfair Display',serif; font-style:italic; font-size:14px; color:var(--muted); margin-top:8px; }
+.edition-bar { background:var(--ink); color:#f5f1e8; display:flex; justify-content:center; gap:34px; padding:14px 20px; flex-wrap:wrap; }
+.stat-pill { display:flex; flex-direction:column; align-items:center; font-family:'DM Sans',sans-serif; }
+.stat-pill .num { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:#f5f1e8; }
+.stat-pill .lab { font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:#b8ac96; margin-top:2px; }
+.filter-bar { position:sticky; top:0; background:var(--paper); border-bottom:1px solid var(--rule); padding:14px 0; display:flex; flex-wrap:wrap; gap:8px; align-items:center; z-index:10; margin-bottom:24px; }
+.filter-btn { font-family:'DM Sans',sans-serif; font-size:11px; font-weight:500; letter-spacing:0.5px; padding:6px 14px; border:1px solid var(--rule); background:transparent; color:var(--ink); border-radius:999px; cursor:pointer; transition:all 0.15s ease; text-transform:uppercase; }
+.filter-btn:hover { border-color:var(--ink); }
+.filter-btn.active { background:var(--ink); color:#f5f1e8; border-color:var(--ink); }
+.search-wrap { margin-left:auto; }
+.search-wrap input { font-family:'DM Sans',sans-serif; font-size:12px; padding:6px 12px; border:1px solid var(--rule); background:#fff; border-radius:999px; width:220px; outline:none; color:var(--ink); }
+.search-wrap input:focus { border-color:var(--ink); }
+.section { margin:36px 0 14px; }
+.sec-head { display:flex; align-items:center; gap:14px; margin-bottom:18px; border-bottom:1px solid var(--rule); padding-bottom:10px; }
+.sec-emoji { background:var(--ink); color:#f5f1e8; width:36px; height:36px; display:grid; place-items:center; border-radius:4px; font-size:18px; }
+.sec-title { font-family:'Playfair Display',serif; font-size:26px; font-weight:700; letter-spacing:-0.3px; }
+.sec-count { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); background:var(--tag-bg); padding:3px 10px; border-radius:999px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); gap:18px; }
+.card { background:var(--card-bg); border:1px solid var(--rule); padding:18px 20px 16px; display:flex; flex-direction:column; transition:transform 0.18s ease,box-shadow 0.18s ease; }
+.card:hover { transform:translateY(-2px); box-shadow:0 8px 24px -10px rgba(0,0,0,0.18); }
+.card.headline { grid-column:1/-1; border-left:4px solid var(--accent); padding-left:26px; }
+.card.serious { border-left:4px solid #c62828; padding-left:24px; }
+.card.positive { border-left:4px solid #1b5e20; padding-left:24px; }
+.card-meta { display:flex; align-items:center; gap:8px; margin-bottom:10px; flex-wrap:wrap; }
+.ticker { font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; letter-spacing:1px; background:var(--accent2); color:#f5f1e8; padding:3px 9px; border-radius:3px; }
+.tag { font-family:'DM Sans',sans-serif; font-size:9.5px; font-weight:600; letter-spacing:0.5px; padding:3px 9px; border-radius:999px; text-transform:uppercase; background:var(--tag-bg); color:var(--ink); }
+.tag.acq { background:#e8f5e9; color:#2e7d32; }
+.tag.order { background:#e3f2fd; color:#1565c0; }
+.tag.div { background:#fff3e0; color:#e65100; }
+.tag.expand { background:#f3e5f5; color:#7b1fa2; }
+.tag.fund { background:#fce4ec; color:#c62828; }
+.tag.tech { background:#ede7f6; color:#4527a0; }
+.tag.mgmt { background:#e8eaf6; color:#283593; }
+.tag.data { background:#e8f5e9; color:#1b5e20; }
+.tag.alert { background:#ffebee; color:#c62828; }
+.tag.gov { background:#f3e5f5; color:#6a1b9a; }
+.tag.credit { background:#e0f7fa; color:#006064; }
+.tag.spurt { background:#fff9c4; color:#827717; }
+.tag.positive { background:#c8e6c9; color:#1b5e20; }
+.date-meta { font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); letter-spacing:0.5px; margin-left:auto; }
+.card h3 { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; line-height:1.25; margin-bottom:9px; color:var(--ink); }
+.card.headline h3 { font-size:22px; }
+.card p { font-family:'Source Serif 4',serif; font-size:13.5px; line-height:1.55; color:#3a3a3a; margin-bottom:8px; }
+.num-highlight { font-family:'JetBrains Mono',monospace; font-weight:500; color:var(--accent2); font-size:13px; }
+.num-highlight.up { color:#1b5e20; }
+.num-highlight.down { color:#c62828; }
+.sources { margin-top:auto; padding-top:10px; border-top:1px dashed var(--rule); font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); }
+.sources a { color:var(--accent); text-decoration:underline dotted; margin-right:12px; font-weight:500; }
+.sources a:hover { color:var(--ink); }
+.sources .src-label { font-size:8.5px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin-right:5px; }
+.connector { background:linear-gradient(135deg,#2c3e50,#34495e); color:#f5f1e8; padding:20px 24px; margin:20px 0; position:relative; border-radius:2px; }
+.connector::before { content:"🔗"; position:absolute; top:14px; right:18px; font-size:22px; opacity:0.4; }
+.connector .ctitle { font-family:'DM Sans',sans-serif; font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#f1c40f; font-weight:600; margin-bottom:8px; }
+.connector .cbody { font-family:'Source Serif 4',serif; font-size:13.5px; line-height:1.6; opacity:0.92; }
+.foot { margin-top:56px; padding-top:22px; border-top:4px double var(--ink); text-align:center; font-family:'DM Sans',sans-serif; }
+.foot .ctx { font-family:'Source Serif 4',serif; font-size:13px; color:var(--muted); font-style:italic; margin:12px auto; max-width:780px; line-height:1.55; }
+.foot .scope { font-family:'DM Sans',sans-serif; font-size:10px; color:var(--muted); letter-spacing:1.5px; text-transform:uppercase; margin-top:16px; }
+.foot .signoff { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; margin-top:18px; letter-spacing:0.5px; }
+@media (max-width:700px) { body { padding:18px 18px 40px; } .masthead h1 { font-size:46px; letter-spacing:-1px; } .grid { grid-template-columns:1fr; } .search-wrap { width:100%; } .search-wrap input { width:100%; } }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="date-sub">Monday · 15 June – Monday · 22 June 2026</div>
+  <h1>Market Pulse</h1>
+  <div class="tagline">NSE Corporate Announcements Intelligence Report</div>
+  <div class="ed-info">Master-List Coverage · Filtered from 3,091 NSE filings · Post-Q4 Structural Week</div>
+</header>
+
+<div class="edition-bar">
+  <div class="stat-pill"><span class="num">40+</span><span class="lab">Cards</span></div>
+  <div class="stat-pill"><span class="num">152</span><span class="lab">Companies</span></div>
+  <div class="stat-pill"><span class="num">7</span><span class="lab">Orders</span></div>
+  <div class="stat-pill"><span class="num">12</span><span class="lab">Spurts</span></div>
+  <div class="stat-pill"><span class="num">2</span><span class="lab">M&A</span></div>
+  <div class="stat-pill"><span class="num">77</span><span class="lab">SAST Filings</span></div>
+</div>
+
+<nav class="filter-bar">
+  <button class="filter-btn active" data-tag="all">All</button>
+  <button class="filter-btn" data-tag="order">Orders</button>
+  <button class="filter-btn" data-tag="acq">M&A / Capital</button>
+  <button class="filter-btn" data-tag="expand">Capex</button>
+  <button class="filter-btn" data-tag="alert">Watch / Litigation</button>
+  <button class="filter-btn" data-tag="spurt">Spurt / Price</button>
+  <button class="filter-btn" data-tag="credit">Credit Rating</button>
+  <button class="filter-btn" data-tag="gov">Governance</button>
+  <div class="search-wrap"><input id="search" type="text" placeholder="Search ticker, theme…"></div>
+</nav>
+
+<!-- HEADLINE — HCG -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">⚠️</div><h2 class="sec-title">Lead Story — Regulatory Suspension</h2><span class="sec-count">1 Card</span></div>
+  <div class="grid">
+    <article class="card headline serious" data-tags="alert">
+      <div class="card-meta"><span class="ticker">HCG</span><span class="tag alert">CDSCO 24-Month Suspension</span><span class="tag alert">Clinical Trial Violations</span><span class="date-meta">17 June 2026</span></div>
+      <h3>CDSCO suspends HCG's KR Unit Ethics Committee for 24 months — failure to report SAEs, casualties, conflict of interest</h3>
+      <p>HCG disclosed on 17 June that the <strong>Central Drugs Standard Control Organisation (CDSCO)</strong> issued an order dated <span class="num-highlight">12 June 2026</span> suspending the registration of the <strong>HCG Bangalore Institute of Oncology — KR Road Unit Ethics Committee</strong> from approving or overseeing any new clinical trial or BA/BE study for a period of <span class="num-highlight">24 months</span>. Order issued by DCGI Dr Rajeev Singh Raghuvanshi under Rule 14.3(iv) of the New Drugs and Clinical Trials Rules, 2019.</p>
+      <p>CDSCO's findings: the EC <span class="num-highlight down">failed to report at least three cases each of injury and death to CDSCO within prescribed timelines</span>, did not provide details on four cases each of injuries and deaths, plus documentation lapses and deficiencies in conflict-of-interest controls and patient safety oversight. Order follows two risk-based inspections at HCG Bangalore in July 2025 — a chain of events that traces back to the resignation of then-EC Chairperson Justice P Krishna Bhat (Retd) in June 2025, after the institute failed to act on his discrepancy findings during clinical trials. South First, the originating investigative source, has been publishing on this since June 2025.</p>
+      <p>During suspension, the EC has been directed to continue monitoring all ongoing trials, submit monthly safety reports, file CAPA reports and causality assessments for all previously-unreported SAEs, and provide compensation details where applicable. <strong>HCG's defensive framing</strong>: the suspension is "limited to this single ethics committee and does not affect other ethics committees, hospital operations, or patient care" and management expects <span class="num-highlight">no significant financial impact</span> — currently reviewing the order and exploring legal remedies.</p>
+      <p>Stock reaction was contained — <span class="num-highlight down">−1.06% to ₹609</span> by 19 June close. Operating context: HCG runs 2,600+ beds across 25 facilities in India and Kenya; KKR holds majority control (covered earlier in the May edition during the BACC/Milann divestment). Real impact will play out in the BA/BE-study revenue line (small but visible), oncology-trial relationships with pharma sponsors, and the reputational angle around clinical-research governance.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/HCG_17062026_SE_Disclosure_Suspension_Order_HCG_KR_Unit_Ethics_Commi.pdf" target="_blank">NSE — HCG Disclosure</a>
+        <a href="https://thesouthfirst.com/health/south-first-impact-cdsco-suspends-hcg-bangalores-ethics-committee-for-24-months/" target="_blank">South First — Backstory</a>
+        <a href="https://medicalbuyer.co.in/cdsco-suspends-registration-of-ec-at-hcg-oncology-hospital-over-testing-irregularities/" target="_blank">Medical Buyer</a>
+        <a href="https://www.business-standard.com/industry/news/cdsco-bars-hcg-hospitals-bengaluru-unit-from-conducting-new-clinical-trials-for-24-months-over-safety-violations-126061901092_1.html" target="_blank">Business Standard</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ORDERS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📜</div><h2 class="sec-title">Order Wins</h2><span class="sec-count">7 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">MARINE</span><span class="tag order">₹76.38 Cr STT + Deepak</span><span class="date-meta">16 June 2026</span></div>
+      <h3>Marine Electricals adds ₹76.38 Cr STT GDC + Deepak Chem orders — Q1 FY27 inflow now ~₹279 Cr</h3>
+      <p>Marine Electricals' run continues. On 16 June, twin orders totalling <span class="num-highlight">₹76.38 Cr</span> filed under one Reg 30: <strong>STT Global Data Centres India</strong> (power distribution SITC) + <strong>Deepak Chemtech</strong> (specialty chemicals customer). Stock <span class="num-highlight up">+4.78% to ₹258.45</span>; market cap ~₹3,629 Cr, P/E ~59.5. The new orders take <span class="num-highlight up">disclosed Q1 FY27 order inflows to ~₹279 Cr</span> — already a sizable share of FY26's full-year revenue of ₹877 Cr. Recent run: ₹115 Cr from L&T for Tata Semiconductor Dholera (6 Apr), ₹70.86 Cr Princeton + C-Torq (27 Apr), ₹16.90 Cr Afcons + KSL + UCSL (16 Apr), and last month's ₹208.72 Cr Adani Infra + Udupi Cochin Shipyard headline. Vadodara 51,000 sq ft facility inaugurated 15 Apr (+25% to assembly area).</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/MARINE_16062026_Signed_Regulation_30_STT_and_Deepak_Chem_Bagging_of_Ord.pdf" target="_blank">NSE — Order</a>
+        <a href="https://tradebrains.in/marine-electricals-surges-5-on-winning-76-38-cr-orders-from-stt-gdc-and-deepak-chem/" target="_blank">Order Detail</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">HFCL</span><span class="tag order">RVNL PO</span><span class="date-meta">17 June 2026</span></div>
+      <h3>HFCL receives RVNL purchase order — fourth headline-area filing in five weeks</h3>
+      <p>HFCL filed a purchase-order intimation on 17 June from <strong>Rail Vikas Nigam Limited (RVNL)</strong>. Adds rail-infrastructure dimension to HFCL's defence + telecom + OFC order-stack. Recent record: 27 May ₹135 Cr RailTel defence AMC (5-year), 11 May & 16 May twin orders, ₹230 Cr defence MMHG facility approval (14 May). Stock has been a consistent multibagger this quarter; the rail-PSU customer addition extends the diversification thesis. Specifics on PO scope and value in the linked PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/HFCL_17062026_HFCL-STX_Intimation_PO_RVNL_17062026.pdf" target="_blank">NSE — RVNL PO</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">INTERARCH</span><span class="tag order">Reg 30 Order</span><span class="date-meta">17 June 2026</span></div>
+      <h3>Interarch Building Solutions — fresh order under Reg 30</h3>
+      <p>Interarch filed another order disclosure on 17 June, after the ₹102 Cr order + ER Steel Canada MoU + record FY26 trifecta covered earlier (12-14 May). Specifics in the linked PDF. The PEB leader continues to ride domestic industrial-capex demand plus the North America expansion through the Canada partnership.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/INTERARCH1983_17062026_Regulation_30.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">KMEW</span><span class="tag order">IWAI 20 Pax Award</span><span class="date-meta">20 June 2026</span></div>
+      <h3>KMEW wins IWAI 20-Pax (passenger) award</h3>
+      <p>Kothari Industrial / KMEW filed an "IWAI 20 Pax Award" intimation on 20 June. <strong>IWAI (Inland Waterways Authority of India)</strong> awards relate to inland waterway transport / vessel supply contracts — typically 20-passenger ferry/transport vessels for National Waterways. Comes against the backdrop of an earlier spurt-in-volume reply (11 May, prior window). Specifics on contract size, route, and execution in the linked PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/KMEW_20062026_Intimation_of_IWAI_20_Pax_Award.pdf" target="_blank">NSE — IWAI Award</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">REFEX</span><span class="tag order">Another Order</span><span class="date-meta">20 June 2026</span></div>
+      <h3>Refex Industries — fifth straight week of fresh order disclosures</h3>
+      <p>Refex's order rhythm extends. Yet another "Bagging/Receiving of orders/contracts" disclosure on 20 June ("RIL_BOD_20062026_sd"). Five consecutive Market Pulse weeks have carried a Refex order card. The ash-handling / refrigerant / EV-mobility / power-trading diversified play continues to capture industrial / PSU demand. Specifics in PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/REFEX2002_20062026_RIL_BOD_20062026_sd.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">GOODLUCK</span><span class="tag order">Order Received</span><span class="date-meta">19 June 2026</span></div>
+      <h3>Goodluck India — fresh order receipt</h3>
+      <p>Goodluck India (precision steel pipes, hollow sections, forgings, defence) filed an order intimation on 19 June ("Intimation_Order_Received"). Followed the company's FY26 results (covered last week with dividend). Defence + auto + infra orders are the company's growth engines; specifics on customer / size in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/GOODLUCK_19062026_Intimation_Order_Received.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">DEEPINDS</span><span class="tag order">Order Intimation</span><span class="date-meta">20 June 2026</span></div>
+      <h3>Deep Industries — fresh order intimation</h3>
+      <p>Deep Industries (gas compression / drilling / workover oilfield services) filed an order intimation on 20 June. Comes alongside last week's FY26 board outcome + dividend. The oilfield-services rhythm continues to be a function of ONGC and private E&P capex cycles. Specifics in PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/DEEPINDS_20062026_Intimation.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- M&A -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🤝</div><h2 class="sec-title">M&A, Strategic Investments, Capital Actions</h2><span class="sec-count">5 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="acq tech">
+      <div class="card-meta"><span class="ticker">CRIZAC</span><span class="tag acq">37.41% in Edument</span><span class="tag tech">AI Platform</span><span class="date-meta">15 June 2026</span></div>
+      <h3>Crizac invests ₹1.25 Cr for 37.41% of Edument Consultancy (ForeignAdmits) — full-stack play</h3>
+      <p>Crizac (recently-listed international student mobility platform) entered definitive agreements on 15 June to invest <span class="num-highlight">~₹1.25 Cr</span> in Edument Consultancy (operator of <strong>ForeignAdmits</strong>) for a <span class="num-highlight">37.41% fully-diluted stake</span>, structured through ₹65.4 lakh CCPS + ₹59.4 lakh CCD. Target close: <span class="num-highlight">12 Aug 2026</span>. Not a related-party transaction. Strategic logic: Edument's AI-first B2B SaaS platform — 700+ counselling partners, 200+ university partners, 100,000+ students served, ₹1,500+ Cr in education loans facilitated, flagship products <strong>LoanMonk</strong> (pre-admission loan eligibility — 80,000+ assessments / 17+ lenders) and <strong>VisaMonk</strong> (AI visa interview simulation; won The PIEoneer Awards 2025) — slots into Crizac's full-stack vision covering destination + financing + visa.</p>
+      <p>Backdrop is strong — Crizac's FY26 print: <span class="num-highlight up">PAT ₹2,191 Mn (+41% YoY)</span>, revenue <span class="num-highlight up">₹10,711 Mn</span>, EBITDA margin <span class="num-highlight">27.1% (+172 bps)</span>, applications processed <span class="num-highlight up">3.94 lakh (+43%)</span>, interim dividend ₹8/share. The company also recently acquired stakes in Global Tree Careers and Studies Planet. Nikhil Jain (Edument founder) joins as Chief Product & Marketing Officer of Crizac. Edument is currently loss-making (FY25 revenue ₹1.13 Cr, net loss ₹71.87 lakh) — clearly an early-stage strategic addition rather than an immediate earnings contributor.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/CRIZAC_15062026_Regulation_30_Edument.pdf" target="_blank">NSE — Edument Acquisition</a>
+        <a href="https://tradebrains.in/crizac-to-acquire-37-41-stake-in-ai-powered-study-abroad-platform-edument-consultancy/" target="_blank">Detail</a>
+      </div>
+    </article>
+
+    <article class="card serious" data-tags="acq alert">
+      <div class="card-meta"><span class="ticker">ARSSBL</span><span class="tag acq">Acquisition</span><span class="tag alert">Post-Forensic Audit Context</span><span class="date-meta">16 June 2026</span></div>
+      <h3>ARSS Infrastructure files acquisition disclosure — three weeks after the Final Forensic Audit Report</h3>
+      <p>ARSS Infrastructure filed an "Acquisition" disclosure on 16 June ("Intimation_Acquisition_sd"). Significant in context: the company filed a <strong>Final Forensic Audit Report</strong> on 27 May (flagged in last edition's Watch List as a rarely-seen and serious disclosure category), Q4/FY26 audited results board meeting on 28 May, EGM on 9 June to formally appoint new statutory auditors (post-MARS→ADV merger), and now this acquisition. The sequencing — forensic report → results → auditor formalisation → acquisition — warrants careful reading of the acquisition PDF before drawing any conclusion. Target, consideration, and rationale in the filing.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/ARSSBL_16062026_Intimation_Acquisition_sd.pdf" target="_blank">NSE — Acquisition</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">JSLL</span><span class="tag acq">MOU + Sale of Derabassi</span><span class="date-meta">15, 19 June 2026</span></div>
+      <h3>JSL Industries — Memorandum of Understanding + Sale/disposal of Derabassi asset</h3>
+      <p>JSL Industries filed a "Memorandum of Understanding/Agreements" disclosure on 15 June plus a separate <strong>"Sale or disposal"</strong> intimation on 19 June referencing <strong>"Derabassi"</strong>. Together suggest a strategic restructuring — possibly divesting the Derabassi facility while signing an MoU for a new partnership or asset. Specifics of consideration, buyer, and use of proceeds (if any) in the respective PDFs. JSLL had just posted FY26 results + dividend in the prior window.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/JSLL_15062026_MOU_Intimation.pdf" target="_blank">NSE — MOU</a>
+        <a href="https://nsearchives.nseindia.com/corporate/JSLL_19062026_Intimation_sale_Derabassi.pdf" target="_blank">NSE — Derabassi Sale</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">SHAREINDIA</span><span class="tag acq">NCD Issue</span><span class="date-meta">18 June 2026</span></div>
+      <h3>Share India Securities — Non-Convertible Debenture issue</h3>
+      <p>Share India Securities filed an "Issue of Securities" disclosure on 18 June regarding <strong>NCDs</strong>. Follows the recent rhythm of compliance-related filings (Acuite rating revision 29 May, penalty updates in May). For a broking/capital-markets business, NCD issuance is a standard fund-raise; size, coupon, tenor, and use of proceeds in the linked PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/SHAREINDIA_18062026_Reg30_NCD_18-06-2026.pdf" target="_blank">NSE — NCD Issue</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">CMSINFO</span><span class="tag acq">Buyback Extinguishment</span><span class="date-meta">19 June 2026</span></div>
+      <h3>CMS Info Systems — Closure of Buyback / Extinguishment of Shares</h3>
+      <p>CMS Info Systems closed its ₹167.93 Cr tender buyback (announced 18 May, record date 22 May) on 19 June with the <strong>extinguishment-of-shares intimation</strong>. The buyback of up to 49,39,126 equity shares (3% of capital) at ₹340/share has now formally completed its accounting cycle. Capital-return cycle complete; positive read on the cash-logistics business's per-share metrics.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/CMSINFO_19062026_ExtinguishmentofSharesSEIntimationFinal.pdf" target="_blank">NSE — Extinguishment</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CAPACITY / OPERATIONS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🏭</div><h2 class="sec-title">Operations & Capacity</h2><span class="sec-count">2 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="expand">
+      <div class="card-meta"><span class="ticker">KILITCH</span><span class="tag expand">Commercial Production</span><span class="date-meta">17 June 2026</span></div>
+      <h3>Kilitch Drugs — commencement of commercial production at new line</h3>
+      <p>Kilitch Drugs filed a "Commencement of commercial production/operations" intimation on 17 June. For a pharma formulations player, a new line going commercial typically signals fresh capacity for either a regulated-market product or an Indian formulations expansion. Specifics on product, capacity, and target markets in the linked PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/KILITCH_17062026_IntimationToStockExchanges.pdf" target="_blank">NSE — Commercial Production</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">VINCOFE</span><span class="tag alert">Annual Maintenance Shutdown</span><span class="date-meta">19 June 2026</span></div>
+      <h3>Vintage Coffee — "Closure of operations" filing is actually a routine maintenance shutdown</h3>
+      <p>Vintage Coffee & Beverages filed under the "Closure of operations" category on 19 June, which would be unusual and alarming on its face — but the substance is benign: the <strong>subsidiary factory is shutting for annual maintenance from 19 June to 2 July 2026</strong>. Standard scheduled downtime, not permanent. Important to flag because the filing category looks scary in screens but the substance is operational, not strategic. Vintage Coffee's exchange had also sought a volume-movement clarification on 15 June (separately).</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/VINCOFE_18062026_VCDisclosure.pdf" target="_blank">NSE — Closure Disclosure</a>
+        <a href="https://www.screener.in/company/VINCOFE/consolidated/" target="_blank">Screener — VINCOFE</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- WATCH LIST -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">⚠️</div><h2 class="sec-title">Watch List — Litigations, Regulatory Actions, Clarifications</h2><span class="sec-count">7 Cards</span></div>
+  <div class="connector">
+    <div class="ctitle">Sector Signal — GST / Regulatory Action Cluster Continues</div>
+    <div class="cbody">Following the May cycle of GST and regulatory disclosures (Finolex, Sedemac, Bata, Rainbow), this week sees more — Sula Vineyards' ₹8.12 Cr GST appeal rejected by CGST Commissioner Appeals, Polymed and Angel One filing action-related disclosures, KRN files an order/action filing, and SDBL files a regulatory-licence action. The volume of these filings across mid-caps is sustained — Reg 30 read with the SEBI 30 Jan 2026 Master Circular continues to drive aggressive self-disclosure.</div>
+  </div>
+  <div class="grid">
+    <article class="card serious" data-tags="alert">
+      <div class="card-meta"><span class="ticker">SULA</span><span class="tag alert">₹8.12 Cr GST Confirmed</span><span class="date-meta">16 June 2026</span></div>
+      <h3>Sula Vineyards — CGST Commissioner Appeals rejects GST appeal; ₹8.12 Cr liability confirmed</h3>
+      <p>Sula Vineyards filed an "Action(s) taken or orders passed" disclosure on 16 June. The <strong>Commissioner (Appeals), CGST & Central Excise, Nashik rejected Sula's appeal</strong> in an Order-in-Appeal dated 29 May 2026, upholding the original demand for <span class="num-highlight">₹8.12 Cr</span> covering FY 2017-18 to FY 2021-22. Two issues: tax rate on restaurant services + GST liability on corporate guarantees. Disclosure delay (order dated 29 May, disclosed 16 June) explained by logistics — copy received at Nashik on 12 June, reached the registered office authorized person on 15 June.</p>
+      <p>Sula has been having a tough FY26 — PAT <span class="num-highlight down">₹25.65 Cr (−63.5%)</span>, revenue <span class="num-highlight down">₹596 Cr (−3.7%)</span> on Own Brands weakness and Telangana route-to-market disruption. Wine Tourism a bright spot at <span class="num-highlight up">₹113 Cr (+21%)</span> — first time crossing ₹100 Cr. Domaine Chandon asset acquisition for ₹20 Cr from Moët Hennessy through Artisan Spirits subsidiary completing. AGM on 25 June. ₹8.12 Cr against a ~₹600 Cr revenue base is a contained but real provision item; next move is further appeal.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/SULA_16062026_SE_Intimation_CGST_order_16062026_Final.pdf" target="_blank">NSE — CGST Order</a>
+        <a href="https://scanx.trade/stock-market-news/companies/sula-vineyards-faces-rs-8-12-crore-demand-as-gst-appeal-rejected/43171365" target="_blank">Detail</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">ANGELONE</span><span class="tag alert">Order/Action</span><span class="date-meta">15 June 2026</span></div>
+      <h3>Angel One — "Action(s) taken or orders passed" disclosure</h3>
+      <p>Angel One (retail broking platform) filed an "Action(s) taken or orders passed" disclosure on 15 June ("Intimationoforder"). For a regulated broking platform, this is most likely an SEBI / exchange / tax-authority order. Quantum, nature, and any operational/financial impact in the linked PDF. Combined with the recent regulatory-action theme across mid-caps, worth careful reading.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/ANGELONE_15062026_June152026_Intimationoforder.pdf" target="_blank">NSE — Order</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">POLYMED</span><span class="tag alert">Action Reply</span><span class="date-meta">16 June 2026</span></div>
+      <h3>Poly Medicure — reply letter under "Action(s) taken or orders passed"</h3>
+      <p>Poly Medicure filed a reply letter on 16 June under "Action(s) taken or orders passed" — typically follows an earlier regulator/exchange action requiring a formal response. The medical-device exporter has had multiple Reg 30 filings during the window (11 total); the reply suggests an ongoing engagement with a regulator. Substance in the linked PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/POLYMED_16062026_Reply_Letter_upload.pdf" target="_blank">NSE — Reply Letter</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">KRN</span><span class="tag alert">Action/Order</span><span class="date-meta">20 June 2026</span></div>
+      <h3>KRN Heat Exchanger — "Action(s) initiated or orders passed" disclosure</h3>
+      <p>KRN Heat Exchanger (HVAC & refrigeration components, recent IPO) filed an "Action(s) initiated or orders passed" disclosure on 20 June ("intimationordersigned"). Newer listing with thin coverage; the substance, scale relative to company size, and authority issuing the order are all material context — read the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/KRN_20062026_intimationordersigned.pdf" target="_blank">NSE — Order/Action</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">SDBL</span><span class="tag alert">License Action</span><span class="date-meta">19 June 2026</span></div>
+      <h3>Som Distilleries — "Granting/withdrawal/cancellation/suspension of key licenses"</h3>
+      <p>Som Distilleries & Breweries filed a Reg 30 disclosure on 19 June under the <strong>rarely-triggered "Granting/withdrawal/surrender/cancellation/suspension of key licenses or regulatory approvals"</strong> category. For a liquor company, licence-related disclosures are particularly material — could be a state liquor licence renewal, withdrawal, or suspension. Direction (positive or restrictive) determines materiality; recommend reading PDF for substance.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/SDBL_19062026_SE_intimation_190626sd.pdf" target="_blank">NSE — License Action</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">BORANA</span><span class="tag alert">Clarification Reply</span><span class="date-meta">17 June 2026</span></div>
+      <h3>Borana Weaves — Reply to Clarification on financial results (with real PDF this time)</h3>
+      <p>Borana Weaves filed a "Reply to Clarification - Financial results" on 17 June — with an actual PDF this time, following multiple placeholder URLs in prior windows. Provides the substantive response to the NSE clarification request that has been pending. Read the reply for the company's position on whatever the original clarification was.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/BORANA_17062026_ClarificationLetter17062026.pdf" target="_blank">NSE — Reply</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">GUJTHEM · KALYANIFRG · MODISONLTD · TINNARUBR</span><span class="tag alert">Pending Placeholder Clarifications</span><span class="date-meta">date NaN</span></div>
+      <h3>Four pending "Clarification – Financial Results" filings with placeholder URLs</h3>
+      <p>The placeholder-clarification queue continues: <strong>Gujarat Themis Biosyn</strong>, <strong>Kalyani Forge</strong>, <strong>Modison Limited</strong>, and <strong>Tinna Rubber</strong> all appear with "Clarification – Financial Results" entries carrying placeholder URLs ("nseindia.com/-") — content not yet published. Worth tracking as the actual PDFs become available.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.nseindia.com/companies-listing/corporate-filings-announcements" target="_blank">NSE Announcements Portal</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- SPURT IN VOLUME & PRICE MOVEMENT -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📈</div><h2 class="sec-title">Spurt in Volume & Price Movement Clarifications</h2><span class="sec-count">3 Cards</span></div>
+  <div class="connector">
+    <div class="ctitle">Sector Signal — Mid-Cap Volume Spurts Across Diverse Names</div>
+    <div class="cbody">Twelve spurt-in-volume clarifications + 4 price-movement clarifications from master-list companies during the window — an unusually broad cluster. Diverse sectors: foods/coffee (VINCOFE), specialty films (XPROINDIA), labware (TARSONS), pipes (VENUSPIPES), engineering (ANUP), farm equipment (INDOFARM), auto components (BETA, MENONBE). Each is a standard exchange-query reply ("no undisclosed material event") — but the breadth signals mid-cap retail / momentum-driven flows broad-basing across sectors.</div>
+  </div>
+  <div class="grid">
+    <article class="card" data-tags="spurt alert">
+      <div class="card-meta"><span class="ticker">TARSONS</span><span class="tag spurt">Spurt + Price Movement</span><span class="date-meta">18 June 2026</span></div>
+      <h3>Tarsons Products — twin clarifications: spurt-in-volume + price movement</h3>
+      <p>Tarsons Products (lab plastic-ware consumables — primary scientific market) filed dual clarifications on 18 June — both <strong>spurt-in-volume</strong> and <strong>price movement</strong>, with a second pair of placeholder URLs. Suggests an active trading day with both volume and price action requiring exchange-mandated reply. Standard reply pattern: no undisclosed material event; PDF carries the formal letter.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/TARSONS_18062026_SE_IntimationClarification_NSE.pdf" target="_blank">NSE — Clarification</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="spurt alert">
+      <div class="card-meta"><span class="ticker">POWERICA</span><span class="tag spurt">Price Movement</span><span class="date-meta">20 June 2026</span></div>
+      <h3>Powerica — price movement clarification</h3>
+      <p>Powerica (Cummins-licensed gensets, power solutions) filed a price-movement clarification on 20 June plus a placeholder URL entry. Standard NSE-letter-reply pattern. Powerica has had 9 total filings during the window — also covered its FY26 / dividend cycle. PDF carries the formal clarification.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/POWERICA_20062026_Clarification_on_price_movement_SESigned.pdf" target="_blank">NSE — Price Clarification</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="spurt">
+      <div class="card-meta"><span class="ticker">XPROINDIA · MENONBE · BETA · ANUP · INDOFARM · VENUSPIPES</span><span class="tag spurt">Spurt-in-Volume Cluster</span><span class="date-meta">16-19 June 2026</span></div>
+      <h3>Six master-list names file spurt-in-volume clarifications during the window</h3>
+      <p>Spurt-in-volume cluster: <strong>XPROINDIA</strong> (Xpro India — dielectric films, 16 Jun), <strong>MENONBE</strong> (Menon Bearings, 16 Jun), <strong>BETA</strong> (BETA Drugs / Drug intermediates, 15 Jun — though URL dated 7 April), <strong>ANUP</strong> (Anup Engineering — heat exchangers, 18 Jun + placeholder), <strong>INDOFARM</strong> (Indo Farm Equipment — tractors / cranes, 19 Jun + placeholder), <strong>VENUSPIPES</strong> (Venus Pipes & Tubes — SS pipes, 19 Jun + placeholder). All standard exchange-query replies; uniformly no undisclosed material event. Cluster size (12 master-list spurt clarifications including placeholders) is the broadest single-week count in the dataset to date.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/XPROINDIA_16062026_Exchange_letter_16012026_volume_signed.pdf" target="_blank">XPROINDIA</a>
+        <a href="https://nsearchives.nseindia.com/corporate/MENONBE_16062026_NSE_Intimation_Volume_Increase_.pdf" target="_blank">MENONBE</a>
+        <a href="https://nsearchives.nseindia.com/corporate/ANUP_18062026_Clarification.pdf" target="_blank">ANUP</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CREDIT RATINGS -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📈</div><h2 class="sec-title">Credit Rating Actions</h2><span class="sec-count">2 Cards</span></div>
+  <div class="grid">
+    <article class="card positive" data-tags="credit positive">
+      <div class="card-meta"><span class="ticker">PREMIERPOL</span><span class="tag positive">Rating Upgrade</span><span class="date-meta">17 June 2026</span></div>
+      <h3>Premier Polyfilm receives credit rating upgrade</h3>
+      <p>Premier Polyfilm — covered in the very first Market Pulse edition for the 99.76% postal-ballot auditor change — received a <strong>credit rating UPGRADE</strong> on 17 June ("Intimation_of_upgradation_of_Credit_Rating"). Direction is explicitly positive (the filename uses "upgradation"). Specific agency, grade transition, and rated-facility size in the PDF. Positive operating-and-credit profile signal for a small-cap polymer films maker.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/PREMIERPOL_17062026_Intimation_of_upgradation_of_Credit_Rating_.pdf" target="_blank">NSE — Rating Upgrade</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="credit">
+      <div class="card-meta"><span class="ticker">BBOX</span><span class="tag credit">Credit Rating</span><span class="date-meta">17 June 2026</span></div>
+      <h3>Black Box — credit rating intimation</h3>
+      <p>Black Box (BBOX) filed a credit rating intimation on 17 June. Comes after the acquisition completion (13 May), revised Q4 PR (26 May), and securities allotment (26 May). Rating grade and any commentary on the post-acquisition financial profile in the PDF.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/BBOX_17062026_SE_Intimation_CreditRating.pdf" target="_blank">NSE — Credit Rating</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ALLOTMENTS / SECURITIES -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">💼</div><h2 class="sec-title">Securities Allotments</h2><span class="sec-count">2 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="acq">
+      <div class="card-meta"><span class="ticker">DEVX · STLNETWORK</span><span class="tag acq">Securities Allotment</span><span class="date-meta">16, 20 June 2026</span></div>
+      <h3>DevX twin allotments (16 Jun) + STL Networks allotment (20 Jun)</h3>
+      <p><strong>DevX (Dev Accelerator)</strong> filed twin Allotment of Securities + Outcome of Board Meeting on 16 June — three filings together suggest a meaningful tranche of preferential issue / warrant conversion to fund the workspace-operator's continued expansion. <strong>STL Networks (formerly Sterlite Tech post-demerger)</strong> filed an Allotment of Securities on 20 June. Both add to the recent allotment-related activity in the master list. Specifics in PDFs.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/DEVX_16062026_SE_Outcome_of_Board_Meeting.pdf" target="_blank">DEVX Board / Allotment</a>
+        <a href="https://nsearchives.nseindia.com/corporate/STLNETWORK_20062026_BSENSE.pdf" target="_blank">STL Allotment</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="acq mgmt">
+      <div class="card-meta"><span class="ticker">FIRSTCRY · MOSCHIP · KERNEX</span><span class="tag acq">ESOP / Circular Resolution Allotments</span><span class="date-meta">16-17 June 2026</span></div>
+      <h3>ESOP-driven allotments: FirstCry, MosChip, Kernex</h3>
+      <p>Three master-list names filed ESOP-allotment disclosures: <strong>FIRSTCRY</strong> (ESOP exercise disclosure 16 Jun — following last week's UAE/Saudi WOS funding move), <strong>MOSCHIP</strong> (Outcome of Circular Resolution — board approval for ESOP allotment, 16 Jun — note MosChip's EGM postponement was in last window's Watch List), <strong>KERNEX</strong> (ESOP intimation 17 Jun — alongside the back-to-back railway-safety orders). Routine but worth noting given the parallel corporate-action activity at each name.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/FIRSTCRY_16062026_ESOPexercisedisclosureJune162026.pdf" target="_blank">FIRSTCRY ESOP</a>
+        <a href="https://nsearchives.nseindia.com/corporate/MOSCHIP_16062026_Outcome_of_Circular_Resolution.pdf" target="_blank">MOSCHIP</a>
+        <a href="https://nsearchives.nseindia.com/corporate/KERNEX_17062026_Intimation_ESOP.pdf" target="_blank">KERNEX ESOP</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- KERNEX SEPARATE FOR ORDER -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">🚆</div><h2 class="sec-title">Kernex — Railway Safety Order Pattern</h2><span class="sec-count">1 Card</span></div>
+  <div class="grid">
+    <article class="card" data-tags="order">
+      <div class="card-meta"><span class="ticker">KERNEX</span><span class="tag order">Continued Order Momentum</span><span class="date-meta">17 June 2026 ESOP</span></div>
+      <h3>Kernex Microsystems — order rhythm continues from prior window</h3>
+      <p>Cross-reference: Kernex Microsystems' twin orders (CLW3 on 27 May + JSL LoI on 28 May), covered in the previous Market Pulse, set the order-flow rhythm. This week's filing is the ESOP allotment (in the previous section). Kavach safety-system rollout remains the structural story for the company; following the May-end order pair, monitoring the next disclosure cycle is the action item.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.screener.in/company/KERNEX/consolidated/" target="_blank">Screener — KERNEX</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- DEEDEV CORRIGENDA -->
+<section class="section">
+  <div class="sec-head"><div class="sec-emoji">📝</div><h2 class="sec-title">Corrigenda, Board Outcomes & Misc.</h2><span class="sec-count">4 Cards</span></div>
+  <div class="grid">
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">DEEDEV</span><span class="tag alert">Twin Corrigenda</span><span class="date-meta">18, 19 June 2026</span></div>
+      <h3>Deccan Cements — twin Corrigendum filings</h3>
+      <p>Deccan Cements filed two Corrigendum disclosures (18 Jun + 19 Jun) — typically rectifying earlier filing errors. Comes after last week's Reg 30 order disclosure. Specifics in the linked PDFs; back-to-back corrigenda are unusual and may relate to the prior order intimation or Q4-results disclosures.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/DEEDEV_18062026_NSEBSESIGNED.pdf" target="_blank">DEEDEV Corrigendum #1</a>
+        <a href="https://nsearchives.nseindia.com/corporate/DEEDEV_19062026_NSEBSE.pdf" target="_blank">DEEDEV Corrigendum #2</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="alert">
+      <div class="card-meta"><span class="ticker">RPGLIFE</span><span class="tag alert">Book Closure Cancelled</span><span class="date-meta">16 June 2026</span></div>
+      <h3>RPG Life Sciences — Cancellation of Book Closure / Record Date</h3>
+      <p>RPG Life Sciences filed an unusual "Cancellation of Book Closure" disclosure on 16 June ("Reply_Letter__Record_date"). Book-closure cancellations typically arise from procedural / regulatory issues or postponed corporate actions (e.g., dividend record-date adjustment). Substance in the PDF; worth reading for downstream impact on any pending dividend or corporate action.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/RPGLIFE_16062026_Reply_Letter__Record_date.pdf" target="_blank">NSE — Cancellation Notice</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="gov">
+      <div class="card-meta"><span class="ticker">STYLAMIND · GRPLTD · SHRINGARMS</span><span class="tag gov">Board Outcomes</span><span class="date-meta">17, 19 June 2026</span></div>
+      <h3>Late board outcomes: Stylam Industries (13 filings), GRP, Shringar Mantra Internal Auditor</h3>
+      <p>A handful of board outcomes filed in the window: <strong>STYLAMIND</strong> (Stylam Industries — laminates) leads filing activity (13 filings; twin board outcomes 17 Jun), <strong>GRPLTD</strong> (GRP Limited — recycled rubber/polymer, board outcome 17 Jun), <strong>SHRINGARMS</strong> (Shringar Mantra — Internal Auditor appointment via board outcome 19 Jun). Specifics in respective PDFs.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://nsearchives.nseindia.com/corporate/STYLAMIND_17062026_Outcome.pdf" target="_blank">STYLAMIND</a>
+        <a href="https://nsearchives.nseindia.com/corporate/GRPLTD_17062026_GRP_Outcome_BM_17062026.pdf" target="_blank">GRPLTD</a>
+      </div>
+    </article>
+
+    <article class="card" data-tags="gov">
+      <div class="card-meta"><span class="ticker">77 SAST DISCLOSURES · 38 ANALYST/CON-CALL · 8 APPOINTMENTS</span><span class="tag gov">Standard Compliance</span><span class="date-meta">15-22 June 2026</span></div>
+      <h3>Routine activity: SAST disclosures, analyst meetings, and governance changes</h3>
+      <p>The window's tail of routine activity: <strong>77 SEBI Takeover-Regulation disclosures</strong> (the bulk of which are annual Reg 31(4) promoter shareholding statements as of 31 Mar 2026, post the FY26 AGM filing cycle), <strong>38 Analyst/Institutional Investor Meet/Con-call updates</strong>, <strong>10 trading-window opens/closes</strong>, <strong>8 appointment filings</strong>, <strong>7 director/KMP resignations</strong>. None individually flagged as material; consistent with the post-Q4-results AGM-cycle phase.</p>
+      <div class="sources"><span class="src-label">Sources:</span>
+        <a href="https://www.nseindia.com/companies-listing/corporate-filings-announcements" target="_blank">NSE Announcements Portal</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="ctx">Coverage scope: 349-company master list (suffixes normalised). Period: 15-22 June 2026 broadcast window. Of <strong>3,091 NSE filings</strong>, <strong>317 belonged to master-list tickers across 152 companies</strong>. Editorial filter excluded 28 newspaper publications, 77 routine SAST disclosures, 10 trading-window opens/closes, and other compliance noise. <strong>Lead disclosure</strong>: HCG CDSCO 24-month ethics-committee suspension. <strong>Notable secondary disclosures</strong>: ARSSBL acquisition (post-forensic audit), Sula ₹8.12 Cr GST confirmed, SDBL licence action. SME segment filings continue missing from source NSE feed.</div>
+  <div class="scope">Coverage Period · 15 June 2026 → 22 June 2026 · Cards: 40+ · Companies: 152 · Filings Reviewed: 3,091</div>
+  <div class="signoff">Presented by Nova Orbit</div>
+</footer>
+
+<script>
+const buttons = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.card');
+const sections = document.querySelectorAll('.section');
+const search = document.getElementById('search');
+function applyFilters() {
+  const activeTag = document.querySelector('.filter-btn.active').dataset.tag;
+  const term = (search.value||'').trim().toLowerCase();
+  cards.forEach(card => {
+    const tags = (card.dataset.tags||'').split(' ');
+    const text = card.innerText.toLowerCase();
+    const tagMatch = activeTag==='all' || tags.includes(activeTag);
+    const textMatch = !term || text.includes(term);
+    card.style.display = (tagMatch && textMatch) ? '' : 'none';
+  });
+  sections.forEach(sec => {
+    const visible = Array.from(sec.querySelectorAll('.card')).some(c => c.style.display !== 'none');
+    sec.style.display = visible ? '' : 'none';
+  });
+}
+buttons.forEach(b => b.addEventListener('click', () => {
+  buttons.forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  applyFilters();
+}));
+search.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>
